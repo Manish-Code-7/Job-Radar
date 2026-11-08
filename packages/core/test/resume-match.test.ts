@@ -78,3 +78,40 @@ describe("matching", () => {
     expect(can(null, "feed")).toBe(false);
   });
 });
+
+import { canonicalSkill, searchSkills, skillsFromText as skillsFrom } from "../src";
+describe("skills catalog", () => {
+  it("search-as-you-type", () => {
+    expect(searchSkills("rea").map((s) => s.name)[0]).toBe("React");
+    expect(searchSkills("spring").map((s) => s.name)).toEqual(expect.arrayContaining(["Spring", "Spring Boot"]));
+    expect(searchSkills("k8s")[0]?.name).toBe("Kubernetes");
+    expect(searchSkills("pyt").map((s) => s.name)).toContain("PyTorch");
+    expect(searchSkills("react", ["React"]).map((s) => s.name)).not.toContain("React");
+  });
+  it("canonical spellings", () => {
+    expect(canonicalSkill("reactjs")).toBe("React");
+    expect(canonicalSkill("  postgres ")).toBe("PostgreSQL");
+    expect(canonicalSkill("Some Niche Tool")).toBe("Some Niche Tool");
+  });
+  it("parser now finds frameworks beyond the base dictionary", () => {
+    const s = skillsFrom("Built with NestJS, Tailwind CSS, Express and Jest; deployed with Helm on Kubernetes", 20);
+    expect(s).toEqual(expect.arrayContaining(["NestJS", "Tailwind CSS", "Express", "Jest", "Helm", "Kubernetes"]));
+    expect(skillsFrom("Please express your interest and steer the helm of the project", 20)).not.toEqual(expect.arrayContaining(["Express"]));
+  });
+});
+
+import { docxToText, isDocx, isPdf } from "../src";
+describe("resume files", () => {
+  const docx = readFileSync(join(__dirname, "fixtures", "resume-fresher.docx"));
+  it("detects and reads .docx without extra dependencies", () => {
+    expect(isDocx(docx)).toBe(true);
+    expect(isPdf(docx)).toBe(false);
+    const text = docxToText(docx);
+    expect(text).toContain("Ananya Rao");
+    expect(parseResumeRules(text, NOW).skills).toEqual(expect.arrayContaining(["Java", "React", "PostgreSQL"]));
+  });
+  it("accepts PDFs with junk before the header", () => {
+    expect(isPdf(Buffer.concat([Buffer.from("\r\n﻿junk"), Buffer.from("%PDF-1.7 ...")]))).toBe(true);
+    expect(isPdf(Buffer.from("hello world"))).toBe(false);
+  });
+});

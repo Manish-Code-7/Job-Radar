@@ -67,7 +67,7 @@ export default function Settings() {
               </div>
             )}
             <ResumeUpload hasResume={!!p.resumeKey} onParsed={(d) => setDraft({ ...current, ...d, name: d.name || current.name })} />
-            <ResumeReview key={draft ? "draft" : "saved"} initial={draft ?? current} saving={saveResume.isPending} submitLabel="Save profile" onSave={(d) => saveResume.mutate({ ...d, name: d.name ?? undefined, education: d.education ?? undefined })} />
+            <ResumeReview key={draft ? "draft" : "saved"} initial={draft ?? current} track={p.tracks[0] ?? "software"} saving={saveResume.isPending} submitLabel="Save profile" onSave={(d) => saveResume.mutate({ ...d, name: d.name ?? undefined, education: d.education ?? undefined })} />
           </Card>
         </section>
 

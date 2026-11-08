@@ -27,8 +27,8 @@ export function PreferencesForm({ initial, cities, onSave, saving, submitLabel }
         onSave(p);
       }}
     >
-      <Chips label="Roles you want" hint="Pick one or more." options={TRACK_OPTIONS} value={p.tracks as (typeof TRACK_OPTIONS)[number][]} onChange={(tracks) => setP({ ...p, tracks })} render={(t) => TRACK_LABEL[t]!} />
-      <Chips label="Cities" hint="Where you can work from the office." options={cities} value={p.cities} onChange={(c) => setP({ ...p, cities: c })} />
+      <Chips label="Roles you want *" hint="Required. Pick one or more." options={TRACK_OPTIONS} value={p.tracks as (typeof TRACK_OPTIONS)[number][]} onChange={(tracks) => setP({ ...p, tracks })} render={(t) => TRACK_LABEL[t]!} />
+      <Chips label="Cities *" hint="Required: pick at least one city, or turn on remote below." options={cities} value={p.cities} onChange={(c) => setP({ ...p, cities: c })} />
       <label className="flex min-h-14 cursor-pointer items-center justify-between gap-4 rounded-xl border bg-card px-4">
         <span>
           <span className="block text-sm font-medium">Remote jobs in India</span>
@@ -43,8 +43,13 @@ export function PreferencesForm({ initial, cities, onSave, saving, submitLabel }
         <Hint>Only applied when a job states its pay. Most don&apos;t.</Hint>
       </div>
       <Chips label="Hide jobs from" hint="We already leave out staffing agencies by default." options={KIND_OPTIONS} value={p.avoidKinds as (typeof KIND_OPTIONS)[number][]} onChange={(avoidKinds) => setP({ ...p, avoidKinds })} render={(k) => KIND_LABEL[k]!} />
-      <Button type="submit" size="lg" className="w-full sm:w-auto" disabled={saving || (!p.cities.length && !p.remoteOk)}>{saving ? "Saving…" : submitLabel}</Button>
-      {!p.cities.length && !p.remoteOk && <p className="text-sm text-muted-foreground">Pick at least one city or allow remote.</p>}
+      {(!p.tracks.length || (!p.cities.length && !p.remoteOk)) && (
+        <p role="alert" className="rounded-lg bg-bad-soft px-3 py-2 text-sm text-bad">
+          {!p.tracks.length ? "Pick at least one role. " : ""}
+          {!p.cities.length && !p.remoteOk ? "Pick at least one city, or turn on remote jobs." : ""}
+        </p>
+      )}
+      <Button type="submit" size="lg" className="w-full sm:w-auto" disabled={saving || !p.tracks.length || (!p.cities.length && !p.remoteOk)}>{saving ? "Saving…" : submitLabel}</Button>
     </form>
   );
 }

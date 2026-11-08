@@ -1,3 +1,4 @@
+import { ALL_SKILLS } from "../skills";
 import type { EmploymentType, Seniority, Track, Workplace } from "../types";
 
 /* ----------------------------- Location ----------------------------- */
@@ -286,6 +287,17 @@ export const SKILL_DICT: [string, RegExp][] = [
   ["Power BI", /\bpower ?bi\b/i], ["Excel", /\bexcel\b/i], ["Snowflake", /\bsnowflake\b/i], ["dbt", /\bdbt\b/i],
 ];
 
+const COMMON_WORDS = new Set(["Express", "Helm", "Serverless", "Spring", "Flask", "Rust", "Swift", "Dart", "Jest", "Keras", "Jira", "Figma", "Spark", "Kafka", "Airflow", "Postman"]);
+const esc = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+/** Catalog entries the hand-written dictionary doesn't cover (frameworks, tools…), matched as whole words. */
+const CATALOG_EXTRA: [string, RegExp][] = ALL_SKILLS.filter(({ name }) => !SKILL_DICT.some(([n]) => n === name))
+  // Single letters / very short names are too ambiguous in free text.
+  .filter(({ name }) => !["C", "R", "Go", "OOP", "RAG", "DBMS", "Excel", "Statistics", "Agile"].includes(name))
+  // Names that are also everyday English words only count when capitalised ("Express", not "express interest").
+  .map(({ name }) => [name, new RegExp(`(?<![\\w.+#])${esc(name)}(?![\\w+#])`, COMMON_WORDS.has(name) ? "" : "i")]);
+
 export function skillsFromText(text: string, limit = 12): string[] {
-  return SKILL_DICT.filter(([, re]) => re.test(text)).map(([s]) => s).slice(0, limit);
+  const out = SKILL_DICT.filter(([, re]) => re.test(text)).map(([s]) => s);
+  for (const [name, re] of CATALOG_EXTRA) if (out.length < 40 && !out.includes(name) && re.test(text)) out.push(name);
+  return out.slice(0, limit);
 }

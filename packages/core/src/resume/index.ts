@@ -1,5 +1,6 @@
 import { skillsFromText } from "../classifier/rules";
 import { normalizeWs } from "../text";
+export { docxToText, isDocx, isPdf } from "./files";
 
 /** What we extract from a resume. The user reviews and edits all of it before it's used. */
 export interface ParsedResume {

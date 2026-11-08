@@ -125,13 +125,26 @@ export const meRouter = router({
           ),
         )
         .orderBy(input.sort === "newest" ? desc(jobs.firstSeenAt) : desc(matches.score))
-        .limit(input.limit);
+        .limit(Math.min(300, input.limit * 6)); // over-fetch, then spread companies out below
       const mine = new Set(p.skills.map((s) => s.toLowerCase()));
+      // Company variety: each further job from the same company ranks a little lower, so the top of the
+      // feed mixes employers instead of showing one big company's whole board. Displayed scores are unchanged.
+      const seen = new Map<string, number>();
+      const ranked = rows
+        .map((r, i) => {
+          const k = seen.get(r.company) ?? 0;
+          seen.set(r.company, k + 1);
+          const base = input.sort === "newest" ? -i : r.score;
+          return { r, key: base - k * (input.sort === "newest" ? 4 : 8) };
+        })
+        .sort((a, b) => b.key - a.key)
+        .slice(0, input.limit)
+        .map((x) => x.r);
       return {
         computedAt: p.matchesComputedAt,
         profileUpdatedAt: p.updatedAt,
         upToDate: !!p.matchesProfileVersion && p.matchesProfileVersion.getTime() >= p.updatedAt.getTime(),
-        jobs: rows.map((r) => ({ ...r, badge: displayBadge(r.status, r.lastVerifiedAt), matchedSkills: r.skills.filter((s) => mine.has(s.toLowerCase())) })),
+        jobs: ranked.map((r) => ({ ...r, badge: displayBadge(r.status, r.lastVerifiedAt), matchedSkills: r.skills.filter((s) => mine.has(s.toLowerCase())) })),
       };
     }),
 

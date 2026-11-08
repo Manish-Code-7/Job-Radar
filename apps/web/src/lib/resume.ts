@@ -1,5 +1,6 @@
 import "server-only";
 import { parseResumeRules, SKILL_DICT, type ParsedResume } from "@job-radar/core";
+export { docxToText, isDocx, isPdf } from "@job-radar/core";
 import { extractText, getDocumentProxy } from "unpdf";
 import { z } from "zod";
 

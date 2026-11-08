@@ -102,7 +102,7 @@ export default function Onboarding() {
           {draft && (
             <>
               <p className="flex items-start gap-2.5 rounded-xl border border-primary/30 bg-primary-soft p-3.5 text-sm text-primary"><Sparkles className="mt-0.5 size-4 shrink-0" aria-hidden="true" />Check what we picked up and fix anything that&apos;s wrong. Matching uses exactly this.</p>
-              <ResumeReview initial={draft} saving={saveResume.isPending} submitLabel="Looks right, continue" onSave={(d) => saveResume.mutate({ ...d, name: d.name ?? undefined, education: d.education ?? undefined })} />
+              <ResumeReview initial={draft} track={p.tracks[0] ?? "software"} saving={saveResume.isPending} submitLabel="Looks right, continue" onSave={(d) => saveResume.mutate({ ...d, name: d.name ?? undefined, education: d.education ?? undefined })} />
               {saveResume.error && <p role="alert" className="text-sm text-bad">{saveResume.error.message}</p>}
             </>
           )}

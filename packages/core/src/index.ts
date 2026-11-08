@@ -10,3 +10,4 @@ export * from "./budget/providers";
 export * from "./resume";
 export * from "./match";
 export * from "./plans";
+export * from "./skills";
