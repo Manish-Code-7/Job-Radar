@@ -33,10 +33,20 @@ function r2() {
   return { client, url };
 }
 
-export async function putResume(objectKey: string, pdf: Buffer): Promise<void> {
+export async function putResume(objectKey: string, file: Buffer): Promise<void> {
   const { client, url } = r2();
-  const res = await client.fetch(url(objectKey), { method: "PUT", body: new Uint8Array(encrypt(pdf)), headers: { "content-type": "application/octet-stream" } });
-  if (!res.ok) throw new Error(`R2 upload failed: ${res.status} ${await res.text().catch(() => "")}`);
+  const body = encrypt(file);
+  // Sign first, then send the exact bytes ourselves: R2 requires Content-Length, and letting the signer
+  // forward the body can turn it into a chunked stream without one (R2 answers 411 MissingContentLength).
+  const signed = await client.sign(url(objectKey), {
+    method: "PUT",
+    body: new Uint8Array(body),
+    headers: { "content-type": "application/octet-stream", "content-length": String(body.length) },
+  });
+  const headers = new Headers(signed.headers);
+  headers.delete("content-length"); // fetch sets it from the byte array
+  const res = await fetch(signed.url, { method: "PUT", headers, body: new Uint8Array(body) });
+  if (!res.ok) throw new Error(`R2 upload failed: ${res.status} ${(await res.text().catch(() => "")).slice(0, 200)}`);
 }
 
 export async function getResume(objectKey: string): Promise<Buffer> {

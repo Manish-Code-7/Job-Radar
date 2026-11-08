@@ -48,11 +48,13 @@ export function ResumeUpload({ onParsed, hasResume }: { onParsed: (d: ResumeData
       <p className="mt-3 font-medium">{state.busy ? `Reading ${state.name}…` : hasResume ? "Replace your resume" : "Drop your resume here"}</p>
       <p className="mt-1 text-sm text-muted-foreground">PDF or Word (.docx), up to 10 MB</p>
       <input ref={input} type="file" accept="application/pdf,.pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document,.docx" className="sr-only" id="resume-file" onChange={(e) => e.target.files?.[0] && upload(e.target.files[0])} />
-      <Button type="button" className="mt-4" disabled={state.busy} onClick={() => input.current?.click()}>
+      <div className="mt-4 flex justify-center">
+      <Button type="button" disabled={state.busy} onClick={() => input.current?.click()}>
         {state.busy ? "Reading…" : "Choose file"}
       </Button>
+      </div>
       {state.error && <p role="alert" className="mx-auto mt-4 max-w-sm rounded-lg bg-bad-soft p-3 text-sm text-bad">{state.error}</p>}
-      <p className="mt-4 inline-flex items-center gap-1.5 text-[13px] text-muted-foreground"><Lock className="size-3.5" aria-hidden="true" />Encrypted. Read on our servers only, never by an outside AI.</p>
+      <p className="mt-4 flex items-center justify-center gap-1.5 text-[13px] text-muted-foreground"><Lock className="size-3.5 shrink-0" aria-hidden="true" />Encrypted. Read on our servers only, never by an outside AI.</p>
     </div>
   );
 }
