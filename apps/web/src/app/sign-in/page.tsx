@@ -10,7 +10,7 @@ const VERIFIER = "neon_auth_session_verifier";
 
 /** Only allow same-site relative redirects (no //host or absolute URLs). */
 function safeNext(v: string | null): string {
-  return v && v.startsWith("/") && !v.startsWith("//") ? v : "/admin";
+  return v && v.startsWith("/") && !v.startsWith("//") ? v : "/feed";
 }
 
 function message(e: unknown, fallback: string): string {

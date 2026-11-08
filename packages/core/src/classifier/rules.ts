@@ -267,7 +267,7 @@ export function isItServicesEmployer(name: string): boolean {
 
 /* --------------------------------- Skills --------------------------------- */
 export const SKILL_DICT: [string, RegExp][] = [
-  ["Python", /\bpython\b/i], ["Java", /\bjava\b(?!script)/i], ["JavaScript", /\b(javascript|js)\b/i],
+  ["Python", /\bpython\b/i], ["Java", /\bjava\b(?!script)/i], ["JavaScript", /\bjavascript\b|(?<![.\w])js\b|\bes6\b/i],
   ["TypeScript", /\btypescript\b/i], ["Go", /\b(golang|go lang)\b|\bGo\b/], ["C++", /\bc\+\+/i], ["C#", /\bc#/i],
   ["Rust", /\brust\b/i], ["Kotlin", /\bkotlin\b/i], ["Swift", /\bswift\b/i], ["Scala", /\bscala\b/i], ["Ruby", /\bruby\b/i],
   ["PHP", /\bphp\b/i], ["SQL", /\bsql\b/i], ["React", /\breact(\.js|js)?\b/i], ["Angular", /\bangular\b/i],

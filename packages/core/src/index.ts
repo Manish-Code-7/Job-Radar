@@ -7,3 +7,6 @@ export * from "./classifier";
 export * from "./verify";
 export * from "./budget";
 export * from "./budget/providers";
+export * from "./resume";
+export * from "./match";
+export * from "./plans";

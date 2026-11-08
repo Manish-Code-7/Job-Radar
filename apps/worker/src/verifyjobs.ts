@@ -3,6 +3,7 @@ import {
   and,
   atsPolicy,
   companies,
+  deletionRequests,
   eq,
   gte,
   inArray,
@@ -165,5 +166,13 @@ export async function maintenance(deps: Deps) {
     await deps.db.update(jobs).set({ status: "archived", updatedAt: now }).where(inArray(jobs.id, ids.slice(i, i + 500)));
   }
   await deps.db.delete(rawPayloads).where(lt(rawPayloads.expiresAt, now));
-  info("maintenance", { archived: ids.length });
+  // Account deletions: our rows were removed at request time; purge the Neon Auth identity here (≤ 7 days).
+  const pending = await deps.db.select().from(deletionRequests).where(isNull(deletionRequests.completedAt));
+  for (const d of pending) {
+    await deps.db.execute(sql`delete from neon_auth.session where "userId" = ${d.userId}`);
+    await deps.db.execute(sql`delete from neon_auth.account where "userId" = ${d.userId}`);
+    await deps.db.execute(sql`delete from neon_auth."user" where id = ${d.userId}`);
+    await deps.db.update(deletionRequests).set({ completedAt: now }).where(eq(deletionRequests.userId, d.userId));
+  }
+  info("maintenance", { archived: ids.length, accountsPurged: pending.length });
 }

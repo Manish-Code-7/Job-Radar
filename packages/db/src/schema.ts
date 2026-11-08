@@ -7,6 +7,7 @@ import {
   jsonb,
   pgEnum,
   pgTable,
+  primaryKey,
   real,
   text,
   timestamp,
@@ -288,3 +289,78 @@ export const takedownRequests = pgTable("takedown_requests", {
 });
 
 /* Users and sessions live in Neon Auth's `neon_auth` schema (Managed Better Auth), not here. */
+
+/* -------------------------------- Phase 2: users, profiles, matching -------------------------------- */
+/** One row per Neon Auth user (`neon_auth.user.id`). Resume-derived fields are editable by the user. */
+export const profiles = pgTable("profiles", {
+  userId: text("user_id").primaryKey(),
+  email: text("email").notNull(),
+  name: text("name"),
+  plan: text("plan").notNull().default("free"),
+  // Consent (DPDP): current state; history lives in consent_records.
+  consentVersion: text("consent_version"),
+  consentAt: ts("consent_at"),
+  consentWithdrawnAt: ts("consent_withdrawn_at"),
+  // From the resume (reviewed by the user).
+  skills: text("skills").array().notNull().default(sql`'{}'::text[]`),
+  experienceMonths: integer("experience_months").notNull().default(0),
+  education: text("education"),
+  gradYear: integer("grad_year"),
+  projects: jsonb("projects").$type<{ title: string; summary?: string; skills?: string[] }[]>().notNull().default(sql`'[]'::jsonb`),
+  resumeKey: text("resume_key"), // R2 object key of the encrypted PDF
+  resumeUploadedAt: ts("resume_uploaded_at"),
+  parsedBy: text("parsed_by"), // "ollama" | "rules"
+  // Preferences.
+  cities: text("cities").array().notNull().default(sql`'{}'::text[]`),
+  remoteOk: boolean("remote_ok").notNull().default(true),
+  tracks: text("tracks").array().notNull().default(sql`'{}'::text[]`),
+  minPayLpa: real("min_pay_lpa"),
+  avoidKinds: text("avoid_kinds").array().notNull().default(sql`'{}'::text[]`),
+  onboardedAt: ts("onboarded_at"),
+  embedding: vector("embedding", { dimensions: 384 }),
+  matchesComputedAt: ts("matches_computed_at"),
+  createdAt: createdAt(),
+  updatedAt: ts("updated_at").notNull().defaultNow(),
+});
+
+export const consentRecords = pgTable(
+  "consent_records",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    userId: text("user_id").notNull(),
+    at: ts("at").notNull().defaultNow(),
+    action: text("action").notNull(), // granted | withdrawn
+    version: text("version").notNull(),
+    purposes: text("purposes").array().notNull().default(sql`'{}'::text[]`),
+    ipHash: text("ip_hash"),
+  },
+  (t) => [index("consent_records_user_idx").on(t.userId, t.at)],
+);
+
+export const matches = pgTable(
+  "matches",
+  {
+    userId: text("user_id").notNull(),
+    jobId: uuid("job_id")
+      .notNull()
+      .references(() => jobs.id, { onDelete: "cascade" }),
+    score: real("score").notNull(),
+    skillScore: real("skill_score").notNull(),
+    semanticScore: real("semantic_score"),
+    freshnessScore: real("freshness_score").notNull(),
+    companyScore: real("company_score").notNull(),
+    reasons: text("reasons").array().notNull().default(sql`'{}'::text[]`),
+    gaps: text("gaps").array().notNull().default(sql`'{}'::text[]`),
+    dismissedAt: ts("dismissed_at"),
+    computedAt: ts("computed_at").notNull().defaultNow(),
+  },
+  (t) => [primaryKey({ columns: [t.userId, t.jobId] }), index("matches_user_score_idx").on(t.userId, t.score)],
+);
+
+/** Account deletions: our data is removed immediately; the Neon Auth user is purged by maintenance (≤ 7 days). */
+export const deletionRequests = pgTable("deletion_requests", {
+  userId: text("user_id").primaryKey(),
+  email: text("email").notNull(),
+  requestedAt: ts("requested_at").notNull().defaultNow(),
+  completedAt: ts("completed_at"),
+});

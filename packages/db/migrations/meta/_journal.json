@@ -15,6 +15,13 @@
       "when": 1794131303166,
       "tag": "0001_neon_auth",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1794136085700,
+      "tag": "0002_profiles_matching",
+      "breakpoints": true
     }
   ]
 }

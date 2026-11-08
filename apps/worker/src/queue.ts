@@ -6,6 +6,7 @@ import type { Deps } from "./deps";
 import { detectCompany } from "./detect";
 import { env } from "./env";
 import { info, warn } from "./log";
+import { recomputeAll, recomputeProfile } from "./matching";
 import { handleUserReport, maintenance, runAudit, verifyCompanyJobs, verifyOne } from "./verifyjobs";
 
 export const Q = {
@@ -18,6 +19,8 @@ export const Q = {
   detect: "detect:company",
   maintenance: "maintenance:daily",
   testAdapter: "admin:test-adapter",
+  matchProfile: "match:profile",
+  matchAll: "match:all",
 } as const;
 
 const TZ = "Asia/Kolkata";
@@ -66,7 +69,11 @@ export async function startQueue(deps: Deps) {
       const c = await company(deps, job!.data.companyId);
       if (!c) return;
       const r = await crawlCompany(deps, c);
-      if (r.status === "ok") await boss.send(Q.verifyCompany, { companyId: c.id }, { singletonKey: `verify:${c.id}` });
+      if (r.status === "ok") {
+        await boss.send(Q.verifyCompany, { companyId: c.id }, { singletonKey: `verify:${c.id}` });
+        // New jobs reach users within ~10 minutes (one batch for many crawls).
+        if (r.report?.newJobs.length) await boss.send(Q.matchAll, {}, { singletonKey: "match:all", singletonSeconds: 600 } as never);
+      }
     });
   }
   await boss.work<{ companyId: string }>(Q.verifyCompany, async ([job]) => {
@@ -98,6 +105,8 @@ export async function startQueue(deps: Deps) {
       samples: (r.sample ?? []).map((raw) => ({ title: raw.title, url: raw.url, ...classifyRules(raw, { name: c.name, kind: c.kind }) })),
     };
   });
+  await boss.work<{ userId: string }>(Q.matchProfile, { pollingIntervalSeconds: 1 }, async ([job]) => recomputeProfile(deps, job!.data.userId));
+  await boss.work(Q.matchAll, async () => recomputeAll(deps));
   await boss.work(Q.audit, async () => void (await runAudit(deps)));
   await boss.work(Q.maintenance, async () => void (await maintenance(deps)));
 

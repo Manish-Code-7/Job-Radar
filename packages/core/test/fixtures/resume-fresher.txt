@@ -1,0 +1,21 @@
+Ananya Rao
+ananya.rao@example.com | +91 98xxxxxx10 | Bengaluru
+
+Education
+B.Tech in Computer Science and Engineering, RV College of Engineering, Bengaluru
+2021 – 2025 | CGPA 8.4
+
+Experience
+Software Engineer Intern, Acme Fintech — Jan 2025 – Jun 2025
+• Built REST APIs in Java with Spring Boot and PostgreSQL
+Associate Software Engineer, Nimbus Labs — Jul 2025 – Present
+• Ship features in TypeScript, React and Node.js; on-call for AWS services
+
+Projects
+Campus Placement Tracker | GitHub
+• Next.js + PostgreSQL app used by 1,200 students; Docker on AWS
+Resume Ranker
+• Python, scikit-learn and FastAPI service that ranks resumes against job posts
+
+Skills
+Java, Python, TypeScript, React, Node.js, SQL, Git, Docker, Linux

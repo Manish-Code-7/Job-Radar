@@ -9,9 +9,9 @@
   --muted-foreground: oklch(0.5 0.015 260);
   --card: oklch(1 0 0);
   --border: oklch(0.91 0.005 260);
-  --primary: oklch(0.45 0.16 265);
+  --primary: oklch(0.5 0.13 237); /* professional blue (#0369A1) */
   --primary-foreground: oklch(0.99 0 0);
-  --ok: oklch(0.55 0.14 150);
+  --ok: oklch(0.52 0.15 150); /* verified green (#16A34A) */
   --warn: oklch(0.7 0.15 75);
   --bad: oklch(0.58 0.2 25);
   --radius: 0.6rem;
@@ -24,7 +24,7 @@
     --muted-foreground: oklch(0.7 0.01 260);
     --card: oklch(0.19 0.01 260);
     --border: oklch(0.3 0.01 260);
-    --primary: oklch(0.7 0.14 265);
+    --primary: oklch(0.74 0.12 230);
     --primary-foreground: oklch(0.16 0.01 260);
   }
 }
@@ -52,3 +52,8 @@ body {
 * {
   border-color: var(--border);
 }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }

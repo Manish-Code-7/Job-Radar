@@ -10,4 +10,4 @@ export default function proxy(req: NextRequest) {
   return mw(req);
 }
 
-export const config = { matcher: ["/admin/:path*"] };
+export const config = { matcher: ["/admin/:path*", "/feed/:path*", "/onboarding/:path*", "/settings/:path*"] };
