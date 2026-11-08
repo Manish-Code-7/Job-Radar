@@ -79,6 +79,16 @@ services:
     <<: *env
     # Neon already has point-in-time restore; this adds an off-platform copy in R2.
 
+  # Temporary public URL with no Cloudflare account or domain (https://<random>.trycloudflare.com).
+  # The URL changes when this container restarts; use the `tunnel` profile with a real domain for production.
+  quicktunnel:
+    image: cloudflare/cloudflared:2024.12.2
+    platform: ${PLATFORM:-linux/arm64}
+    restart: unless-stopped
+    command: ["tunnel", "--no-autoupdate", "--url", "http://web:3000"]
+    profiles: ["quicktunnel"]
+    depends_on: [web]
+
   # Exposes `web` through Cloudflare without opening ports. Set CLOUDFLARE_TUNNEL_TOKEN in .env.
   cloudflared:
     image: cloudflare/cloudflared:2024.12.2
