@@ -1,0 +1,36 @@
+<!doctype html>
+<!-- Synthetic fixture: a custom careers page that embeds a schema.org JobPosting. -->
+<html>
+<head>
+  <title>Associate Software Engineer | Acme Careers</title>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Associate Software Engineer",
+    "datePosted": "2026-11-01",
+    "validThrough": "2027-01-31",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": { "@type": "Organization", "name": "Acme Technologies" },
+    "jobLocation": { "@type": "Place", "address": { "@type": "PostalAddress", "addressLocality": "Bengaluru", "addressRegion": "Karnataka", "addressCountry": "IN" } },
+    "identifier": { "@type": "PropertyValue", "value": "REQ-12345" },
+    "description": "<p>Join our platform team. We are looking for 0-2 years of experience with Java or Python, REST APIs and SQL. Freshers with strong projects are welcome.</p><ul><li>Build services</li><li>Write tests</li></ul>"
+  }
+  </script>
+</head>
+<body>
+  <main>
+    <h1>Associate Software Engineer</h1>
+    <div class="job-location">Bengaluru, India</div>
+    <p>Join our platform team. We are looking for 0-2 years of experience with Java or Python, REST APIs and SQL.</p>
+    <h2>What you will do</h2>
+    <ul><li>Design, build and ship backend services used by millions of customers.</li>
+    <li>Write clean, tested code and take part in code reviews.</li>
+    <li>Work with product and design to turn ideas into features.</li></ul>
+    <h2>What we look for</h2>
+    <ul><li>A degree in computer science or equivalent practical experience.</li>
+    <li>Good grasp of data structures and algorithms.</li></ul>
+    <a class="btn" href="/jobs/12345/associate-software-engineer/apply">Apply now</a>
+  </main>
+</body>
+</html>

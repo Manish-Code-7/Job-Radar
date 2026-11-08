@@ -1,0 +1,166 @@
+{
+ "id": "744000160437899",
+ "name": "Executive Assistant | Bosch Building Technologies",
+ "uuid": "72e3d607-5df3-45ca-ae5a-be6493777996",
+ "jobId": "242a0954-9b86-4733-a335-37b551080676",
+ "jobAdId": "cca3c8e6-2b41-479f-8b35-8c603f0add63",
+ "defaultJobAd": true,
+ "refNumber": "REF298446A",
+ "company": {
+  "name": "Bosch Group",
+  "identifier": "BoschGroup"
+ },
+ "location": {
+  "city": "Nieuwegein",
+  "region": "Utrecht",
+  "country": "nl",
+  "address": "Nieuwegein - Vianen",
+  "postalCode": "3439LM",
+  "remote": false,
+  "hybrid": true,
+  "fullLocation": "Nieuwegein, Utrecht, Netherlands"
+ },
+ "customField": [
+  {
+   "fieldId": "5abe2a4ab60a5e486a2d9b1d",
+   "fieldLabel": "Contract type",
+   "valueId": "98487475-2a49-44f5-a615-408b525b3821",
+   "valueLabel": "Limited"
+  },
+  {
+   "fieldId": "5abe28e96d8bc56863dd9746",
+   "fieldLabel": "Tariff Area",
+   "valueId": "1eb092c9-1716-4683-b6bc-d9ac691709f9",
+   "valueLabel": "Netherlands Local Grades"
+  },
+  {
+   "fieldId": "586a997ee4b05fd937b86098",
+   "fieldLabel": "Legal Entity(acronym)",
+   "valueId": "1df47c31-685c-43e9-805e-4d6e6cf005a6",
+   "valueLabel": "BTHN"
+  },
+  {
+   "fieldId": "586a99b5e4b0daa006ae1079",
+   "fieldLabel": "Working Location",
+   "valueId": "96209f76-6c0b-4436-92b6-b6212ccbef51",
+   "valueLabel": "Nieuwegein"
+  },
+  {
+   "fieldId": "5abe295a6d8bc56863dd9747",
+   "fieldLabel": "Global Salary Level",
+   "valueId": "427b1359-5057-4375-a2ae-6c649782296d",
+   "valueLabel": "Experienced/ Middle Tariff"
+  },
+  {
+   "fieldId": "69ca83a2489188782a1e9f87",
+   "fieldLabel": "Direct Or Indirect",
+   "valueId": "1aefbf4c-c10a-422e-a975-a504a7117792",
+   "valueLabel": "Indirect"
+  },
+  {
+   "fieldId": "5abe29f9b60a5e486a2d9b1c",
+   "fieldLabel": "Working hours",
+   "valueId": "60756b3e-dbab-4353-ac3a-0064d2bb27d8",
+   "valueLabel": "Full-time"
+  },
+  {
+   "fieldId": "586a9995e4b0daa006ae1078",
+   "fieldLabel": "Legal Entity",
+   "valueId": "2cc66cb0-d0a6-41f5-8324-2df937226541",
+   "valueLabel": "Bosch Energy and Building Solutions B.V."
+  },
+  {
+   "fieldId": "691cf1c93001c782b9560ab7",
+   "fieldLabel": "Division full name",
+   "valueId": "9129badf-927e-44a3-a58b-fcfd9c21f2a1",
+   "valueLabel": "Building Technologies"
+  },
+  {
+   "fieldId": "5abe27936d8bc56863dd9745",
+   "fieldLabel": "Position type",
+   "valueId": "c7b4da31-6f38-405a-b2e8-08a76e3c3f2c",
+   "valueLabel": "Professional"
+  },
+  {
+   "fieldId": "COUNTRY",
+   "fieldLabel": "Country/Region",
+   "valueId": "nl",
+   "valueLabel": "Netherlands"
+  },
+  {
+   "fieldId": "586a971ee4b0daa006ae1077",
+   "fieldLabel": "Brands",
+   "valueId": "default",
+   "valueLabel": "Bosch Group"
+  },
+  {
+   "fieldId": "586a996ce4b05fd937b86097",
+   "fieldLabel": "Working Country",
+   "valueId": "bb6cfa09-ac14-4f15-9283-e10e3ed27043",
+   "valueLabel": "Netherlands"
+  },
+  {
+   "fieldId": "586a9b22e4b05fd937b8609a",
+   "fieldLabel": "Local Grade",
+   "valueId": "353ad917-67e6-4867-ae48-4b43b7eeac97",
+   "valueLabel": "NL_Tariff_Experienced"
+  },
+  {
+   "fieldId": "586a99a5e4b05fd937b86099",
+   "fieldLabel": "Division",
+   "valueId": "d7b54d05-61b3-4242-bd3d-cde1ec339e50",
+   "valueLabel": "BT"
+  }
+ ],
+ "releasedDate": "2026-11-07T08:15:04.073Z",
+ "creator": {
+  "name": "",
+  "avatarUrl": ""
+ },
+ "postingUrl": "https://jobs.smartrecruiters.com/BoschGroup/744000160437899-executive-assistant-bosch-building-technologies",
+ "applyUrl": "https://jobs.smartrecruiters.com/BoschGroup/744000160437899-executive-assistant-bosch-building-technologies?oga=true",
+ "referralUrl": "https://jobs.smartrecruiters.com/external-referrals/company/BoschGroup/publication/72e3d607-5df3-45ca-ae5a-be6493777996?dcr_ci=BoschGroup",
+ "jobAd": {
+  "sections": {
+   "companyDescription": {
+    "title": "Bedrijfsomschrijving",
+    "text": "<p><em>Zorg dat het Management Team goed voorbereid vooruit kan</em></p><p>Als Executive Assistant bij Bosch Building Technologies werk je nauw samen met onze Senior Executive Assistant en ondersteun je het Management Team van onze Nederlandse organisatie.</p><p>Daarnaast ben je de vaste rechterhand van de Director Field Service. Je bewaakt zijn agenda en mailbox, helpt prioriteiten stellen en zorgt dat afspraken, overleggen en acties goed worden voorbereid en opgevolgd.</p><p>Je krijgt veel verantwoordelijkheid en werkt dicht op het Management Team. Dat vraagt om overzicht, zelfstandigheid en het vermogen om vooruit te denken. Samen met de Senior Executive Assistant zorg je voor structuur en een professionele ondersteuning van de organisatie.</p><p>Je werkt vanuit Nieuwegein en/of Berkel en Rodenrijs.</p>"
+   },
+   "jobDescription": {
+    "title": "Vacatureomschrijving",
+    "text": "<p>Vooruitdenken, organiseren en zorgen dat zaken geregeld zijn</p><p>Geen dag en geen agenda verloopt precies zoals gepland. Een afspraak verandert, een teammeeting moet worden voorbereid en ondertussen lopen er verschillende acties en deadlines. Jij houdt het overzicht en zorgt dat de juiste zaken op het juiste moment aandacht krijgen.</p><p>Wat je gaat doen</p><ul><li>Director Field Service ondersteunen: je bent zijn vaste rechterhand, beheert zijn agenda en mailbox, helpt prioriteren en zorgt voor voorbereiding, vastlegging en opvolging van teammeetings met zijn direct reports.</li><li>Het Management Team ondersteunen: samen met de Senior Executive Assistant verdelen jullie de administratieve, organisatorische en coördinerende werkzaamheden voor het MT.</li><li>Bijeenkomsten organiseren: je organiseert en coördineert interne evenementen en bijeenkomsten, van voorbereiding en uitvoering tot evaluatie.</li><li>Onboarding organiseren: je helpt bij de onboarding van nieuwe collega's binnen het Field Service-team en stemt hierover af met de betrokken collega's.</li><li>Managementdocumenten voorbereiden: je werkt aan presentaties, rapportages en andere documenten en bewaakt de kwaliteit en tijdige beschikbaarheid.</li><li>Communicatie verzorgen: je bent een belangrijk aanspreekpunt en zorgt voor duidelijke en professionele communicatie binnen en buiten de organisatie.</li><li>Voortgang bewaken: je pakt zelfstandig ad-hoc managementzaken op, volgt acties en deadlines en doet voorstellen om werkprocessen te verbeteren.</li></ul><p>Kortom: samen met de Senior Executive Assistant zorg je dat het Management Team goed voorbereid aan de werkdag begint en zich kan richten op het leiden van de organisatie.</p>"
+   },
+   "qualifications": {
+    "title": "Functie-eisen",
+    "text": "<p>Wat jij meebrengt</p><p>Je neemt graag verantwoordelijkheid, houdt overzicht en weet wanneer je zelfstandig kunt handelen en wanneer afstemming nodig is.</p><p>Je brengt mee:</p><ul><li>een afgeronde relevante opleiding, bijvoorbeeld in managementondersteuning, office management of organisatiemanagement;</li><li>minimaal twee jaar relevante werkervaring in een ondersteunende rol, bij voorkeur als management- of directieassistent;</li><li>sterke organisatorische en planningsvaardigheden en het vermogen om overzicht te houden wanneer prioriteiten veranderen;</li><li>een nauwkeurige en gestructureerde manier van werken;</li><li>een proactieve en dienstverlenende houding;</li><li>het vermogen om werkzaamheden zelfstandig te organiseren en op te volgen;</li><li>zorgvuldigheid en integriteit bij het omgaan met vertrouwelijke informatie;</li><li>een zeer goede beheersing van het Nederlands, mondeling en schriftelijk;</li><li>een goede beheersing van het Engels;</li><li>goede vaardigheden met Microsoft 365, waaronder Outlook, Word, Excel, PowerPoint en Teams;</li><li>het vermogen om gemakkelijk samen te werken met collega's en verschillende stakeholders;</li><li>het vermogen om onder druk prioriteiten te stellen en tijdig af te stemmen wanneer belangen, deadlines of werkzaamheden daarom vragen.</li></ul><p>Je vaste standplaats kan Nieuwegein of Berkel en Rodenrijs zijn. Dat stemmen we samen af. Wanneer de werkzaamheden daarom vragen, ben je ook op de andere locatie aanwezig.</p><p>Je werkt minimaal drie dagen per week op kantoor, bij voorkeur vier dagen.</p>"
+   },
+   "additionalInformation": {
+    "title": "Aanvullende informatie",
+    "text": "<p>Samenwerken dicht op het Management Team</p><p>Je werkt nauw samen met de Senior Executive Assistant en het Management Team. Jullie verdelen de werkzaamheden, houden elkaar op de hoogte en zorgen samen dat de ondersteuning professioneel en goed georganiseerd is.</p><p>Je krijgt een afwisselende functie binnen een dynamische organisatie, met ruimte om verantwoordelijkheid te nemen en jezelf verder te ontwikkelen.</p><p>Wat Bosch je biedt</p><p>Je kunt rekenen op:</p><ul><li>een marktconform salaris;</li><li>38 verlofdagen per jaar bij een fulltime dienstverband;</li><li>een jaarcontract met uitzicht op een vast dienstverband;</li><li>een laptop en iPhone;</li><li>de mogelijkheid om in overleg hybride te werken, waarbij je minimaal drie dagen per week op kantoor werkt en bij voorkeur vier;</li><li>begeleiding en ruimte voor opleidingen en doorgroeimogelijkheden;</li><li>een pensioenregeling via PMT;</li><li>een stabiele, internationale werkgever met een mensgerichte en professionele cultuur;</li><li>samenwerking met enthousiaste collega's binnen een hecht team.</li></ul><p>Hoe ziet de sollicitatieprocedure eruit?</p><ol><li>Kennismaking met onze Talent Acquisition Partner.</li><li>Eerste gesprek via Teams met de Senior Executive Assistant en een HR Business Partner.</li><li>Tweede kennismaking op locatie met twee leden van het Management Team en een informele kennismaking met de Senior Executive Assistant.</li><li>Zijn we allebei enthousiast? Dan volgt een aanbieding en contract bij Bosch.</li></ol><p>Klaar om het overzicht te bewaren, vooruit te denken en ervoor te zorgen dat het Management Team zich op de juiste zaken kan richten?</p><p>Solliciteer als Executive Assistant bij Bosch Building Technologies.</p>"
+   }
+  }
+ },
+ "active": true,
+ "visibility": "PUBLIC",
+ "industry": {
+  "id": "facilities_services",
+  "label": "Facilities Services"
+ },
+ "function": {
+  "id": "general_business",
+  "label": "General Business"
+ },
+ "experienceLevel": {
+  "id": "associate",
+  "label": "Associate"
+ },
+ "typeOfEmployment": {
+  "id": "permanent",
+  "label": "Full-time"
+ },
+ "language": {
+  "code": "nl",
+  "label": "Dutch",
+  "labelNative": "Nederlands"
+ }
+}

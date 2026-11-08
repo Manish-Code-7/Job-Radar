@@ -1,0 +1,41 @@
+{
+ "jobPostingInfo": {
+  "id": "330c34c1085d1048f7835b7cb2d40000",
+  "title": "Research Scientist - Nemotron India",
+  "jobDescription": "<p>NVIDIA has continuously reinvented itself. Our invention of the GPU sparked the growth of the PC gaming market, redefined modern computer graphics, and revolutionized parallel computing. Today, research in artificial intelligence is booming worldwide, which calls for highly scalable and massively parallel computation horsepower that NVIDIA GPUs excel. NVIDIA is a “learning machine” that constantly evolves by adapting to new opportunities that are hard to solve, that only we can address, and that matter to the world. This is our life’s work , to amplify human creativity and intelligence. As an NVIDIAN, you’ll be immersed in a diverse, supportive environment where everyone is inspired to do their best work. Come join our diverse team and see how you can make a lasting impact on the world!</p><br /><p>We are looking for Research Scientists passionate about large generative models! We are searching for world-class researchers in deep learning and natural language processing (NLP) to join our applied deep learning research team which pioneered the Megatron, MT-NLG, and DLSS projects at NVIDIA. Our team is pushing the boundaries of generative AI by building state-of-the-art large language and multi-modal foundation models and applying them to solve real-world problems. If you are passionate about the latest research and technologies revolutionizing generative AI and want to explore creative new paradigms for applied foundation models such as software assistants and customized multi-modal agents, this team will be a great fit for you. After building prototypes that demonstrate the promise of your research, you will collaborate with product teams to apply your ideas into industry-leading real-world applications.</p><p> </p><p><b>What you will do:</b></p><ul><li style=\"color:black !important\"><span style=\"color:#000000\">Develop deep learning-based approaches to improve and advance large language models (LLMs) and large multi-modal models.</span></li></ul><ul><li style=\"color:black !important\"><span style=\"color:#000000\">Design and implement machine learning techniques to adapt foundation models to downstream tasks of interest such as software assistant and multi-turn multi-modal and multi-lingual dialogue system.</span></li></ul><ul><li style=\"color:black !important\"><span style=\"color:#000000\">Construct and curate datasets for large-scale machine learning, for learning from human preferences, and for specific domains of applications.</span></li></ul><ul><li style=\"color:black !important\"><span style=\"color:#000000\">Work closely with product and hardware architecture teams to integrate your research and developments into products.</span></li></ul><br /><p><b>What we need to see:</b></p><ul><li>MS or PhD in Electrical Engineering, Computer Science/Engineering, or a related field (or equivalent experience).</li><li>3&#43; years of experience.</li></ul><ul><li style=\"color:black !important\"><span style=\"color:#000000\">Extensive machine learning / deep learning research or work experience.</span></li></ul><ul><li style=\"color:black !important\"><span style=\"color:#000000\">Knowledge of application areas such as natural language processing and computer vision.</span></li></ul><ul><li style=\"color:black !important\"><span style=\"color:#000000\">Excellent programming skills in some rapid prototyping environments such as Python; C&#43;&#43; and parallel programming (e.g., CUDA) is a plus.</span></li></ul><ul><li style=\"color:black !important\"><span style=\"color:#000000\">Expertise with deep learning frameworks such as PyTorch.</span></li></ul><ul><li style=\"color:black !important\"><span style=\"color:#000000\">A track record of research excellence demonstrated in publications at leading conferences and journals.</span></li></ul><br /><p>Widely considered to be one of the technology world’s most desirable employers, NVIDIA offers highly competitive salaries and a comprehensive benefits package. As you plan your future, see what we can offer to you and your family <a target=\"_blank\" href=\"http://www.nvidiabenefits.com/\">www.nvidiabenefits.com/</a>NVIDIA is committed to encouraging a diverse work environment and proud to be an equal opportunity employer.</p><p> </p><p>As we highly value diversity in our current and future employees, we do not discriminate (including in our hiring and promotion practices) on the basis of race, religion, color, national origin, gender, gender expression, sexual orientation, age, marital status, veteran status, disability status or any other characteristic protected by law. We will ensure that individuals with disabilities are provided reasonable accommodation to participate in the job application or interview process, to perform essential job functions, and to receive other benefits and privileges of employment. Please contact us to request accommodation.<br /></p><p>#LI-Hybrid</p><p style=\"text-align:inherit\"></p><p style=\"text-align:inherit\"></p><p style=\"text-align:inherit\"></p><p style=\"text-align:inherit\"></p>",
+  "location": "India, Bengaluru",
+  "additionalLocations": [
+   "India, Hyderabad",
+   "India, Pune"
+  ],
+  "postedOn": "Posted 14 Days Ago",
+  "startDate": "2026-10-24",
+  "timeType": "Full time",
+  "jobReqId": "JR2028483",
+  "jobPostingId": "Research-Scientist---Nemotron-India_JR2028483",
+  "jobPostingSiteId": "NVIDIAExternalCareerSite",
+  "country": {
+   "descriptor": "India",
+   "id": "c4f78be1a8f14da0ab49ce1162348a5e"
+  },
+  "canApply": true,
+  "posted": true,
+  "includeResumeParsing": true,
+  "jobRequisitionLocation": {
+   "descriptor": "India, Bengaluru",
+   "country": {
+    "descriptor": "India",
+    "id": "c4f78be1a8f14da0ab49ce1162348a5e",
+    "alpha2Code": "IN"
+   }
+  },
+  "externalUrl": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/India-Bengaluru/Research-Scientist---Nemotron-India_JR2028483",
+  "questionnaireId": "2f2764b3a82910064296831695150000"
+ },
+ "hiringOrganization": {
+  "name": "IN01 NVIDIA Graphics Bengaluru",
+  "url": ""
+ },
+ "similarJobs": [],
+ "userAuthenticated": false
+}

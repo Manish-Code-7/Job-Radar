@@ -1,0 +1,226 @@
+{
+ "total": 149,
+ "jobPostings": [
+  {
+   "title": "Research Scientist - Nemotron India",
+   "externalPath": "/job/India-Bengaluru/Research-Scientist---Nemotron-India_JR2028483",
+   "locationsText": "3 Locations",
+   "postedOn": "Posted 14 Days Ago",
+   "bulletFields": [
+    "JR2028483"
+   ]
+  },
+  {
+   "title": "Senior Systems Software Engineer",
+   "externalPath": "/job/India-Pune/Senior-Systems-Software-Engineer_JR2021126",
+   "locationsText": "3 Locations",
+   "postedOn": "Posted 30+ Days Ago",
+   "bulletFields": [
+    "JR2021126"
+   ]
+  },
+  {
+   "title": "Senior System Software Engineer, Software Defined Networking",
+   "externalPath": "/job/India-Bengaluru/Senior-System-Software-Engineer--Software-Defined-Networking_JR2025441",
+   "locationsText": "2 Locations",
+   "postedOn": "Posted 30+ Days Ago",
+   "bulletFields": [
+    "JR2025441"
+   ]
+  }
+ ],
+ "facets": [
+  {
+   "facetParameter": "jobFamilyGroup",
+   "descriptor": "Job Category",
+   "values": [
+    {
+     "descriptor": "Engineering",
+     "id": "0c40f6bd1d8f10ae43ffaefd46dc7e78",
+     "count": 116
+    },
+    {
+     "descriptor": "Sales",
+     "id": "0c40f6bd1d8f10ae43ffcac5bbec7e90",
+     "count": 19
+    },
+    {
+     "descriptor": "Univ Employment",
+     "id": "0c40f6bd1d8f10ae43ffda1e8d447e94",
+     "count": 8
+    },
+    {
+     "descriptor": "Professional Services",
+     "id": "e8bdc341a93101bd5f4d2b0a1c005e36",
+     "count": 2
+    },
+    {
+     "descriptor": "Operations",
+     "id": "0c40f6bd1d8f10ae43ffc3fc7d8c7e8a",
+     "count": 2
+    },
+    {
+     "descriptor": "Program Manager",
+     "id": "0c40f6bd1d8f10ae43ffc668c6847e8c",
+     "count": 1
+    },
+    {
+     "descriptor": "IT - Information Technology",
+     "id": "0c40f6bd1d8f10ae43ffbd1459047e84",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "facetParameter": "workerSubType",
+   "descriptor": "Job Type",
+   "values": [
+    {
+     "descriptor": "Regular Employee",
+     "id": "0c40f6bd1d8f10adf6dae161b1844a15",
+     "count": 134
+    },
+    {
+     "descriptor": "Intern (Fixed Term)",
+     "id": "0c40f6bd1d8f10adf6dae42e46d44a17",
+     "count": 8
+    },
+    {
+     "descriptor": "Management",
+     "id": "0c40f6bd1d8f10adf6dae2cd57444a16",
+     "count": 7
+    }
+   ]
+  },
+  {
+   "facetParameter": "timeType",
+   "descriptor": "Time Type",
+   "values": [
+    {
+     "descriptor": "Full time",
+     "id": "5509c0b5959810ac0029943377d47364",
+     "count": 149
+    }
+   ]
+  },
+  {
+   "facetParameter": "locationMainGroup",
+   "values": [
+    {
+     "facetParameter": "locationHierarchy2",
+     "descriptor": "Location Type",
+     "values": [
+      {
+       "descriptor": "Office",
+       "id": "0c3f5f117e9a0101f6422f0fe79d0000",
+       "count": 27
+      },
+      {
+       "descriptor": "Remote",
+       "id": "0c3f5f117e9a0101f63dc469c3010000",
+       "count": 2
+      }
+     ]
+    },
+    {
+     "facetParameter": "locationHierarchy1",
+     "descriptor": "Locations",
+     "values": [
+      {
+       "descriptor": "China",
+       "id": "2fcb99c455831013ea529fe151e3323c",
+       "count": 3
+      },
+      {
+       "descriptor": "India",
+       "id": "2fcb99c455831013ea52b82135ba3266",
+       "count": 21
+      },
+      {
+       "descriptor": "Israel",
+       "id": "2fcb99c455831013ea52bbe14cf9326c",
+       "count": 1
+      },
+      {
+       "descriptor": "Taiwan",
+       "id": "2fcb99c455831013ea52ed162d4932c0",
+       "count": 1
+      },
+      {
+       "descriptor": "United States",
+       "id": "2fcb99c455831013ea52fb338f2932d8",
+       "count": 2
+      }
+     ]
+    },
+    {
+     "facetParameter": "locations",
+     "descriptor": "Sites",
+     "values": [
+      {
+       "descriptor": "China, Shanghai",
+       "id": "91336993fab910af6d710b3449b4c33e",
+       "count": 3
+      },
+      {
+       "descriptor": "India, Bengaluru",
+       "id": "91336993fab910af6d6fb9748af4c1df",
+       "count": 15
+      },
+      {
+       "descriptor": "India, Gurugram",
+       "id": "f28ae3c49d2601aff203e114d301695f",
+       "count": 2
+      },
+      {
+       "descriptor": "India, Hyderabad",
+       "id": "91336993fab910af6d6fb2be0974c1d0",
+       "count": 2
+      },
+      {
+       "descriptor": "India, Mumbai",
+       "id": "91336993fab910af6d6fabbb968cc1c1",
+       "count": 3
+      },
+      {
+       "descriptor": "India, Pune",
+       "id": "91336993fab910af6d6fb0782884c1cb",
+       "count": 7
+      },
+      {
+       "descriptor": "India, Remote",
+       "id": "91336993fab910af6d6fb4ee7634c1d5",
+       "count": 2
+      },
+      {
+       "descriptor": "Israel, Raanana",
+       "id": "970bf8c909a7013ea54a57dcd4008107",
+       "count": 1
+      },
+      {
+       "descriptor": "Israel, Tel Aviv",
+       "id": "c7769ee377291036b08490819096b8bf",
+       "count": 1
+      },
+      {
+       "descriptor": "Israel, Yokneam",
+       "id": "970bf8c909a701c749f87bdcd4008607",
+       "count": 1
+      },
+      {
+       "descriptor": "Taiwan, Taipei",
+       "id": "91336993fab910af6d6f5eaae3acc14e",
+       "count": 1
+      },
+      {
+       "descriptor": "US, CA, Santa Clara",
+       "id": "91336993fab910af6d702fae0bb4c2e8",
+       "count": 2
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "userAuthenticated": false
+}
