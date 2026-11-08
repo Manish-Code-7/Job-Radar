@@ -11,3 +11,4 @@ reports/*.tmp
 .neon
 *.tsbuildinfo
 job-radar-data.zip
+apps/web/certificates/
