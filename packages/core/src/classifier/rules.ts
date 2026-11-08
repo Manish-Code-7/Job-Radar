@@ -109,15 +109,38 @@ function toYears(n: number, unit: string): number {
   return /^m/i.test(unit) ? n / 12 : n;
 }
 
+const PREFERRED_HEADING = /(preferred|nice[- ]to[- ]have|good[- ]to[- ]have|bonus|desired|desirable|plus points?|additional)\s*(qualifications?|skills|requirements|experience)?\s*[:\n]/gi;
+const REQUIRED_HEADING = /(basic|minimum|required|must[- ]have|mandatory|key)\s*(qualifications?|requirements|skills|experience)\s*[:\n]|\b(requirements|qualifications|what you('| wi)ll need|who you are)\s*[:\n]/gi;
+const INLINE_PREFERRED = /^[^.;\n]{0,80}\b(preferred|is a plus|a plus|nice to have|good to have|bonus|desirable|advantageous)\b/i;
+
+/** Is position `i` inside a "preferred qualifications" section? (nearest preceding heading wins) */
+function inPreferredSection(s: string, i: number): boolean {
+  let lastPref = -1;
+  let lastReq = -1;
+  const prefSpans: [number, number][] = [];
+  for (const m of s.matchAll(PREFERRED_HEADING)) {
+    prefSpans.push([m.index!, m.index! + m[0].length]);
+    if (m.index! < i) lastPref = Math.max(lastPref, m.index!);
+  }
+  for (const m of s.matchAll(REQUIRED_HEADING)) {
+    // "qualifications:" inside "Preferred qualifications:" is part of the preferred heading.
+    if (prefSpans.some(([a, b]) => m.index! >= a && m.index! < b)) continue;
+    if (m.index! < i) lastReq = Math.max(lastReq, m.index!);
+  }
+  return lastPref > lastReq;
+}
+
 export function parseExperience(text: string): ExperienceResult {
-  const s = text.replace(/\s+/g, " ");
-  type Hit = { min: number; max?: number; text: string; ctx: boolean };
+  const s = text.replace(/[ \t\u00a0]+/g, " ");
+  type Hit = { min: number; max?: number; text: string; ctx: boolean; preferred: boolean; at: number };
   const hits: Hit[] = [];
   const ctxAround = (i: number, len: number) => CONTEXT.test(s.slice(Math.max(0, i - 80), i + len + 80));
   const push = (m: RegExpMatchArray, min: number, max?: number) => {
-    const after = s.slice(m.index! + m[0].length, m.index! + m[0].length + 25);
-    if (NOT_EXP_AFTER.test(after)) return;
-    hits.push({ min, max, text: m[0].trim(), ctx: ctxAround(m.index!, m[0].length) });
+    const end = m.index! + m[0].length;
+    if (NOT_EXP_AFTER.test(s.slice(end, end + 25))) return;
+    if (hits.some((h) => m.index! >= h.at && m.index! < h.at + h.text.length)) return; // overlaps a range already taken
+    const preferred = INLINE_PREFERRED.test(s.slice(end, end + 120)) || inPreferredSection(s, m.index!);
+    hits.push({ min, max, text: m[0].trim(), ctx: ctxAround(m.index!, m[0].length), preferred, at: m.index! });
   };
 
   for (const m of s.matchAll(new RegExp(`${NUM}${DASH}${NUM}\\s*\\+?\\s*${UNIT}`, "gi"))) {
@@ -134,12 +157,14 @@ export function parseExperience(text: string): ExperienceResult {
 
   const fresher = /\b(freshers?|fresh graduates?|new grads?|recent graduates?|0\s*years?|no (prior )?experience (is )?required|entry[- ]level)\b/i.test(s);
 
-  const withCtx = hits.filter((h) => h.ctx);
-  const use = withCtx.length ? withCtx : hits;
+  const required = hits.filter((h) => !h.preferred);
+  const pool = required.length ? required : [];
+  const withCtx = pool.filter((h) => h.ctx);
+  const use = withCtx.length ? withCtx : pool;
   if (!use.length) return fresher ? { minYears: 0, maxYears: 1, expText: "freshers", fresher } : { fresher };
 
-  // The smallest stated requirement wins ("2+ years required; 5+ preferred" → 2).
-  const best = use.reduce((a, b) => (b.min < a.min ? b : a));
+  // Each required line is its own bar ("3+ years coding" AND "2+ years design") → the largest minimum applies.
+  const best = use.reduce((a, b) => (b.min > a.min ? b : a));
   const floor = (n: number) => (n < 1 ? 0 : Math.round(n * 10) / 10);
   return {
     minYears: floor(best.min),
@@ -166,7 +191,15 @@ function inrToLpa(n: number): number {
 export function parseSalary(text: string): SalaryResult {
   const s = text.replace(/\s+/g, " ");
   const num = (x: string) => Number(x.replace(/,/g, ""));
-  let m = s.match(new RegExp(`(?:${RUPEE}\\s*)?(\\d{1,3}(?:\\.\\d{1,2})?)\\s*${LAKH}?${DASH}(?:${RUPEE}\\s*)?(\\d{1,3}(?:\\.\\d{1,2})?)\\s*${LAKH}`, "i"));
+  // Absolute amounts first, so "₹3,00,000 to ₹5 Lakh" isn't read as "000 to 5 lakh".
+  const abs = s.match(new RegExp(`${RUPEE}\\s*(\\d{1,3}(?:,\\d{2,3})+|\\d{6,8})(?:\\s*(?:-|–|to)\\s*(?:${RUPEE}\\s*)?(\\d{1,3}(?:,\\d{2,3})+|\\d{6,8}|\\d{1,3}(?:\\.\\d{1,2})?\\s*${LAKH}))?`, "i"));
+  if (abs) {
+    const a = inrToLpa(num(abs[1]!));
+    const second = abs[2];
+    const b = second ? (new RegExp(LAKH, "i").test(second) ? num(second.replace(new RegExp(LAKH, "i"), "").trim()) : inrToLpa(num(second))) : a;
+    if (a >= 0.5 && b <= 200 && b >= a) return { salaryMinLpa: a, salaryMaxLpa: b, salaryText: abs[0].trim() };
+  }
+  let m = s.match(new RegExp(`(?<![\\d,.])(?:${RUPEE}\\s*)?(\\d{1,3}(?:\\.\\d{1,2})?)\\s*${LAKH}?${DASH}(?:${RUPEE}\\s*)?(\\d{1,3}(?:\\.\\d{1,2})?)\\s*${LAKH}`, "i"));
   if (m) return { salaryMinLpa: num(m[1]!), salaryMaxLpa: num(m[2]!), salaryText: m[0].trim() };
   m = s.match(new RegExp(`(?:${RUPEE}\\s*)?(\\d{1,3}(?:\\.\\d{1,2})?)\\s*${LAKH}`, "i"));
   if (m && (new RegExp(RUPEE, "i").test(m[0]) || /ctc|salary|pay|compensation|package|stipend/i.test(s.slice(Math.max(0, m.index! - 60), m.index! + 60)))) {

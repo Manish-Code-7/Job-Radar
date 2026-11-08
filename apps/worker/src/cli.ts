@@ -89,7 +89,7 @@ async function main() {
   try {
     switch (cmd) {
       case "seed": {
-        const file = values.file ?? join(ROOT, "data/directory.json");
+        const file = values.file ? resolve(process.env.INIT_CWD ?? process.cwd(), values.file) : join(ROOT, "data/directory.json");
         const r = await seed(deps.db, file);
         console.log(`seeded ${r.total} companies (${r.inserted} new, ${r.updated} updated); ${r.unknown.length} need ATS detection: run \`pnpm worker detect --pending\``);
         break;

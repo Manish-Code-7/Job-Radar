@@ -85,7 +85,8 @@ export function classifyRules(raw: RawJob, company: ClassifyCompany): Classified
   const sen = seniorityFromTitle(raw.title);
   const exp = parseExperience(text);
   const sal = parseSalary([raw.salaryHint ?? "", text].join("\n"));
-  const track = trackFromTitle(raw.title) ?? trackFromTitle(text.slice(0, 600)) ?? "other";
+  // Title only: company blurbs at the top of descriptions mention "AI" etc. and mislabel non-tech roles.
+  const track = trackFromTitle(raw.title) ?? "other";
   const skills = skillsFromText(`${raw.title}\n${text}`);
 
   const rejectReasons: string[] = [];

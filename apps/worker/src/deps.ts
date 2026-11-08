@@ -4,7 +4,7 @@ import { GeminiJobAi } from "./ai";
 import { PlaywrightDriver } from "./browser";
 import { embed } from "./embeddings";
 import { env } from "./env";
-import { gotScrapingClient } from "./http";
+import { routedHttpClient } from "./http";
 import { info, warn } from "./log";
 import { makeApify, makeFirecrawl } from "./providers";
 
@@ -26,13 +26,13 @@ export function makeDeps(opts: { withDb?: boolean } = {}): Deps {
   const { db, pool } = opts.withDb === false ? { db: undefined as unknown as Db, pool: undefined } : createDb(env.DATABASE_URL);
   const store = pool ? new DbDomainStateStore(db) : undefined;
   const http = new PoliteFetcher({
-    http: gotScrapingClient,
+    http: routedHttpClient,
     contactUrl: env.CRAWL_CONTACT_URL,
     store,
     log: (m, meta) => warn(m, meta),
   });
   // r.jina.ai allows ~20 requests/min without a key → ≥3 s spacing.
-  const jinaHttp = new PoliteFetcher({ http: gotScrapingClient, contactUrl: env.CRAWL_CONTACT_URL, minDelayMs: 3000, maxDelayMs: 3500, respectRobots: false });
+  const jinaHttp = new PoliteFetcher({ http: routedHttpClient, contactUrl: env.CRAWL_CONTACT_URL, minDelayMs: 3000, maxDelayMs: 3500, respectRobots: false });
   let browser: PlaywrightDriver | undefined;
   const caps: Record<Provider, number> = {
     firecrawl: env.FIRECRAWL_API_KEY ? env.FIRECRAWL_MONTHLY_CREDITS : 0,

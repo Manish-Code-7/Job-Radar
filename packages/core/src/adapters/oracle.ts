@@ -73,16 +73,22 @@ export const oracle: Adapter = {
   async listJobs(company: CompanyRef, ctx: AdapterContext) {
     const s = parseOracleUrl(company.careersUrl ?? "");
     if (!s) throw new Error(`${company.name}: careersUrl must be an Oracle CandidateExperience site URL`);
-    const searches = ctx.searchTexts ?? DEFAULT_WORKDAY_SEARCHES;
+    const base = `${s.origin}/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true`;
+    // Probe once for the India location facet so we only page through Indian jobs.
+    const probe = await ctx.http.json<{ items: { locationsFacet?: { Id: number; Name: string; TotalCount: number }[] }[] }>(
+      `${base}&finder=findReqs;siteNumber=${s.siteNumber},facetsList=LOCATIONS,limit=1,offset=0`,
+    );
+    const india = probe.items[0]?.locationsFacet?.find((f) => f.Name.trim().toLowerCase() === "india");
+    const loc = india ? `,selectedLocationsFacet=${india.Id}` : "";
+    const fullIndia = !!india && india.TotalCount <= 500 && !ctx.searchTexts;
+    const searches = fullIndia ? [""] : (ctx.searchTexts ?? DEFAULT_WORKDAY_SEARCHES);
     const byId = new Map<string, OracleReq>();
-    let complete = searches.length === 1 && searches[0] === "";
+    let complete = fullIndia;
     for (const q of searches) {
       let total = Infinity;
       for (let offset = 0; offset < total && offset < 500; offset += 25) {
         const kw = q ? `,keyword=%22${encodeURIComponent(q)}%22` : "";
-        const url =
-          `${s.origin}/hcmRestApi/resources/latest/recruitingCEJobRequisitions?onlyData=true` +
-          `&expand=requisitionList.secondaryLocations&finder=findReqs;siteNumber=${s.siteNumber},limit=25,offset=${offset}${kw},sortBy=POSTING_DATES_DESC`;
+        const url = `${base}&expand=requisitionList.secondaryLocations&finder=findReqs;siteNumber=${s.siteNumber}${loc},limit=25,offset=${offset}${kw},sortBy=POSTING_DATES_DESC`;
         const page = await ctx.http.json<{ items: { TotalJobsCount?: number; requisitionList: OracleReq[] }[] }>(url);
         const item = page.items[0];
         total = item?.TotalJobsCount ?? 0;

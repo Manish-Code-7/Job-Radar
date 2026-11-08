@@ -1,4 +1,5 @@
 import { and, companies, eq, isNull, jobs, lt, or, sql, type CompanyRow } from "@job-radar/db";
+import { classifyRules } from "@job-radar/core";
 import PgBoss from "pg-boss";
 import { crawlCompany } from "./crawl";
 import type { Deps } from "./deps";
@@ -16,6 +17,7 @@ export const Q = {
   audit: "verify:audit",
   detect: "detect:company",
   maintenance: "maintenance:daily",
+  testAdapter: "admin:test-adapter",
 } as const;
 
 const TZ = "Asia/Kolkata";
@@ -81,6 +83,20 @@ export async function startQueue(deps: Deps) {
   await boss.work<{ companyId: string }>(Q.detect, async ([job]) => {
     const c = await company(deps, job!.data.companyId);
     if (c) await detectCompany(deps, c);
+  });
+  // Admin "Test adapter": raw count + 5 normalized samples, nothing written. The return value is the job output.
+  await boss.work<{ companyId: string }>(Q.testAdapter, { pollingIntervalSeconds: 1 }, async ([job]) => {
+    const c = await company(deps, job!.data.companyId);
+    if (!c) return { error: "company not found" };
+    const r = await crawlCompany(deps, c, { dry: true, force: true, maxDetailFetches: 5 });
+    return {
+      status: r.status,
+      via: r.via,
+      reason: r.reason,
+      rawCount: r.report?.found ?? 0,
+      complete: r.report?.complete ?? false,
+      samples: (r.sample ?? []).map((raw) => ({ title: raw.title, url: raw.url, ...classifyRules(raw, { name: c.name, kind: c.kind }) })),
+    };
   });
   await boss.work(Q.audit, async () => void (await runAudit(deps)));
   await boss.work(Q.maintenance, async () => void (await maintenance(deps)));

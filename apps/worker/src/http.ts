@@ -1,4 +1,4 @@
-import { FetchError, type HttpClient } from "@job-radar/core";
+import { FetchError, nativeHttpClient, type HttpClient } from "@job-radar/core";
 import { gotScraping } from "got-scraping";
 
 /**
@@ -27,5 +27,15 @@ export const gotScrapingClient: HttpClient = {
       if (err.name === "TimeoutError" || err.code === "ETIMEDOUT") throw new FetchError("timeout", err.message, req.url);
       throw new FetchError("network", err.message, req.url);
     }
+  },
+};
+
+/** Hosts that check browser fingerprints. Everything else uses plain fetch (faster, and safer for large bodies). */
+const NEEDS_BROWSER_FINGERPRINT = /\.myworkday(jobs|site)\.com$/i;
+
+export const routedHttpClient: HttpClient = {
+  request(req) {
+    const host = new URL(req.url).hostname;
+    return (NEEDS_BROWSER_FINGERPRINT.test(host) ? gotScrapingClient : nativeHttpClient).request(req);
   },
 };

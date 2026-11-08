@@ -389,8 +389,12 @@ function mapAmazon(j: AmazonJob): RawJob {
     sourceJobId: j.id_icims,
     url: `https://www.amazon.jobs${j.job_path}`,
     title: j.title.trim(),
-    descriptionText: [j.description, j.basic_qualifications, j.preferred_qualifications]
-      .map((s) => htmlToText(s))
+    // Keep Amazon's section headings so the classifier can tell required from preferred experience.
+    descriptionText: [
+      htmlToText(j.description),
+      j.basic_qualifications ? `Basic qualifications:\n${htmlToText(j.basic_qualifications)}` : "",
+      j.preferred_qualifications ? `Preferred qualifications:\n${htmlToText(j.preferred_qualifications)}` : "",
+    ]
       .filter(Boolean)
       .join("\n\n"),
     locations: compact([j.normalized_location ?? j.location]),

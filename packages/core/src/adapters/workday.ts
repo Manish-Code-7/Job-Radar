@@ -113,19 +113,47 @@ function mapDetail(s: WorkdaySite, externalPath: string, d: WdDetail): RawJob {
   };
 }
 
-async function listViaApi(s: WorkdaySite, ctx: AdapterContext, searchText: string, maxJobs = 500) {
+interface WdFacetValue {
+  descriptor?: string;
+  id?: string;
+  facetParameter?: string;
+  values?: WdFacetValue[];
+}
+
+/** Find the "India" location facet at any depth (tenants use locationCountry, locationHierarchy1, …). */
+export function findIndiaFacet(facets: WdFacetValue[] | undefined): { param: string; id: string } | null {
+  let best: { param: string; id: string; score: number } | null = null;
+  const walk = (list: WdFacetValue[] | undefined, param?: string) => {
+    for (const f of list ?? []) {
+      const p = f.facetParameter ?? param;
+      if (f.values) walk(f.values, f.facetParameter ?? param);
+      if (p && f.id && f.descriptor?.trim().toLowerCase() === "india") {
+        const score = /country/i.test(p) ? 3 : /hierarchy1/i.test(p) ? 2 : 1;
+        if (!best || score > best.score) best = { param: p, id: f.id, score };
+      }
+    }
+  };
+  walk(facets);
+  return best ? { param: (best as { param: string }).param, id: (best as { id: string }).id } : null;
+}
+
+async function wdPage(s: WorkdaySite, ctx: AdapterContext, searchText: string, offset: number, appliedFacets: Record<string, string[]>) {
+  const res = await ctx.http.fetch({
+    url: `${s.cxsBase}/jobs`,
+    method: "POST",
+    headers: wdHeaders(s),
+    body: JSON.stringify({ appliedFacets, limit: 20, offset, searchText }),
+    useCache: false,
+  });
+  if (res.status !== 200) throw new FetchError("http", `workday list HTTP ${res.status}`, s.cxsBase, res.status);
+  return JSON.parse(res.body) as WdList & { facets?: WdFacetValue[] };
+}
+
+async function listViaApi(s: WorkdaySite, ctx: AdapterContext, searchText: string, appliedFacets: Record<string, string[]>, maxJobs = 500) {
   const out: WdListPosting[] = [];
   let total = Infinity;
   for (let offset = 0; offset < total && offset < maxJobs; offset += 20) {
-    const res = await ctx.http.fetch({
-      url: `${s.cxsBase}/jobs`,
-      method: "POST",
-      headers: wdHeaders(s),
-      body: JSON.stringify({ appliedFacets: {}, limit: 20, offset, searchText }),
-      useCache: false,
-    });
-    if (res.status !== 200) throw new FetchError("http", `workday list HTTP ${res.status}`, s.cxsBase, res.status);
-    const page = JSON.parse(res.body) as WdList;
+    const page = await wdPage(s, ctx, searchText, offset, appliedFacets);
     // Workday only reports `total` on the first page.
     if (offset === 0) total = page.total ?? 0;
     out.push(...page.jobPostings);
@@ -151,14 +179,29 @@ export const workday: Adapter = {
   async listJobs(company: CompanyRef, ctx: AdapterContext): Promise<ListResult> {
     const s = parseWorkdayUrl(company.careersUrl ?? "");
     if (!s) throw new Error(`${company.name}: careersUrl must be a myworkdayjobs.com site URL`);
-    const searches = ctx.searchTexts ?? DEFAULT_WORKDAY_SEARCHES;
     const byPath = new Map<string, WdListPosting>();
-    let complete = searches.length === 1 && searches[0] === "";
+    let complete = false;
+    let indiaFiltered = false;
     try {
-      for (const q of searches) {
-        const r = await listViaApi(s, ctx, q);
-        if (!r.exhausted) complete = false;
+      // One probe request to discover the tenant's India facet.
+      const probe = await wdPage(s, ctx, ctx.searchTexts?.[0] ?? "", 0, {});
+      const india = findIndiaFacet(probe.facets);
+      const facets: Record<string, string[]> = india ? { [india.param]: [india.id] } : {};
+      indiaFiltered = !!india;
+      let done = false;
+      if (india && !ctx.searchTexts) {
+        // Whole India board in one pass when it is small enough → a complete snapshot (S1 can close jobs).
+        const r = await listViaApi(s, ctx, "", facets, 500);
         for (const p of r.postings) byPath.set(p.externalPath, p);
+        complete = r.exhausted;
+        done = r.exhausted;
+      }
+      if (!done) {
+        for (const q of ctx.searchTexts ?? DEFAULT_WORKDAY_SEARCHES) {
+          const r = await listViaApi(s, ctx, q, facets);
+          for (const p of r.postings) byPath.set(p.externalPath, p);
+        }
+        complete = false;
       }
     } catch (e) {
       if (!isFetchError(e) || (e.kind !== "blocked" && e.status !== 403)) throw e;
@@ -171,6 +214,8 @@ export const workday: Adapter = {
     const jobs: RawJob[] = [];
     for (const p of byPath.values()) {
       const base = mapList(s, p);
+      // List rows often say only "3 Locations"; the India facet already guarantees India.
+      if (indiaFiltered && !/india/i.test(base.locations.join(" "))) base.locations.push("India");
       if (ctx.knownJobIds?.has(base.sourceJobId) || budget <= 0) {
         jobs.push(base);
         continue;
@@ -178,7 +223,9 @@ export const workday: Adapter = {
       budget--;
       try {
         const d = await jsonOrGone<WdDetail>(ctx, `${s.cxsBase}${p.externalPath}`);
-        jobs.push(d ? mapDetail(s, p.externalPath, d) : base);
+        const full = d ? mapDetail(s, p.externalPath, d) : base;
+        if (indiaFiltered && !/india/i.test(full.locations.join(" "))) full.locations.push("India");
+        jobs.push(full);
       } catch {
         jobs.push(base);
       }

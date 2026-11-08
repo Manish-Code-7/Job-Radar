@@ -8,6 +8,7 @@ import {
   icims,
   lever,
   oracle,
+  findIndiaFacet,
   parseWorkdayUrl,
   recruitee,
   smartrecruiters,
@@ -118,6 +119,28 @@ describe("workday", () => {
     expect(workdayJobId("/job/India-Bengaluru/Research-Scientist_JR2028483")).toBe("JR2028483");
   });
 
+  it("finds the India location facet at any depth", () => {
+    const facets = JSON.parse(fixture("workday-list.json")).facets;
+    expect(findIndiaFacet(facets)).toEqual({ param: "locationHierarchy1", id: "2fcb99c455831013ea52b82135ba3266" });
+    expect(findIndiaFacet([{ facetParameter: "locationCountry", values: [{ descriptor: "India", id: "c1" }] }])).toEqual({ param: "locationCountry", id: "c1" });
+    expect(findIndiaFacet([])).toBeNull();
+  });
+
+  it("India board ≤ 500 → one unfiltered India pass → complete snapshot", async () => {
+    const list = JSON.parse(fixture("workday-list.json"));
+    const bodies: unknown[] = [];
+    const { ctx } = ctxFor([
+      [/\/jobs$/, (req) => {
+        const b = JSON.parse(req.body!);
+        bodies.push(b);
+        return { body: JSON.stringify(b.offset === 0 ? { ...list, total: 3 } : { jobPostings: [] }) };
+      }],
+    ]);
+    const r = await workday.listJobs(co("workday", undefined, site), { ...ctx, maxDetailFetches: 0 });
+    expect(r.complete).toBe(true);
+    expect(bodies[1]).toEqual({ appliedFacets: { locationHierarchy1: ["2fcb99c455831013ea52b82135ba3266"] }, limit: 20, offset: 0, searchText: "" });
+  });
+
   it("lists via CXS with POST + fetches details", async () => {
     const list = JSON.parse(fixture("workday-list.json"));
     const { ctx, calls } = ctxFor([
@@ -130,8 +153,9 @@ describe("workday", () => {
     const r = await workday.listJobs(co("workday", undefined, site), { ...ctx, searchTexts: ["software engineer"], maxDetailFetches: 1 });
     expectWellFormed(r.jobs);
     expect(r.complete).toBe(false); // search-filtered
-    const post = calls.find((c) => c.method === "POST")!;
-    expect(JSON.parse(post.body!)).toEqual({ appliedFacets: {}, limit: 20, offset: 0, searchText: "software engineer" });
+    const posts = calls.filter((c) => c.method === "POST").map((c) => JSON.parse(c.body!));
+    expect(posts[0]).toEqual({ appliedFacets: {}, limit: 20, offset: 0, searchText: "software engineer" }); // facet probe
+    expect(posts[1].appliedFacets).toEqual({ locationHierarchy1: ["2fcb99c455831013ea52b82135ba3266"] }); // then India only
     expect(r.jobs[0]!.detailFetched).toBe(true);
     expect(r.jobs[0]!.descriptionText.length).toBeGreaterThan(100);
     expect(r.jobs[1]!.detailFetched).toBe(false);

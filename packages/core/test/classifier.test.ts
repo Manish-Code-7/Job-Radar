@@ -83,8 +83,16 @@ describe("experience regex", () => {
 
   it("freshers", () => expect(parseExperience("Freshers are welcome to apply")).toMatchObject({ minYears: 0, fresher: true }));
   it("ignores degree durations", () => expect(parseExperience("A 4 year degree program in CS").minYears).toBeUndefined());
-  it("takes the smallest requirement", () =>
+  it("ignores preferred experience (inline)", () =>
     expect(parseExperience("2+ years of experience required; 5+ years of experience preferred").minYears).toBe(2));
+  it("several required lines → the largest bar applies (Amazon SDE II)", () =>
+    expect(
+      parseExperience(
+        "Basic qualifications:\n- 3+ years of non-internship professional software development experience\n- 2+ years of non-internship design or architecture experience\n\nPreferred qualifications:\n- 5+ years of full software development life cycle experience",
+      ).minYears,
+    ).toBe(3));
+  it("only preferred experience stated → not stated", () =>
+    expect(parseExperience("Preferred qualifications:\n- 2+ years of experience with Kubernetes").minYears).toBeUndefined());
 });
 
 describe("seniority + employment", () => {
@@ -109,6 +117,10 @@ describe("seniority + employment", () => {
 });
 
 describe("location", () => {
+  it("track comes from the title only (company blurbs mention AI)", () => {
+    const c = classifyRules(raw("Accounts Payable Manager", "CRED uses AI and machine learning to build trust."), acme);
+    expect(c.track).toBe("other");
+  });
   it("parses Indian cities and aliases", () => {
     expect(parseLocations(["Bangalore", "Gurgaon, Haryana"]).cities).toEqual(["Bengaluru", "Delhi NCR"]);
   });
@@ -124,6 +136,8 @@ describe("salary", () => {
     ["Salary: INR 4,00,000 - 6,00,000 per annum", 4, 6],
     ["CTC 8 LPA", 8, 8],
     ["₹ 12 to 18 lakhs", 12, 18],
+    ["CTC: ₹3,00,000 to ₹5 Lakh per annum", 3, 5],
+    ["₹6,50,000 - ₹9,00,000", 6.5, 9],
   ])("%s", (t, min, max) => expect(parseSalary(t)).toMatchObject({ salaryMinLpa: min, salaryMaxLpa: max }));
   it("ignores unrelated numbers", () => expect(parseSalary("We have 300 engineers in 4 offices")).toEqual({}));
 });
