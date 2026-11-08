@@ -1,5 +1,7 @@
-# Job Radar: everything on one Oracle Cloud Always Free Arm VM (linux/arm64).
-# Local: `docker compose up -d --build` (works on x86 too; images are multi-arch).
+# Job Radar on one Oracle Cloud Always Free Arm VM (linux/arm64), with the data services on Neon:
+# Postgres, Auth, Realtime, AI Gateway and the `jobstats` Function live on the Neon `production` branch
+# (see neon.ts). `neon deploy` writes their URLs/secrets into .env, which every service below reads.
+# Local: `docker compose up -d --build`. A local Postgres is still available: `--profile localdb`.
 name: job-radar
 
 x-env: &env
@@ -7,7 +9,9 @@ x-env: &env
   restart: unless-stopped
 
 services:
+  # Optional local database (offline development only). The app uses Neon by default.
   postgres:
+    profiles: ["localdb"]
     image: pgvector/pgvector:pg16
     platform: ${PLATFORM:-linux/arm64}
     restart: unless-stopped
@@ -32,10 +36,7 @@ services:
       platforms: ["${PLATFORM:-linux/arm64}"]
     platform: ${PLATFORM:-linux/arm64}
     restart: "no"
-    environment:
-      DATABASE_URL: postgres://jobradar:${POSTGRES_PASSWORD:-jobradar}@postgres:5432/jobradar
-    command: ["pnpm", "--filter", "@job-radar/db", "migrate"]
-    depends_on: { postgres: { condition: service_healthy } }
+    command: ["pnpm", "--filter", "@job-radar/db", "migrate"] # uses DATABASE_URL_UNPOOLED from .env
 
   worker:
     <<: *env
@@ -45,13 +46,11 @@ services:
       platforms: ["${PLATFORM:-linux/arm64}"]
     platform: ${PLATFORM:-linux/arm64}
     environment:
-      DATABASE_URL: postgres://jobradar:${POSTGRES_PASSWORD:-jobradar}@postgres:5432/jobradar
       OLLAMA_URL: http://ollama:11434
       WORKER_NAME: oracle
     command: ["pnpm", "--filter", "@job-radar/worker", "start"]
     shm_size: 1gb # Chromium needs shared memory
     depends_on:
-      postgres: { condition: service_healthy }
       migrate: { condition: service_completed_successfully }
 
   web:
@@ -61,8 +60,6 @@ services:
       dockerfile: apps/web/Dockerfile
       platforms: ["${PLATFORM:-linux/arm64}"]
     platform: ${PLATFORM:-linux/arm64}
-    environment:
-      DATABASE_URL: postgres://jobradar:${POSTGRES_PASSWORD:-jobradar}@postgres:5432/jobradar
     ports: ["127.0.0.1:3000:3000"]
     depends_on:
       migrate: { condition: service_completed_successfully }
@@ -80,12 +77,7 @@ services:
       platforms: ["${PLATFORM:-linux/arm64}"]
     platform: ${PLATFORM:-linux/arm64}
     <<: *env
-    environment:
-      PGHOST: postgres
-      PGUSER: jobradar
-      PGPASSWORD: ${POSTGRES_PASSWORD:-jobradar}
-      PGDATABASE: jobradar
-    depends_on: { postgres: { condition: service_healthy } }
+    # Neon already has point-in-time restore; this adds an off-platform copy in R2.
 
   # Exposes `web` through Cloudflare without opening ports. Set CLOUDFLARE_TUNNEL_TOKEN in .env.
   cloudflared:

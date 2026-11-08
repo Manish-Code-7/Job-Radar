@@ -8,3 +8,5 @@ dist
 storage/
 apps/worker/storage/
 reports/*.tmp
+.neon
+*.tsbuildinfo

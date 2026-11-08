@@ -10,6 +10,7 @@ import {
   gt,
   gte,
   ilike,
+  inArray,
   jobChecks,
   jobs,
   or,
@@ -88,7 +89,7 @@ export const adminRouter = router({
     const [gem] = await db
       .select({ n: sql<number>`count(*)::int` })
       .from(providerUsage)
-      .where(and(eq(providerUsage.provider, "gemini"), gt(providerUsage.at, sql`now() - interval '1 day'`)));
+      .where(and(inArray(providerUsage.provider, ["gemini", "ai_gateway"]), gt(providerUsage.at, sql`now() - interval '1 day'`)));
     const recentRuns = await db
       .select({ id: crawlRuns.id, company: companies.name, status: crawlRuns.status, via: crawlRuns.via, worker: crawlRuns.worker, found: crawlRuns.jobsFound, new: crawlRuns.jobsNew, closed: crawlRuns.jobsClosed, startedAt: crawlRuns.startedAt, error: crawlRuns.error })
       .from(crawlRuns)
@@ -105,7 +106,7 @@ export const adminRouter = router({
       statusCounts,
       verifiedOpen36h: verified36[0]?.n ?? 0,
       falseOpen: { perAts: falseOpen, last30d: audit!.n ? audit!.bad / audit!.n : null, samples: audit!.n },
-      gemini: { enabled: env.GEMINI_ENABLED, usedToday: gem?.n ?? 0, dailyBudget: env.GEMINI_DAILY_REQUESTS },
+      ai: { enabled: env.AI_ENABLED, provider: env.AI_PROVIDER, usedToday: gem?.n ?? 0, dailyBudget: env.GEMINI_DAILY_REQUESTS },
       providers: [
         { name: "Firecrawl", unit: "credits", enabled: env.FIRECRAWL_ENABLED, ...firecrawl, alert: firecrawl.pctUsed >= 0.8 },
         { name: "Apify", unit: "USD", enabled: env.APIFY_ENABLED, ...apify, alert: apify.pctUsed >= 0.8 },

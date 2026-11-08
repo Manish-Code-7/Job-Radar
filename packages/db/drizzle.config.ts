@@ -3,5 +3,6 @@ export default defineConfig({
   dialect: "postgresql",
   schema: "./src/schema.ts",
   out: "./migrations",
-  dbCredentials: { url: process.env.DATABASE_URL ?? "postgres://jobradar:jobradar@localhost:5432/jobradar" },
+  // Direct connection for migrations (Neon: DATABASE_URL_UNPOOLED).
+  dbCredentials: { url: process.env.DATABASE_URL_UNPOOLED ?? process.env.DATABASE_URL ?? "" },
 });

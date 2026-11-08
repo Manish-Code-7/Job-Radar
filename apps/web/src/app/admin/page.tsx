@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardTitle } from "@/components/ui/card";
 import { ago, cn } from "@/lib/utils";
+import { LiveCrawlRuns } from "@/components/live-crawl-runs";
 import { useTRPC } from "@/trpc/client";
 
 function Meter({ value, max, alert }: { value: number; max: number; alert?: boolean }) {
@@ -40,9 +41,9 @@ export default function Health() {
           <p className="text-xs text-muted-foreground">{h.falseOpen.samples} audited · target &lt; 2%</p>
         </Card>
         <Card>
-          <CardTitle>Gemini free tier (24h)</CardTitle>
-          <p className="mt-1 text-2xl font-semibold tabular-nums">{h.gemini.enabled ? `${h.gemini.usedToday}/${h.gemini.dailyBudget}` : "off"}</p>
-          <Meter value={h.gemini.usedToday} max={h.gemini.dailyBudget} alert={h.gemini.usedToday >= 0.8 * h.gemini.dailyBudget} />
+          <CardTitle>AI on job text (24h) · {h.ai.provider}</CardTitle>
+          <p className="mt-1 text-2xl font-semibold tabular-nums">{h.ai.enabled ? `${h.ai.usedToday}/${h.ai.dailyBudget}` : "off"}</p>
+          <Meter value={h.ai.usedToday} max={h.ai.dailyBudget} alert={h.ai.usedToday >= 0.8 * h.ai.dailyBudget} />
         </Card>
       </div>
 
@@ -89,25 +90,7 @@ export default function Health() {
         </Card>
       </div>
 
-      <Card>
-        <CardTitle>Recent crawl runs</CardTitle>
-        <div className="mt-2 overflow-x-auto">
-          <table className="w-full text-sm">
-            <thead className="text-left text-xs text-muted-foreground"><tr><th className="py-1">Company</th><th>Status</th><th>Via</th><th>Worker</th><th className="text-right">Found</th><th className="text-right">New</th><th className="text-right">Closed</th><th className="pl-6">When</th></tr></thead>
-            <tbody className="divide-y">
-              {h.recentRuns.map((r) => (
-                <tr key={r.id}>
-                  <td className="py-1.5">{r.company}</td>
-                  <td><Badge tone={r.status === "ok" ? "ok" : r.status === "running" ? "primary" : "bad"}>{r.status}</Badge></td>
-                  <td className="text-xs">{r.via ?? "–"}</td><td className="text-xs">{r.worker}</td>
-                  <td className="text-right tabular-nums">{r.found ?? "–"}</td><td className="text-right tabular-nums">{r.new ?? "–"}</td><td className="text-right tabular-nums">{r.closed ?? "–"}</td>
-                  <td className="pl-6 text-xs text-muted-foreground">{ago(r.startedAt)}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </Card>
+      <LiveCrawlRuns />
     </div>
   );
 }

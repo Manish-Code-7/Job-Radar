@@ -143,6 +143,19 @@ async function main() {
         console.log(JSON.stringify(await deps.browser().applyProbe(values.url)));
         break;
       }
+      case "ai-check": {
+        // End-to-end check of the AI route (Neon AI Gateway or Gemini) on one public job posting.
+        if (!deps.ai) throw new Error("no AI configured (NEON_AI_GATEWAY_TOKEN or GEMINI_API_KEY)");
+        console.log(`provider ${deps.ai.provider} · model ${deps.ai.model}`);
+        const r = await deps.ai.enrich({
+          title: "Associate Software Engineer",
+          company: "Acme",
+          text: "Build REST APIs in Java and Spring Boot with PostgreSQL. 0-2 years of experience. Freshers welcome. Bengaluru.",
+          descriptionHash: `ai-check-${Date.now()}`,
+        });
+        console.log(r ? `ok: ${JSON.stringify(r)}` : "no result (see the warn line above); the classifier falls back to rules only");
+        break;
+      }
       case "report":
         await verificationReport(deps, Number(values.sample), Number(values.apply));
         break;
@@ -165,6 +178,7 @@ async function main() {
   pnpm worker report --sample 50 --apply 10   (verification report → reports/)
   pnpm worker render --url <url>               (debug: what our Playwright sees)
   pnpm worker probe --url <url>                (debug: S5 Apply-click probe)
+  pnpm worker ai-check                         (call the AI route once: Neon AI Gateway or Gemini)
   pnpm worker audit
   pnpm worker start                            (long-running pg-boss worker)`);
     }

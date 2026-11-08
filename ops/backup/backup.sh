@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 set -euo pipefail
-: "${R2_ACCOUNT_ID:?}" "${R2_ACCESS_KEY_ID:?}" "${R2_SECRET_ACCESS_KEY:?}" "${R2_BUCKET:?}"
+: "${DATABASE_URL_UNPOOLED:?direct Neon URL required (pg_dump cannot use the pooler)}" "${R2_ACCOUNT_ID:?}" "${R2_ACCESS_KEY_ID:?}" "${R2_SECRET_ACCESS_KEY:?}" "${R2_BUCKET:?}"
 export AWS_ACCESS_KEY_ID="$R2_ACCESS_KEY_ID" AWS_SECRET_ACCESS_KEY="$R2_SECRET_ACCESS_KEY" AWS_DEFAULT_REGION=auto
 ENDPOINT="https://${R2_ACCOUNT_ID}.r2.cloudflarestorage.com"
 FILE="jobradar-$(date +%Y%m%d-%H%M).dump"
 # Custom format, compressed. raw_payloads is short-lived debug data — skip it to keep dumps small.
-pg_dump --format=custom --compress=9 --exclude-table-data=raw_payloads -f "/tmp/$FILE"
+pg_dump "$DATABASE_URL_UNPOOLED" --format=custom --compress=9 --no-owner --exclude-table-data=raw_payloads -f "/tmp/$FILE"
 aws s3 cp "/tmp/$FILE" "s3://${R2_BUCKET}/backups/$FILE" --endpoint-url "$ENDPOINT" --only-show-errors
 rm -f "/tmp/$FILE"
 # Retention: keep the newest 14.

@@ -70,12 +70,12 @@ function ruleSummary(c: Omit<ClassifiedJob, "summary">, title: string, company: 
   const exp =
     c.minYears !== undefined
       ? c.maxYears !== undefined
-        ? `${c.minYears}–${c.maxYears} years of experience`
-        : `${c.minYears}+ years of experience`
-      : "experience not stated";
+        ? `Asks for ${c.minYears}–${c.maxYears} years of experience.`
+        : `Asks for ${c.minYears}+ years of experience.`
+      : "Experience not stated.";
   const skills = c.skills.length ? ` Mentions ${c.skills.slice(0, 6).join(", ")}.` : "";
   const pay = c.salaryText ? ` Pay stated: ${c.salaryText}.` : "";
-  return clip(`${title} at ${company}, ${where}. Asks for ${exp}.${skills}${pay}`, 600);
+  return clip(`${title} at ${company}, ${where}. ${exp}${skills}${pay}`, 600);
 }
 
 export function classifyRules(raw: RawJob, company: ClassifyCompany): ClassifiedJob {

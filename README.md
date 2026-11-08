@@ -2,7 +2,7 @@
 
 Openings for Indian freshers and people with 0–2 years' experience, taken **only from each hiring company's own careers portal**, verified open every day, and (from Phase 2) matched to each user's resume.
 
-Everything runs on free tiers and open-source software. The Firecrawl free account (1,000 credits/month) and the Apify free account ($5/month) are used only as a rationed "heavy tools" budget. Our own crawler always runs first, and the system keeps working when both budgets are spent.
+Data services run on **Neon** (project `autumn-wildflower-21577252`, branch `production`, `aws-ap-southeast-1`): Postgres, Auth, Realtime, the AI Gateway and a Function, all declared in [`neon.ts`](neon.ts). The crawler, worker and web app run on our own VM. Everything else stays free-tier and open source. The Firecrawl free account (1,000 credits/month) and the Apify free account ($5/month) are used only as a rationed "heavy tools" budget. Our own crawler always runs first, and the system keeps working when both budgets are spent.
 
 ```
 apps/web        Next.js 15 (App Router) · Tailwind v4 · shadcn-style UI · tRPC v11 · Better Auth  → admin console, ingest API, Apply click
@@ -47,6 +47,27 @@ flowchart LR
   U(("Users")) --> CFE["Cloudflare edge"] --> CF
 ```
 
+## Neon services
+
+| Service | Declared in `neon.ts` | Used by | How |
+|---|---|---|---|
+| Postgres 18 (+ pgvector) | always on | everything | Drizzle + `pg`. App traffic uses the pooled `DATABASE_URL`. Migrations, pg-boss (session-level advisory locks) and `pg_dump` use `DATABASE_URL_UNPOOLED`. |
+| Auth (Managed Better Auth) | `auth: true` | `apps/web` | `@neon/auth`: `/api/auth/*` proxy, `proxy.ts` guards `/admin`, email OTP and Google. Users are in the `neon_auth` schema and Neon sends the OTP emails (shared SMTP; add custom SMTP before launch). Admins are `ADMIN_EMAILS`. |
+| Realtime (beta) | `preview.realtime` | admin Health page | "Recent crawl runs" is a live SQL query: `/api/admin/live/crawl-runs` seals it (admins only, 60 s capability, renewed automatically), and the browser subscribes with `useLiveQuery`. No polling. |
+| AI Gateway | `aiGateway: true` | worker classifier | google-genai pointed at `${NEON_AI_GATEWAY_BASE_URL}/gemini` with the branch token (`AI_GATEWAY_MODEL`). **Needs prepaid AI Gateway credits.** Without them every call is refused (`paid_plan_required`) and the classifier falls back to rules only. |
+| Functions | `functions.jobstats` | public | [`packages/db/src/functions/jobstats.ts`](packages/db/src/functions/jobstats.ts): `GET /` (verified-open counts) and `GET /jobs?track=&city=&limit=` (summaries + links only). URL: `neon functions get jobstats`. |
+
+```bash
+neon login                       # once
+neon deploy                      # apply neon.ts to the branch, pull env into .env (add --update-existing to change settings)
+neon env pull                    # refresh .env only
+pnpm db:migrate                  # Drizzle migrations over the direct URL
+neon functions get jobstats      # function URL
+neon inspect db table-sizes      # quick health look
+```
+
+The worker CLI and the Next app both load the repo-root `.env`; real environment variables (Docker `env_file`, CI) win. Previews and experiments: `neon checkout <name> --create` gives an isolated branch (database, auth users, realtime, gateway and function), auto-expiring after 7 days.
+
 ## How a job gets onto the site
 
 1. **Crawl** (`crawl:company`, daily at the company's `crawlHour` in IST). The adapter returns a snapshot of the board. Workday and Oracle use the tenant's **India location facet**, so most of them give a *complete* India snapshot.
@@ -66,10 +87,10 @@ Rules that always hold:
 Requires Node 22+, pnpm 9 and Docker.
 
 ```bash
-cp .env.example .env              # set ADMIN_EMAILS, BETTER_AUTH_SECRET, INGEST_TOKEN
 pnpm install
-docker compose up -d postgres     # PG_HOST_PORT=5433 if 5432 is taken locally
-export DATABASE_URL=postgres://jobradar:jobradar@localhost:5432/jobradar
+neon login && neon deploy         # provisions Neon services and writes .env
+echo "NEON_AUTH_COOKIE_SECRET=$(openssl rand -base64 32)" >> .env
+echo "ADMIN_EMAILS=you@example.com" >> .env      # plus INGEST_TOKEN, CRAWL_CONTACT_URL (see .env.example)
 pnpm db:migrate
 pnpm seed                         # imports data/directory.json (idempotent)
 #   …or the 12-company sample:  pnpm worker seed --file data/directory.sample.json
@@ -81,12 +102,13 @@ pnpm worker crawl --company "SAP Labs India" --dry   # browser tier
 pnpm worker detect --pending                 # ATS detector for `unknown` companies
 pnpm worker report --sample 50 --apply 10    # verification report → reports/
 pnpm worker start                            # long-running pg-boss worker
-pnpm dev:web                                 # http://localhost:3000/admin (sign in with an ADMIN_EMAILS address; OTP is printed to the console without SMTP)
+pnpm dev:web                                 # http://localhost:3000/admin (sign in with an ADMIN_EMAILS address; Neon emails the OTP)
+npm run build                                # production build of the web app
 
 pnpm typecheck && pnpm test
 ```
 
-Everything at once: `docker compose up -d --build`, which runs postgres, migrate, worker, web and backup. Add `--profile tunnel` for cloudflared and `--profile ai` for Ollama.
+Everything at once: `docker compose up -d --build`, which runs migrate, worker, web and backup against Neon. Add `--profile tunnel` for cloudflared, `--profile ai` for Ollama, and `--profile localdb` for an offline local Postgres.
 
 ## Deploying on Oracle Cloud Always Free (Arm)
 
@@ -124,11 +146,11 @@ The Always Free Arm allowance is now **2 OCPU / 12 GB RAM** (Oracle halved it in
 1. Cloudflare dashboard → Zero Trust → Networks → Tunnels → *Create a tunnel* (cloudflared). Copy the token.
 2. Add a public hostname, `jobradar.example.com`, pointing to `http://web:3000`.
 3. Put `CLOUDFLARE_TUNNEL_TOKEN=…` in `.env`, then run `docker compose --profile tunnel up -d cloudflared`.
-4. Set `BETTER_AUTH_URL=https://jobradar.example.com` and restart `web`.
+4. Allow the public origin on Neon: `neon neon-auth domain add https://jobradar.example.com` (Auth redirects), and add it to `preview.realtime.allowedOrigins` in `neon.ts`, then `neon deploy --update-existing` (live queries).
 
 ### Backups to Cloudflare R2
 
-The `backup` container runs `pg_dump --format=custom` at 03:30 IST and uploads to `s3://$R2_BUCKET/backups/`, keeping the newest 14 dumps. `raw_payloads` is excluded, since it's 30-day debug data.
+Neon already provides point-in-time restore. For an off-platform copy, the `backup` container runs `pg_dump --format=custom` (Postgres 18 client, direct URL) at 03:30 IST and uploads to `s3://$R2_BUCKET/backups/`, keeping the newest 14 dumps. `raw_payloads` is excluded, since it's 30-day debug data.
 
 - **Create the bucket:** R2 → create the bucket, then an API token with *Object Read & Write* on that bucket only, and fill in the `R2_*` variables.
 - **Test it:** `docker compose exec backup /backup.sh`

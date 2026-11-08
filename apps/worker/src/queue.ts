@@ -32,7 +32,7 @@ async function company(deps: Deps, id: string): Promise<CompanyRow | undefined> 
 }
 
 export async function startQueue(deps: Deps) {
-  const boss = new PgBoss({ connectionString: env.DATABASE_URL!, schema: "pgboss" });
+  const boss = new PgBoss({ connectionString: env.DATABASE_URL_UNPOOLED ?? env.DATABASE_URL!, schema: "pgboss", max: 4 });
   boss.on("error", (e) => warn("pg-boss error", { err: e.message }));
   await boss.start();
   for (const q of Object.values(Q)) await boss.createQueue(q).catch(() => {});

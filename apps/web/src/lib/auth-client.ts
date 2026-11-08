@@ -1,4 +1,5 @@
 "use client";
-import { emailOTPClient } from "better-auth/client/plugins";
-import { createAuthClient } from "better-auth/react";
-export const authClient = createAuthClient({ plugins: [emailOTPClient()] });
+import { createAuthClient } from "@neon/auth/next";
+
+// Talks to our same-origin /api/auth proxy. Takes no options by design.
+export const authClient = createAuthClient();

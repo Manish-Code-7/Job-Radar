@@ -2,20 +2,28 @@
   "name": "job-radar",
   "private": true,
   "packageManager": "pnpm@9.15.9",
-  "engines": { "node": ">=22" },
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
+    "build": "pnpm --filter @job-radar/web build",
     "typecheck": "pnpm -r --parallel typecheck",
     "test": "pnpm -r test",
     "seed": "pnpm --filter @job-radar/worker seed",
     "worker": "pnpm --filter @job-radar/worker cli",
     "db:generate": "pnpm --filter @job-radar/db generate",
     "db:migrate": "pnpm --filter @job-radar/db migrate",
-    "dev:web": "pnpm --filter @job-radar/web dev"
+    "dev:web": "pnpm --filter @job-radar/web dev",
+    "neon:deploy": "neon deploy"
   },
   "devDependencies": {
-    "typescript": "^5.6.3",
     "@types/node": "^22.10.0",
     "tsx": "^4.19.2",
+    "typescript": "^5.6.3",
     "vitest": "^2.1.8"
+  },
+  "dependencies": {
+    "@neon/config": "^1.13.0",
+    "@neon/env": "^2.1.0"
   }
 }

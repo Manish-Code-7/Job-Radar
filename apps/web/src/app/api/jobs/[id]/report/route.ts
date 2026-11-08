@@ -7,7 +7,7 @@ export async function POST(req: Request, { params }: { params: Promise<{ id: str
   const { id } = await params;
   const session = await getSession().catch(() => null);
   const ip = req.headers.get("cf-connecting-ip") ?? req.headers.get("x-forwarded-for")?.split(",")[0] ?? "unknown";
-  const reporterKey = session?.user.id ?? `ip:${createHash("sha256").update(ip + (process.env.BETTER_AUTH_SECRET ?? "")).digest("hex").slice(0, 16)}`;
+  const reporterKey = session?.user.id ?? `ip:${createHash("sha256").update(ip + (process.env.NEON_AUTH_COOKIE_SECRET ?? "")).digest("hex").slice(0, 16)}`;
   const body = (await req.json().catch(() => ({}))) as { reason?: string };
   await enqueue("verify:user-report", { jobId: id, reporterKey, reason: body.reason?.slice(0, 300) }, { singletonKey: `report:${id}:${reporterKey}`, singletonHours: 24 } as never);
   return Response.json({ ok: true });

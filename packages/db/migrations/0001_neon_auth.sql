@@ -1,0 +1,5 @@
+ALTER TYPE "public"."provider" ADD VALUE 'ai_gateway';--> statement-breakpoint
+DROP TABLE "account" CASCADE;--> statement-breakpoint
+DROP TABLE "session" CASCADE;--> statement-breakpoint
+DROP TABLE "user" CASCADE;--> statement-breakpoint
+DROP TABLE "verification" CASCADE;

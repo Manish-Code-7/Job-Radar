@@ -1,11 +1,20 @@
+import { loadRootEnv } from "@job-radar/db";
 import { z } from "zod";
+
+loadRootEnv();
 
 const num = (d: number) => z.coerce.number().default(d);
 
 const Env = z.object({
   DATABASE_URL: z.string().optional(),
+  /** Direct (non-pooled) URL: pg-boss uses advisory locks/session state that PgBouncer transaction mode breaks. */
+  DATABASE_URL_UNPOOLED: z.string().optional(),
   WORKER_NAME: z.enum(["oracle", "gha", "fallback"]).default("oracle"),
   CRAWL_CONTACT_URL: z.string().default("https://github.com/job-radar/job-radar#crawler"),
+  /** Neon AI Gateway (preferred when set; pulled by `neon deploy`). Needs prepaid gateway credits. */
+  NEON_AI_GATEWAY_TOKEN: z.string().optional(),
+  NEON_AI_GATEWAY_BASE_URL: z.string().optional(),
+  AI_GATEWAY_MODEL: z.string().default("gemini-3-5-flash-lite"),
   GEMINI_API_KEY: z.string().optional(),
   GEMINI_MODEL: z.string().default("gemini-2.5-flash-lite"),
   GEMINI_DAILY_REQUESTS: num(200),

@@ -5,6 +5,7 @@ import * as schema from "./schema";
 export * from "./schema";
 export * from "./stores";
 export * from "./ingest";
+export { loadRootEnv } from "./load-env";
 export { schema };
 export { and, asc, desc, eq, gt, gte, ilike, inArray, isNotNull, isNull, lt, lte, ne, not, or, sql } from "drizzle-orm";
 

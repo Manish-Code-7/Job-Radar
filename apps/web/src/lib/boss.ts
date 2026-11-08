@@ -6,7 +6,8 @@ const g = globalThis as unknown as { __boss?: Promise<PgBoss> };
 /** Producer-only pg-boss client: the web app enqueues; the worker processes. */
 export function boss(): Promise<PgBoss> {
   g.__boss ??= (async () => {
-    const b = new PgBoss({ connectionString: process.env.DATABASE_URL!, schema: "pgboss", supervise: false, schedule: false, migrate: false });
+    // Direct connection: pg-boss relies on session-level behaviour that the Neon pooler (PgBouncer) does not keep.
+    const b = new PgBoss({ connectionString: process.env.DATABASE_URL_UNPOOLED ?? process.env.DATABASE_URL!, schema: "pgboss", supervise: false, schedule: false, migrate: false, max: 2 });
     b.on("error", (e) => console.error("pg-boss", e.message));
     await b.start();
     return b;
