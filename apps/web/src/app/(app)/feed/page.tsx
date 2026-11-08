@@ -28,6 +28,13 @@ export default function Feed() {
   const [city, setCity] = useState("");
   const [remoteOnly, setRemoteOnly] = useState(false);
   const [sort, setSort] = useState<"best" | "newest">("best");
+  // Clock-dependent text is computed in the browser only (server runs in UTC, users are in IST).
+  const [now, setNow] = useState<number | null>(null);
+  useEffect(() => {
+    setNow(Date.now());
+    const t = setInterval(() => setNow(Date.now()), 60_000);
+    return () => clearInterval(t);
+  }, []);
 
   const p = me.data?.profile;
   useEffect(() => {
@@ -62,12 +69,12 @@ export default function Feed() {
     <div>
       <header className="mb-5 flex items-start justify-between gap-3">
         <div>
-          <p className="text-sm text-muted-foreground">{greeting()}{firstName ? `, ${firstName}` : ""}</p>
+          <p className="text-sm text-muted-foreground" suppressHydrationWarning>{now ? `${greeting()}${firstName ? `, ${firstName}` : ""}` : "\u00a0"}</p>
           <h1 className="mt-0.5 text-[26px] font-semibold tracking-tight">Your matches</h1>
           <p className="mt-1 flex flex-wrap items-center gap-x-1.5 text-sm text-muted-foreground">
             <BadgeCheck className="size-4 text-ok" aria-hidden="true" />
             {feed.data ? <><b className="font-semibold text-foreground tabular-nums">{count}</b> verified {count === 1 ? "opening" : "openings"}</> : "Loading"}
-            {feed.data?.computedAt && <span>· updated {ago(feed.data.computedAt)}</span>}
+            {now && feed.data?.computedAt && <span>· updated {ago(feed.data.computedAt)}</span>}
           </p>
         </div>
         <button type="button" onClick={() => refresh.mutate()} disabled={refresh.isPending || computing} aria-label="Refresh matches" className="inline-flex size-11 shrink-0 cursor-pointer items-center justify-center gap-2 rounded-lg border bg-card text-sm hover:bg-muted sm:w-auto sm:px-3.5">
