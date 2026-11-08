@@ -79,6 +79,31 @@ services:
     <<: *env
     # Neon already has point-in-time restore; this adds an off-platform copy in R2.
 
+  # Public HTTPS on our own domain (e.g. DuckDNS): Caddy gets/renews certificates automatically.
+  # Needs ports 80 + 443 open in the cloud firewall. Set SITE_DOMAIN in .env.
+  caddy:
+    image: caddy:2.8.4-alpine
+    platform: ${PLATFORM:-linux/arm64}
+    restart: unless-stopped
+    profiles: ["caddy"]
+    ports: ["80:80", "443:443", "443:443/udp"]
+    environment:
+      SITE_DOMAIN: ${SITE_DOMAIN:-localhost}
+    volumes:
+      - ./ops/caddy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on: [web]
+
+  # Keeps <DUCKDNS_SUBDOMAIN>.duckdns.org pointed at this server's public IP (checks every 5 minutes).
+  duckdns:
+    image: alpine:3.20
+    platform: ${PLATFORM:-linux/arm64}
+    restart: unless-stopped
+    profiles: ["caddy"]
+    env_file: .env
+    command: ["sh", "-c", "apk add -q --no-cache curl && while true; do r=$$(curl -fsS \"https://www.duckdns.org/update?domains=$${DUCKDNS_SUBDOMAIN}&token=$${DUCKDNS_TOKEN}&ip=\"); echo \"$$(date -u +%FT%TZ) duckdns $$r\"; sleep 300; done"]
+
   # Temporary public URL with no Cloudflare account or domain (https://<random>.trycloudflare.com).
   # The URL changes when this container restarts; use the `tunnel` profile with a real domain for production.
   quicktunnel:
@@ -101,3 +126,5 @@ services:
 volumes:
   pgdata:
   ollama:
+  caddy_data:
+  caddy_config:

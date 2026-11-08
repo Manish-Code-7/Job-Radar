@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Deploy / update Job Radar on the server from your Mac.
-#   ops/deploy.sh <host-ip> <path-to-ssh-key.pem> [--with-tunnel | --quick-tunnel]
+#   ops/deploy.sh <host-ip> <path-to-ssh-key.pem> [--caddy | --with-tunnel | --quick-tunnel]
 # Copies .env over SSH (never via git), pulls main, rebuilds and restarts the stack.
 set -euo pipefail
 HOST="${1:?server IP}"; KEY="${2:?ssh key .pem}"; TUNNEL="${3:-}"
@@ -17,6 +17,7 @@ scp -i "$KEY" -q .env "ubuntu@$HOST:job-radar/.env"
 PROFILES=""
 [ "$TUNNEL" = "--with-tunnel" ] && PROFILES="--profile tunnel"
 [ "$TUNNEL" = "--quick-tunnel" ] && PROFILES="--profile quicktunnel"
+[ "$TUNNEL" = "--caddy" ] && PROFILES="--profile caddy"
 
 echo "→ pulling code and (re)starting"
 "${SSH[@]}" "cd ~/job-radar && git fetch -q && git reset -q --hard origin/main && \
