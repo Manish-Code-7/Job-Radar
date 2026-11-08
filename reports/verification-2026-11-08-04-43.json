@@ -1,0 +1,1325 @@
+[
+  {
+    "company": "CRED",
+    "ats": "lever",
+    "title": "area collections manager chennai- flows",
+    "url": "https://jobs.lever.co/cred/af4cc539-ea8b-4405-8067-2d7d729c9759",
+    "verdict": "open",
+    "reason": "present in feed",
+    "s2": {
+      "outcome": "ok",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "http",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": true,
+      "titleSimilarity": 1,
+      "reasons": []
+    },
+    "s5": {
+      "outcome": "form",
+      "finalUrl": "https://jobs.lever.co/cred/af4cc539-ea8b-4405-8067-2d7d729c9759/apply"
+    },
+    "attempts": "http:ok",
+    "latencyMs": 3121
+  },
+  {
+    "company": "Amazon",
+    "ats": "amazon",
+    "title": "Principal Software Engineer, Prime Video Commerce Tech",
+    "url": "https://www.amazon.jobs/en/jobs/10463881/principal-software-engineer-prime-video-commerce-tech",
+    "verdict": "changed",
+    "reason": "identity: location Locations",
+    "s2": {
+      "outcome": "ok",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "http",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": false,
+      "titleSimilarity": 1,
+      "reasons": [
+        "location Locations"
+      ]
+    },
+    "s5": {
+      "outcome": "form",
+      "finalUrl": "https://passport.amazon.jobs/"
+    },
+    "attempts": "http:ok",
+    "latencyMs": 1206
+  },
+  {
+    "company": "JPMorgan Chase",
+    "ats": "oracle",
+    "title": "Reference Data Analyst",
+    "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210804072",
+    "verdict": "changed",
+    "reason": "identity: company \"JPMC Candidate Experience page\"",
+    "s2": {
+      "outcome": "needs_render",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "playwright",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": false,
+      "titleSimilarity": 1,
+      "reasons": [
+        "company \"JPMC Candidate Experience page\""
+      ]
+    },
+    "s5": {
+      "outcome": "form",
+      "finalUrl": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210804072/apply/email"
+    },
+    "attempts": "http:ok → playwright:ok",
+    "latencyMs": 20786
+  },
+  {
+    "company": "NVIDIA",
+    "ats": "workday",
+    "title": "Senior CPU Compiler Performance Engineer",
+    "url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/India-Pune/Senior-CPU-Compiler-Performance-Engineer_JR2021377",
+    "verdict": "open",
+    "reason": "present in feed",
+    "s2": {
+      "outcome": "needs_render",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "playwright",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": true,
+      "titleSimilarity": 1,
+      "reasons": []
+    },
+    "s5": {
+      "outcome": "login",
+      "finalUrl": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/India-Pune/Senior-CPU-Compiler-Performance-Engineer_JR2021377"
+    },
+    "attempts": "http:ok → playwright:ok",
+    "latencyMs": 10283
+  },
+  {
+    "company": "Meesho",
+    "ats": "lever",
+    "title": "Principal Data Scientist",
+    "url": "https://jobs.lever.co/meesho/3d5bf582-493f-4298-b7de-e42a7d58a358",
+    "verdict": "open",
+    "reason": "present in feed",
+    "s2": {
+      "outcome": "ok",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "http",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": true,
+      "titleSimilarity": 1,
+      "reasons": []
+    },
+    "s5": {
+      "outcome": "form",
+      "finalUrl": "https://jobs.lever.co/meesho/3d5bf582-493f-4298-b7de-e42a7d58a358/apply"
+    },
+    "attempts": "http:ok",
+    "latencyMs": 1583
+  },
+  {
+    "company": "Groww",
+    "ats": "greenhouse",
+    "title": "Finance Content Creator",
+    "url": "https://job-boards.eu.greenhouse.io/groww/jobs/5000706101",
+    "verdict": "changed",
+    "reason": "identity: location Location (City) *",
+    "s2": {
+      "outcome": "ok",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "http",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": false,
+      "titleSimilarity": 1,
+      "reasons": [
+        "location Location (City) *"
+      ]
+    },
+    "s5": {
+      "outcome": "form",
+      "finalUrl": "https://job-boards.eu.greenhouse.io/groww/jobs/5000706101",
+      "detail": "form on page"
+    },
+    "attempts": "http:ok",
+    "latencyMs": 1264
+  },
+  {
+    "company": "Razorpay",
+    "ats": "greenhouse",
+    "title": "Analyst, Banking Alliances",
+    "url": "https://job-boards.greenhouse.io/razorpaysoftwareprivatelimited/jobs/4741226005",
+    "verdict": "open",
+    "reason": "present in feed",
+    "s2": {
+      "outcome": "ok",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "http",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": true,
+      "titleSimilarity": 1,
+      "reasons": []
+    },
+    "s5": {
+      "outcome": "form",
+      "finalUrl": "https://job-boards.greenhouse.io/razorpaysoftwareprivatelimited/jobs/4741226005",
+      "detail": "form on page"
+    },
+    "attempts": "http:ok",
+    "latencyMs": 952
+  },
+  {
+    "company": "Sarvam AI",
+    "ats": "ashby",
+    "title": "Product Manager - Chanakya",
+    "url": "https://jobs.ashbyhq.com/sarvam/c4099026-b194-4b16-8a12-c7ae1a9b51a0",
+    "verdict": "open",
+    "reason": "present in feed",
+    "s2": {
+      "outcome": "needs_render",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "playwright",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": true,
+      "titleSimilarity": 1,
+      "reasons": []
+    },
+    "s5": {
+      "outcome": "form",
+      "finalUrl": "https://jobs.ashbyhq.com/sarvam/c4099026-b194-4b16-8a12-c7ae1a9b51a0/application"
+    },
+    "attempts": "http:ok → playwright:ok",
+    "latencyMs": 4697
+  },
+  {
+    "company": "Amazon",
+    "ats": "amazon",
+    "title": "Senior Software Dev Engineer, Core Services",
+    "url": "https://www.amazon.jobs/en/jobs/10558800/senior-software-dev-engineer-core-services",
+    "verdict": "changed",
+    "reason": "identity: location Locations",
+    "s2": {
+      "outcome": "ok",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "http",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": false,
+      "titleSimilarity": 1,
+      "reasons": [
+        "location Locations"
+      ]
+    },
+    "s5": {
+      "outcome": "form",
+      "finalUrl": "https://passport.amazon.jobs/"
+    },
+    "attempts": "http:ok",
+    "latencyMs": 1074
+  },
+  {
+    "company": "JPMorgan Chase",
+    "ats": "oracle",
+    "title": "Lead Software Engineer Java, Spring Boot, AI/ML",
+    "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210803995",
+    "verdict": "open",
+    "reason": "present in feed",
+    "s2": {
+      "outcome": "needs_render",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "playwright",
+      "pageType": "other",
+      "hasApply": false
+    },
+    "s5": {
+      "outcome": "form",
+      "finalUrl": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210803995/apply/email"
+    },
+    "attempts": "http:ok → playwright:ok",
+    "latencyMs": 8648
+  },
+  {
+    "company": "NVIDIA",
+    "ats": "workday",
+    "title": "HPC Operations Engineer",
+    "url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/India-Bengaluru/HPC-Operations-Engineer_JR2014195",
+    "verdict": "open",
+    "reason": "present in feed",
+    "s2": {
+      "outcome": "needs_render",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "playwright",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": true,
+      "titleSimilarity": 1,
+      "reasons": []
+    },
+    "attempts": "http:ok → playwright:ok",
+    "latencyMs": 9923
+  },
+  {
+    "company": "Meesho",
+    "ats": "lever",
+    "title": "Cluster Head -Last Mile - Rajasthan",
+    "url": "https://jobs.lever.co/meesho/0759d672-8d92-496a-a7c9-22bc2ec45d61",
+    "verdict": "open",
+    "reason": "present in feed",
+    "s2": {
+      "outcome": "ok",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "http",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": true,
+      "titleSimilarity": 1,
+      "reasons": []
+    },
+    "attempts": "http:ok",
+    "latencyMs": 804
+  },
+  {
+    "company": "Groww",
+    "ats": "greenhouse",
+    "title": "Product Research Specialist (W from Groww)",
+    "url": "https://job-boards.eu.greenhouse.io/groww/jobs/4714061101",
+    "verdict": "changed",
+    "reason": "identity: location Location (City) *",
+    "s2": {
+      "outcome": "ok",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "http",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": false,
+      "titleSimilarity": 1,
+      "reasons": [
+        "location Location (City) *"
+      ]
+    },
+    "attempts": "http:ok",
+    "latencyMs": 353
+  },
+  {
+    "company": "Razorpay",
+    "ats": "greenhouse",
+    "title": "Product Manager II - Ads",
+    "url": "https://job-boards.greenhouse.io/razorpaysoftwareprivatelimited/jobs/4729533005",
+    "verdict": "open",
+    "reason": "present in feed",
+    "s2": {
+      "outcome": "ok",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "http",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": true,
+      "titleSimilarity": 1,
+      "reasons": []
+    },
+    "attempts": "http:ok",
+    "latencyMs": 1467
+  },
+  {
+    "company": "Sarvam AI",
+    "ats": "ashby",
+    "title": "Engagement Principal, Chanakya",
+    "url": "https://jobs.ashbyhq.com/sarvam/3e3b1ad5-99bb-42e6-9093-8953b89e552b",
+    "verdict": "open",
+    "reason": "present in feed",
+    "s2": {
+      "outcome": "needs_render",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "playwright",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": true,
+      "titleSimilarity": 1,
+      "reasons": []
+    },
+    "attempts": "http:ok → playwright:ok",
+    "latencyMs": 4577
+  },
+  {
+    "company": "CRED",
+    "ats": "lever",
+    "title": "lead – on deck payments",
+    "url": "https://jobs.lever.co/cred/aa501081-1787-4617-bfa9-9f4ecaf68f30",
+    "verdict": "open",
+    "reason": "present in feed",
+    "s2": {
+      "outcome": "ok",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "http",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": true,
+      "titleSimilarity": 1,
+      "reasons": []
+    },
+    "attempts": "http:ok",
+    "latencyMs": 593
+  },
+  {
+    "company": "Amazon",
+    "ats": "amazon",
+    "title": "Software Dev Engineer II, Cross Border Seller Programs",
+    "url": "https://www.amazon.jobs/en/jobs/10591021/software-dev-engineer-ii-cross-border-seller-programs",
+    "verdict": "changed",
+    "reason": "identity: location Locations",
+    "s2": {
+      "outcome": "ok",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "http",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": false,
+      "titleSimilarity": 1,
+      "reasons": [
+        "location Locations"
+      ]
+    },
+    "attempts": "http:ok",
+    "latencyMs": 976
+  },
+  {
+    "company": "JPMorgan Chase",
+    "ats": "oracle",
+    "title": "Quant Model Risk Vice President",
+    "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210707209",
+    "verdict": "changed",
+    "reason": "identity: company \"JPMC Candidate Experience page\"",
+    "s2": {
+      "outcome": "needs_render",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "playwright",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": false,
+      "titleSimilarity": 1,
+      "reasons": [
+        "company \"JPMC Candidate Experience page\""
+      ]
+    },
+    "attempts": "http:ok → playwright:ok",
+    "latencyMs": 8405
+  },
+  {
+    "company": "NVIDIA",
+    "ats": "workday",
+    "title": "Senior Developer Relations Manager",
+    "url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/India-Bengaluru/Senior-Developer-Relations-Manager_JR2018213",
+    "verdict": "open",
+    "reason": "present in feed",
+    "s2": {
+      "outcome": "needs_render",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "playwright",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": true,
+      "titleSimilarity": 1,
+      "reasons": []
+    },
+    "attempts": "http:ok → playwright:ok",
+    "latencyMs": 6746
+  },
+  {
+    "company": "Groww",
+    "ats": "greenhouse",
+    "title": "Associate - Content (Digest)",
+    "url": "https://job-boards.eu.greenhouse.io/groww/jobs/4880153101",
+    "verdict": "changed",
+    "reason": "identity: location Location (City) *",
+    "s2": {
+      "outcome": "ok",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "http",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": false,
+      "titleSimilarity": 1,
+      "reasons": [
+        "location Location (City) *"
+      ]
+    },
+    "attempts": "http:ok",
+    "latencyMs": 1276
+  },
+  {
+    "company": "Meesho",
+    "ats": "lever",
+    "title": "Product Manager II",
+    "url": "https://jobs.lever.co/meesho/5dca8c71-9993-438f-ad51-da3c7f4be692",
+    "verdict": "open",
+    "reason": "present in feed",
+    "s2": {
+      "outcome": "ok",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "http",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": true,
+      "titleSimilarity": 1,
+      "reasons": []
+    },
+    "attempts": "http:ok",
+    "latencyMs": 706
+  },
+  {
+    "company": "Sarvam AI",
+    "ats": "ashby",
+    "title": "Platform Engineer - AI Infrastructure",
+    "url": "https://jobs.ashbyhq.com/sarvam/fcb15601-6440-41f7-aa79-b9992057a4b2",
+    "verdict": "open",
+    "reason": "present in feed",
+    "s2": {
+      "outcome": "needs_render",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "playwright",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": true,
+      "titleSimilarity": 1,
+      "reasons": []
+    },
+    "attempts": "http:ok → playwright:ok",
+    "latencyMs": 4636
+  },
+  {
+    "company": "CRED",
+    "ats": "lever",
+    "title": "accounts payable manager",
+    "url": "https://jobs.lever.co/cred/aa98a938-af3a-45f5-851d-966b2b5bad33",
+    "verdict": "open",
+    "reason": "present in feed",
+    "s2": {
+      "outcome": "ok",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "http",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": true,
+      "titleSimilarity": 1,
+      "reasons": []
+    },
+    "attempts": "http:ok",
+    "latencyMs": 1354
+  },
+  {
+    "company": "Razorpay",
+    "ats": "greenhouse",
+    "title": "Product Marketing Manager, II",
+    "url": "https://job-boards.greenhouse.io/razorpaysoftwareprivatelimited/jobs/4746985005",
+    "verdict": "open",
+    "reason": "present in feed",
+    "s2": {
+      "outcome": "ok",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "http",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": true,
+      "titleSimilarity": 1,
+      "reasons": []
+    },
+    "attempts": "http:ok",
+    "latencyMs": 970
+  },
+  {
+    "company": "Amazon",
+    "ats": "amazon",
+    "title": "Senior Software Development Engineer",
+    "url": "https://www.amazon.jobs/en/jobs/10572951/senior-software-development-engineer",
+    "verdict": "changed",
+    "reason": "identity: location Locations",
+    "s2": {
+      "outcome": "ok",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "http",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": false,
+      "titleSimilarity": 1,
+      "reasons": [
+        "location Locations"
+      ]
+    },
+    "attempts": "http:ok",
+    "latencyMs": 1069
+  },
+  {
+    "company": "JPMorgan Chase",
+    "ats": "oracle",
+    "title": "GRE F&BM P&A - Associate",
+    "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210803329",
+    "verdict": "changed",
+    "reason": "identity: company \"JPMC Candidate Experience page\"",
+    "s2": {
+      "outcome": "needs_render",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "playwright",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": false,
+      "titleSimilarity": 1,
+      "reasons": [
+        "company \"JPMC Candidate Experience page\""
+      ]
+    },
+    "attempts": "http:ok → playwright:ok",
+    "latencyMs": 11327
+  },
+  {
+    "company": "NVIDIA",
+    "ats": "workday",
+    "title": "Senior Compiler Optimization Engineer – LLVM",
+    "url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/India-Bengaluru/Compiler-Optimization-Engineer---LLVM_JR2014377",
+    "verdict": "open",
+    "reason": "present in feed",
+    "s2": {
+      "outcome": "needs_render",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "playwright",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": true,
+      "titleSimilarity": 1,
+      "reasons": []
+    },
+    "attempts": "http:ok → playwright:ok",
+    "latencyMs": 6577
+  },
+  {
+    "company": "Sarvam AI",
+    "ats": "ashby",
+    "title": "Product Manager, Monetization & Retention",
+    "url": "https://jobs.ashbyhq.com/sarvam/6390e602-7b98-4700-baa9-ced5be8b1651",
+    "verdict": "open",
+    "reason": "present in feed",
+    "s2": {
+      "outcome": "needs_render",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "playwright",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": true,
+      "titleSimilarity": 1,
+      "reasons": []
+    },
+    "attempts": "http:ok → playwright:ok",
+    "latencyMs": 5144
+  },
+  {
+    "company": "Meesho",
+    "ats": "lever",
+    "title": "Manager – GTM & Sales Strategy, Meesho AI Services (MAS)",
+    "url": "https://jobs.lever.co/meesho/9401d014-8199-4861-8f65-42fda8160e0c",
+    "verdict": "open",
+    "reason": "present in feed",
+    "s2": {
+      "outcome": "ok",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "http",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": true,
+      "titleSimilarity": 1,
+      "reasons": []
+    },
+    "attempts": "http:ok",
+    "latencyMs": 2482
+  },
+  {
+    "company": "Groww",
+    "ats": "greenhouse",
+    "title": "Creative Illustrator",
+    "url": "https://job-boards.eu.greenhouse.io/groww/jobs/4979964101",
+    "verdict": "changed",
+    "reason": "identity: location Location (City) *",
+    "s2": {
+      "outcome": "ok",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "http",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": false,
+      "titleSimilarity": 1,
+      "reasons": [
+        "location Location (City) *"
+      ]
+    },
+    "attempts": "http:ok",
+    "latencyMs": 360
+  },
+  {
+    "company": "CRED",
+    "ats": "lever",
+    "title": "business development & partnerships",
+    "url": "https://jobs.lever.co/cred/09022710-e79a-4cf0-8060-df0e1cd64263",
+    "verdict": "open",
+    "reason": "present in feed",
+    "s2": {
+      "outcome": "ok",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "http",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": true,
+      "titleSimilarity": 1,
+      "reasons": []
+    },
+    "attempts": "http:ok",
+    "latencyMs": 688
+  },
+  {
+    "company": "Razorpay",
+    "ats": "greenhouse",
+    "title": "Regional Manger, Enterprise Sales - Bank & Direct",
+    "url": "https://job-boards.greenhouse.io/razorpaysoftwareprivatelimited/jobs/4741230005",
+    "verdict": "open",
+    "reason": "present in feed",
+    "s2": {
+      "outcome": "ok",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "http",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": true,
+      "titleSimilarity": 1,
+      "reasons": []
+    },
+    "attempts": "http:ok",
+    "latencyMs": 431
+  },
+  {
+    "company": "Amazon",
+    "ats": "amazon",
+    "title": "Software Dev Engineer-II, Infra Supply Chain Automation",
+    "url": "https://www.amazon.jobs/en/jobs/10533782/software-dev-engineer-ii-infra-supply-chain-automation",
+    "verdict": "changed",
+    "reason": "identity: location Locations",
+    "s2": {
+      "outcome": "ok",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "http",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": false,
+      "titleSimilarity": 1,
+      "reasons": [
+        "location Locations"
+      ]
+    },
+    "attempts": "http:ok",
+    "latencyMs": 899
+  },
+  {
+    "company": "NVIDIA",
+    "ats": "workday",
+    "title": "Senior Architect, GPU and SoC Modelling",
+    "url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/India-Bengaluru/Senior-Architect--GPU-and-SoC-Modelling_JR2021971",
+    "verdict": "open",
+    "reason": "present in feed",
+    "s2": {
+      "outcome": "needs_render",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "playwright",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": true,
+      "titleSimilarity": 1,
+      "reasons": []
+    },
+    "attempts": "http:ok → playwright:ok",
+    "latencyMs": 6712
+  },
+  {
+    "company": "JPMorgan Chase",
+    "ats": "oracle",
+    "title": "Senior Lead Software Engineer - Java, Kafka, Cloud",
+    "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210718313",
+    "verdict": "changed",
+    "reason": "identity: company \"JPMC Candidate Experience page\"",
+    "s2": {
+      "outcome": "needs_render",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "playwright",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": false,
+      "titleSimilarity": 1,
+      "reasons": [
+        "company \"JPMC Candidate Experience page\""
+      ]
+    },
+    "attempts": "http:ok → playwright:ok",
+    "latencyMs": 7900
+  },
+  {
+    "company": "Sarvam AI",
+    "ats": "ashby",
+    "title": "ML Engineer (Training Infra), Foundational Models",
+    "url": "https://jobs.ashbyhq.com/sarvam/e9fb1269-fc4b-4879-aa35-0b75a8c83611",
+    "verdict": "open",
+    "reason": "present in feed",
+    "s2": {
+      "outcome": "needs_render",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "playwright",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": true,
+      "titleSimilarity": 1,
+      "reasons": []
+    },
+    "attempts": "http:ok → playwright:ok",
+    "latencyMs": 4432
+  },
+  {
+    "company": "Meesho",
+    "ats": "lever",
+    "title": "Engineering Manager- Platform",
+    "url": "https://jobs.lever.co/meesho/c428c9f1-d06c-47a3-aa61-7bd445401816",
+    "verdict": "open",
+    "reason": "present in feed",
+    "s2": {
+      "outcome": "ok",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "http",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": true,
+      "titleSimilarity": 1,
+      "reasons": []
+    },
+    "attempts": "http:ok",
+    "latencyMs": 8003
+  },
+  {
+    "company": "CRED",
+    "ats": "lever",
+    "title": "cloud security engineer",
+    "url": "https://jobs.lever.co/cred/9a746e68-0858-4190-9144-54b19a2cbf2c",
+    "verdict": "open",
+    "reason": "present in feed",
+    "s2": {
+      "outcome": "ok",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "http",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": true,
+      "titleSimilarity": 1,
+      "reasons": []
+    },
+    "attempts": "http:ok",
+    "latencyMs": 371
+  },
+  {
+    "company": "Groww",
+    "ats": "greenhouse",
+    "title": "Assistant Manager - Internal Audit",
+    "url": "https://job-boards.eu.greenhouse.io/groww/jobs/4970739101",
+    "verdict": "changed",
+    "reason": "identity: location Location (City) *",
+    "s2": {
+      "outcome": "ok",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "http",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": false,
+      "titleSimilarity": 1,
+      "reasons": [
+        "location Location (City) *"
+      ]
+    },
+    "attempts": "http:ok",
+    "latencyMs": 917
+  },
+  {
+    "company": "Razorpay",
+    "ats": "greenhouse",
+    "title": "AI Builder (Senior Product Designer)",
+    "url": "https://job-boards.greenhouse.io/razorpaysoftwareprivatelimited/jobs/4745511005",
+    "verdict": "open",
+    "reason": "present in feed",
+    "s2": {
+      "outcome": "ok",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "http",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": true,
+      "titleSimilarity": 1,
+      "reasons": []
+    },
+    "attempts": "http:ok",
+    "latencyMs": 632
+  },
+  {
+    "company": "Amazon",
+    "ats": "amazon",
+    "title": "Software Dev Engineer II, Amazon Business",
+    "url": "https://www.amazon.jobs/en/jobs/10588111/software-dev-engineer-ii-amazon-business",
+    "verdict": "changed",
+    "reason": "identity: location Locations",
+    "s2": {
+      "outcome": "ok",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "http",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": false,
+      "titleSimilarity": 1,
+      "reasons": [
+        "location Locations"
+      ]
+    },
+    "attempts": "http:ok",
+    "latencyMs": 1425
+  },
+  {
+    "company": "NVIDIA",
+    "ats": "workday",
+    "title": "Senior DevOps Engineer",
+    "url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/India-Bengaluru/Senior-DevOps-Engineer_JR2026776",
+    "verdict": "open",
+    "reason": "present in feed",
+    "s2": {
+      "outcome": "needs_render",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "playwright",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": true,
+      "titleSimilarity": 1,
+      "reasons": []
+    },
+    "attempts": "http:ok → playwright:ok",
+    "latencyMs": 6443
+  },
+  {
+    "company": "JPMorgan Chase",
+    "ats": "oracle",
+    "title": "Software Engineer III",
+    "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210805741",
+    "verdict": "changed",
+    "reason": "identity: company \"JPMC Candidate Experience page\"",
+    "s2": {
+      "outcome": "needs_render",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "playwright",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": false,
+      "titleSimilarity": 1,
+      "reasons": [
+        "company \"JPMC Candidate Experience page\""
+      ]
+    },
+    "attempts": "http:ok → playwright:ok",
+    "latencyMs": 8141
+  },
+  {
+    "company": "Sarvam AI",
+    "ats": "ashby",
+    "title": "Embedded Infrastructure Engineer, Chanakya",
+    "url": "https://jobs.ashbyhq.com/sarvam/b2201b5e-1e96-497a-962c-bca1768f75fd",
+    "verdict": "open",
+    "reason": "present in feed",
+    "s2": {
+      "outcome": "needs_render",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "playwright",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": true,
+      "titleSimilarity": 1,
+      "reasons": []
+    },
+    "attempts": "http:ok → playwright:ok",
+    "latencyMs": 4629
+  },
+  {
+    "company": "Meesho",
+    "ats": "lever",
+    "title": "Engineering Manager -Backend",
+    "url": "https://jobs.lever.co/meesho/cb16706c-296f-4567-a41f-86206a54ee29",
+    "verdict": "open",
+    "reason": "present in feed",
+    "s2": {
+      "outcome": "ok",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "http",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": true,
+      "titleSimilarity": 1,
+      "reasons": []
+    },
+    "attempts": "http:ok",
+    "latencyMs": 524
+  },
+  {
+    "company": "Groww",
+    "ats": "greenhouse",
+    "title": "Procurement Specialist",
+    "url": "https://job-boards.eu.greenhouse.io/groww/jobs/4980317101",
+    "verdict": "changed",
+    "reason": "identity: location Location (City) *",
+    "s2": {
+      "outcome": "ok",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "http",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": false,
+      "titleSimilarity": 1,
+      "reasons": [
+        "location Location (City) *"
+      ]
+    },
+    "attempts": "http:ok",
+    "latencyMs": 409
+  },
+  {
+    "company": "Razorpay",
+    "ats": "greenhouse",
+    "title": "Group Manager, Banking Alliance",
+    "url": "https://job-boards.greenhouse.io/razorpaysoftwareprivatelimited/jobs/4740737005",
+    "verdict": "open",
+    "reason": "present in feed",
+    "s2": {
+      "outcome": "ok",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "http",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": true,
+      "titleSimilarity": 1,
+      "reasons": []
+    },
+    "attempts": "http:ok",
+    "latencyMs": 476
+  },
+  {
+    "company": "CRED",
+    "ats": "lever",
+    "title": "fraud analyst",
+    "url": "https://jobs.lever.co/cred/913a6616-78c9-4ca3-8c92-67ddea8a80df",
+    "verdict": "open",
+    "reason": "present in feed",
+    "s2": {
+      "outcome": "ok",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "http",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": true,
+      "titleSimilarity": 1,
+      "reasons": []
+    },
+    "attempts": "http:ok",
+    "latencyMs": 1246
+  },
+  {
+    "company": "Amazon",
+    "ats": "amazon",
+    "title": "Applied Scientist",
+    "url": "https://www.amazon.jobs/en/jobs/10593555/applied-scientist",
+    "verdict": "changed",
+    "reason": "identity: location Locations",
+    "s2": {
+      "outcome": "ok",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "http",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": false,
+      "titleSimilarity": 1,
+      "reasons": [
+        "location Locations"
+      ]
+    },
+    "attempts": "http:ok",
+    "latencyMs": 1018
+  },
+  {
+    "company": "NVIDIA",
+    "ats": "workday",
+    "title": "Manager, Compiler Engineering - GPU",
+    "url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/India-Bengaluru/Manager--Compiler-Engineering---GPU_JR2021298",
+    "verdict": "open",
+    "reason": "present in feed",
+    "s2": {
+      "outcome": "needs_render",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "playwright",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": true,
+      "titleSimilarity": 1,
+      "reasons": []
+    },
+    "attempts": "http:ok → playwright:ok",
+    "latencyMs": 6785
+  }
+]

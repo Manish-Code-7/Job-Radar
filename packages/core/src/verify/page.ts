@@ -1,5 +1,6 @@
 import { extractBySelectors, extractLinks, GENERIC_JOB_LINK } from "../adapters/generic";
 import { extractJobPostings, jobFromLd } from "../adapters/jsonld";
+import { parseLocations } from "../classifier/rules";
 import { htmlToText, jaccard, normalizeWs, titleSimilarity } from "../text";
 import type { Extracted, PageType, S4 } from "./signals";
 
@@ -121,16 +122,30 @@ function companyMatches(onPage: string | undefined, names: string[]): boolean {
   });
 }
 
+/**
+ * Location check that only fails on evidence: the page must name a real place (a known Indian city or a
+ * foreign country/city) that doesn't overlap what we stored. Labels like "Locations" or "Location (City) *"
+ * picked up by selectors carry no place, so they can't fail the check.
+ */
 function locationsOverlap(expected: string[], found: string[]): boolean {
   if (!expected.length || !found.length) return true;
-  const norm = (s: string) => s.toLowerCase().replace(/bangalore/g, "bengaluru").replace(/gurgaon/g, "gurugram");
-  const exp = expected.map(norm).join(" | ");
-  const got = found.map(norm).join(" | ");
-  if (/remote/.test(exp) && /remote/.test(got)) return true;
-  return exp.split(/[|,]/).some((e) => e.trim().length > 2 && got.includes(e.trim()));
+  const exp = parseLocations(expected);
+  const got = parseLocations(found);
+  const gotText = found.join(" | ");
+  const gotHasPlace = got.cities.length > 0 || got.inIndia || FOREIGN_PLACE.test(gotText);
+  if (!gotHasPlace) return true;
+  if (exp.workplace === "remote" && got.workplace === "remote") return true;
+  if (got.cities.some((c) => exp.cities.includes(c))) return true;
+  if (!got.cities.length && got.inIndia && exp.inIndia) return true; // "India" vs a specific Indian city
+  if (!exp.cities.length) return exp.inIndia ? got.inIndia || !FOREIGN_PLACE.test(gotText) : true; // we only knew "India" (or nothing)
+  return false;
 }
 
+const FOREIGN_PLACE =
+  /\b(united states|usa|canada|united kingdom|uk|london|germany|france|singapore|australia|netherlands|ireland|poland|spain|brazil|mexico|japan|uae|dubai|philippines|israel|san francisco|new york|seattle|toronto|austin|texas|california|washington)\b/i;
+
 export const TITLE_SIM_THRESHOLD = 0.85;
+const GENERIC_TITLE = /^\s*(careers?( at .*)?|jobs?( at .*)?|job details?|search jobs|current openings|open positions|join us|loading\W*)\s*$/i;
 
 export function identityCheck(
   expected: { title: string; companyNames: string[]; locations: string[]; companyDomains: string[] },
@@ -138,15 +153,21 @@ export function identityCheck(
 ): S4 {
   const reasons: string[] = [];
   let titleSim: number | undefined;
-  if (found.title) {
-    titleSim = titleSimilarity(expected.title, found.title);
+  // A generic heading ("Careers at X", "Job details") from a half-rendered SPA is no evidence of drift.
+  const generic = !found.title || GENERIC_TITLE.test(found.title);
+  if (!generic) {
+    titleSim = titleSimilarity(expected.title, found.title!);
     if (titleSim < TITLE_SIM_THRESHOLD) reasons.push(`title "${expected.title}" → "${found.title}" (${titleSim.toFixed(2)})`);
-  } else reasons.push("no title found");
-  const companyOk = companyMatches(found.company, expected.companyNames);
+  }
+  const hostOk = found.finalUrl ? hostAllowed(found.finalUrl, expected.companyDomains) : true;
+  if (!hostOk) reasons.push(`host ${new URL(found.finalUrl!).hostname} not allowlisted`);
+  // Page-level organisation names are noisy ("JPMC Candidate Experience page"); on an allowlisted host the
+  // host already proves whose page this is, so a name mismatch only counts off-allowlist.
+  const companyOk = companyMatches(found.company, expected.companyNames) || hostOk;
   if (!companyOk) reasons.push(`company "${found.company}"`);
   const locationOk = locationsOverlap(expected.locations, found.locations);
   if (!locationOk) reasons.push(`location ${found.locations.join("/")}`);
-  const hostOk = found.finalUrl ? hostAllowed(found.finalUrl, expected.companyDomains) : true;
-  if (!hostOk) reasons.push(`host ${new URL(found.finalUrl!).hostname} not allowlisted`);
+  // No usable title → we cannot confirm identity, but we have no evidence it changed either.
+  if (generic && reasons.length === 0) return { pass: false, inconclusive: true, companyOk, locationOk, hostOk, reasons: ["no usable title on page"] };
   return { pass: reasons.length === 0, titleSimilarity: titleSim, companyOk, locationOk, hostOk, reasons };
 }

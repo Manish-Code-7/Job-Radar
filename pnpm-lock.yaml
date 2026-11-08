@@ -136,7 +136,7 @@ importers:
         specifier: ^10.1.6
         version: 10.4.2
       playwright:
-        specifier: ^1.49.1
+        specifier: 1.65.0
         version: 1.65.0
       zod:
         specifier: ^3.23.8

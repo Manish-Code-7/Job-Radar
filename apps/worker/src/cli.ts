@@ -175,7 +175,8 @@ async function verificationReport(deps: Deps, sample: number, applyN: number) {
     .select()
     .from(jobs)
     .innerJoin(companies, eq(jobs.companyId, companies.id))
-    .where(inArray(jobs.status, ["open", "pending", "unknown", "changed"]))
+    // Eligible jobs only: those are the ones users will see. Spread across companies.
+    .where(and(inArray(jobs.status, ["open", "pending", "unknown", "changed"]), eq(jobs.freshersEligible, true)))
     .orderBy(sql`row_number() over (partition by ${jobs.companyId} order by random())`, sql`random()`)
     .limit(sample);
   const out: Record<string, unknown>[] = [];

@@ -52,6 +52,8 @@ export interface S3 {
 /** S4 — identity check. */
 export interface S4 {
   pass: boolean;
+  /** Could not judge (e.g. no usable title on the page): never `changed`, never `open`. */
+  inconclusive?: boolean;
   titleSimilarity?: number;
   companyOk: boolean;
   locationOk: boolean;

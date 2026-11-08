@@ -129,6 +129,19 @@ describe("identity", () => {
     expect(identityCheck(exp, { title: "Associate Software Engineer", company: "Acme Technologies", locations: ["Bengaluru"], finalUrl: "https://careers.acme.com/j/1" }).pass).toBe(true));
   it("fails on foreign host", () =>
     expect(identityCheck(exp, { title: "Associate Software Engineer", locations: [], finalUrl: "https://www.naukri.com/job/1" }).hostOk).toBe(false));
+  it("ignores label-only 'locations' scraped by selectors", () =>
+    expect(identityCheck(exp, { title: "Associate Software Engineer", locations: ["Location (City) *"], finalUrl: "https://acme.com/j/1" }).pass).toBe(true));
+  it("noisy page company name is fine on an allowlisted host, not elsewhere", () => {
+    expect(identityCheck(exp, { title: "Associate Software Engineer", company: "JPMC Candidate Experience page", locations: [], finalUrl: "https://acme.com/j/1" }).pass).toBe(true);
+    expect(identityCheck(exp, { title: "Associate Software Engineer", company: "Other Corp", locations: [], finalUrl: "https://elsewhere.io/j/1" }).companyOk).toBe(false);
+  });
+  it("stored 'India' matches a page saying 'Bengaluru, India'", () =>
+    expect(identityCheck({ ...exp, locations: ["3 Locations", "India"] }, { title: "Associate Software Engineer", locations: ["India, Bengaluru, India"], finalUrl: "https://acme.com/j/1" }).pass).toBe(true));
+  it("generic page heading is inconclusive, not a change", () => {
+    const s4 = identityCheck(exp, { title: "CAREERS AT NVIDIA", locations: [], finalUrl: "https://acme.com/j/1" });
+    expect(s4).toMatchObject({ pass: false, inconclusive: true });
+    expect(decideVerdict({ s2: s2({}), s3: s3({ pageType: "job_posting", hasApply: true }), s4 }).verdict).toBe("unknown");
+  });
   it("fails on location mismatch", () =>
     expect(identityCheck(exp, { title: "Associate Software Engineer", locations: ["London, UK"], finalUrl: "https://acme.com/j/1" }).locationOk).toBe(false));
 });

@@ -55,7 +55,9 @@ function sameSite(a: string, b: string): boolean {
 /** Title/location via simple selectors, used when there is no JSON-LD. */
 export function extractBySelectors(html: string, url: string, source: Ats): RawJob | null {
   const og = html.match(/<meta[^>]+property=["']og:title["'][^>]+content=["']([^"']+)["']/i)?.[1];
-  const h1 = html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/i)?.[1];
+  // ATS-specific title hooks first (Workday, Phenom, SuccessFactors), then the first <h1>.
+  const hook = html.match(/<[^>]+(?:data-automation-id=["']jobPostingHeader["']|data-ph-at-id=["']job-title["']|itemprop=["']title["']|class=["'][^"']*\bjob-?title\b[^"']*["'])[^>]*>([\s\S]*?)<\/[a-z0-9]+>/i)?.[1];
+  const h1 = hook ?? html.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/i)?.[1];
   const title = normalizeWs(decodeEntities(htmlToText(h1 ?? og ?? "")));
   if (!title || title.length > 200) return null;
   const locs = [

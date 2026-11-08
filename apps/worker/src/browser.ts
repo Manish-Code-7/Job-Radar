@@ -110,10 +110,10 @@ export class PlaywrightDriver implements BrowserDriver {
         const hasForm = async () =>
           (await page.locator("form input[type=file], form input[type=email], input[name*=resume i], input[name*=email i]").count()) > 0;
         if (await hasForm()) return { outcome: "form", finalUrl: page.url(), detail: "form on page" };
-        const apply = page
-          .locator("a, button")
-          .filter({ hasText: /^\s*(apply( now| for (this )?(job|position|role))?|apply online|submit application|i'?m interested)\s*$/i })
-          .first();
+        const APPLY = /^\s*(apply( now| for (this )?(job|position|role))?|apply online|submit (your )?application|i'?m interested|easy apply)\s*$/i;
+        const apply = page.getByRole("button", { name: APPLY }).or(page.getByRole("link", { name: APPLY })).first();
+        // SPAs (Oracle, Workday) render the button late.
+        await apply.waitFor({ state: "visible", timeout: 10_000 }).catch(() => {});
         if (!(await apply.count())) {
           const body = (await page.evaluate(() => document.body?.innerText ?? "")).toLowerCase();
           if (/no longer accepting|position has been filled|job not found|posting is closed|no longer available/.test(body)) {
@@ -121,9 +121,10 @@ export class PlaywrightDriver implements BrowserDriver {
           }
           return { outcome: "no_button", finalUrl: page.url() };
         }
-        const popup = page.context().waitForEvent("page", { timeout: 6_000 }).catch(() => null);
-        await apply.click({ timeout: 5_000 });
-        const target = (await popup) ?? page;
+        const popup = page.context().waitForEvent("page", { timeout: 8_000 }).catch(() => null);
+        // Some sites start a slow navigation on click; don't fail the probe on that, just look where we landed.
+        await apply.click({ timeout: 10_000 }).catch(() => {});
+        const target = (await Promise.race([popup, page.waitForTimeout(3_000).then(() => null)])) ?? page;
         await target.waitForLoadState("domcontentloaded", { timeout: 15_000 }).catch(() => {});
         await target.waitForTimeout(2_000);
         const finalUrl = target.url();

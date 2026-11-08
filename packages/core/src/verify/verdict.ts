@@ -32,7 +32,7 @@ export function decideVerdict(s: Signals, priorClosed: ClosedObservation[] = [])
     return { verdict: "closed", reason: "missing from full feed snapshot" };
   }
 
-  if (s.s4 && !s.s4.pass) {
+  if (s.s4 && !s.s4.pass && !s.s4.inconclusive) {
     return { verdict: "changed", reason: `identity: ${s.s4.reasons.join("; ")}` };
   }
 
