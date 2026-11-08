@@ -4,7 +4,7 @@ import type { Deps } from "./deps";
 import { info } from "./log";
 
 const KEEP_TOP = 200;
-const MIN_SCORE = 25;
+const MIN_SCORE = 15; // low enough that thin profiles still see their closest jobs (ranked low)
 
 /** Recompute one user's matches against every verified-open, eligible job. */
 export async function recomputeProfile(deps: Deps, userId: string) {
@@ -70,7 +70,7 @@ export async function recomputeProfile(deps: Deps, userId: string) {
       const v = { score: s.score, skillScore: s.skillScore, semanticScore: s.semanticScore, freshnessScore: s.freshnessScore, companyScore: s.companyScore, reasons: s.reasons, gaps: s.gaps, computedAt: now };
       await tx.insert(matches).values({ userId, jobId: s.jobId, ...v }).onConflictDoUpdate({ target: [matches.userId, matches.jobId], set: v });
     }
-    await tx.update(profiles).set({ matchesComputedAt: now }).where(eq(profiles.userId, userId));
+    await tx.update(profiles).set({ matchesComputedAt: now, matchesProfileVersion: p.updatedAt }).where(eq(profiles.userId, userId));
   });
   info("match:profile", { userId, candidates: rows.length, kept: scored.length });
   return { candidates: rows.length, kept: scored.length };

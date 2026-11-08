@@ -319,6 +319,8 @@ export const profiles = pgTable("profiles", {
   onboardedAt: ts("onboarded_at"),
   embedding: vector("embedding", { dimensions: 384 }),
   matchesComputedAt: ts("matches_computed_at"),
+  /** The profile `updatedAt` the current matches were computed from (feed waits until it equals updatedAt). */
+  matchesProfileVersion: ts("matches_profile_version"),
   createdAt: createdAt(),
   updatedAt: ts("updated_at").notNull().defaultNow(),
 });

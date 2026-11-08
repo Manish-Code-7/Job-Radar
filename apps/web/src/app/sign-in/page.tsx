@@ -1,9 +1,11 @@
 "use client";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useState } from "react";
+import { Check } from "lucide-react";
+import Link from "next/link";
+import { Logo } from "@/components/logo";
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
+import { Hint, Input, Label } from "@/components/ui/input";
 import { authClient } from "@/lib/auth-client";
 
 const VERIFIER = "neon_auth_session_verifier";
@@ -109,36 +111,69 @@ function SignIn() {
 
   if (finishing) {
     return (
-      <main className="mx-auto max-w-sm px-4 py-20">
-        <Card className="p-6"><p role="status">Finishing Google sign-in…</p></Card>
+      <main className="grid min-h-dvh place-items-center px-4">
+        <p role="status" className="flex items-center gap-3 text-muted-foreground"><span className="size-4 animate-spin rounded-full border-2 border-primary border-t-transparent" aria-hidden="true" />Finishing Google sign-in…</p>
       </main>
     );
   }
 
   return (
-    <main className="mx-auto max-w-sm px-4 py-20">
-      <Card className="space-y-4 p-6">
-        <h1 className="text-xl font-semibold">Sign in</h1>
-        {!sent ? (
-          <form onSubmit={send} className="space-y-3">
-            <label className="block text-sm" htmlFor="email">Email</label>
-            <Input id="email" type="email" required autoComplete="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-            <Button type="submit" disabled={busy} className="w-full">{busy ? "Sending…" : "Email me a code"}</Button>
-          </form>
-        ) : (
-          <form onSubmit={verify} className="space-y-3">
-            <p className="text-sm text-muted-foreground">We sent a 6-digit code to {email}. Use the newest email if you asked more than once.</p>
-            <label className="block text-sm" htmlFor="otp">Code</label>
-            <Input id="otp" inputMode="numeric" pattern="[0-9]{6}" maxLength={6} required autoComplete="one-time-code" value={otp} onChange={(e) => setOtp(e.target.value.replace(/\D/g, ""))} />
-            <Button type="submit" disabled={busy || otp.length !== 6} className="w-full">{busy ? "Checking…" : "Sign in"}</Button>
-            <button type="button" className="w-full text-sm text-muted-foreground underline" onClick={() => { setSent(false); setErr(null); }}>
-              Use a different email or get a new code
-            </button>
-          </form>
-        )}
-        <Button variant="outline" className="w-full" onClick={google}>Continue with Google</Button>
-        {err && <p role="alert" className="text-sm text-bad">{err}</p>}
-      </Card>
+    <main className="grid min-h-dvh lg:grid-cols-2">
+      <aside className="relative hidden flex-col justify-between overflow-hidden bg-primary p-12 text-primary-foreground lg:flex">
+        <Link href="/" className="flex items-center gap-2.5 font-semibold"><Logo className="size-8 [&_rect]:fill-primary-foreground/15" />Job Radar</Link>
+        <div>
+          <h2 className="max-w-md text-3xl font-semibold leading-tight tracking-tight">Every job here was open when we checked it today.</h2>
+          <ul className="mt-8 space-y-3 text-[15px] opacity-90">
+            {["Straight from company career pages", "Only roles for 0–2 years' experience", "Matched to your resume, privately"].map((t) => (
+              <li key={t} className="flex items-center gap-3"><span className="grid size-6 place-items-center rounded-full bg-primary-foreground/15"><Check className="size-3.5" aria-hidden="true" /></span>{t}</li>
+            ))}
+          </ul>
+        </div>
+        <p className="text-sm opacity-70">Free for job seekers.</p>
+      </aside>
+
+      <section className="flex flex-col px-4 py-8 sm:px-8">
+        <Link href="/" className="flex items-center gap-2.5 font-semibold lg:hidden"><Logo />Job Radar</Link>
+        <div className="mx-auto my-auto w-full max-w-sm py-10">
+          <h1 className="text-[26px] font-semibold tracking-tight">{sent ? "Check your email" : "Sign in or create an account"}</h1>
+          <p className="mt-2 text-sm text-muted-foreground">
+            {sent ? <>We sent a 6-digit code to <b className="font-medium text-foreground">{email}</b>. It expires in 10 minutes.</> : "No password needed. We'll email you a one-time code."}
+          </p>
+
+          {!sent ? (
+            <>
+              <Button type="button" variant="outline" className="mt-8 h-12 w-full text-[15px]" onClick={google}>
+                <svg viewBox="0 0 24 24" className="size-5" aria-hidden="true"><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.4h6.5a5.6 5.6 0 0 1-2.4 3.6v3h3.9c2.3-2.1 3.5-5.2 3.5-8.7z" /><path fill="#34A853" d="M12 24c3.2 0 6-1.1 8-2.9l-3.9-3c-1.1.7-2.5 1.2-4.1 1.2-3.1 0-5.8-2.1-6.7-5H1.3v3.1A12 12 0 0 0 12 24z" /><path fill="#FBBC05" d="M5.3 14.3a7.2 7.2 0 0 1 0-4.6V6.6h-4a12 12 0 0 0 0 10.8l4-3.1z" /><path fill="#EA4335" d="M12 4.8c1.8 0 3.3.6 4.6 1.8l3.4-3.4A12 12 0 0 0 1.3 6.6l4 3.1c.9-2.9 3.6-4.9 6.7-4.9z" /></svg>
+                Continue with Google
+              </Button>
+              <div className="my-6 flex items-center gap-3 text-xs text-muted-foreground"><span className="h-px flex-1 bg-border" />or with email<span className="h-px flex-1 bg-border" /></div>
+              <form onSubmit={send} className="space-y-4">
+                <div>
+                  <Label htmlFor="email">Email</Label>
+                  <Input id="email" type="email" required autoComplete="email" inputMode="email" placeholder="you@example.com" className="h-12" value={email} onChange={(e) => setEmail(e.target.value)} />
+                </div>
+                <Button type="submit" disabled={busy} className="h-12 w-full text-[15px]">{busy ? "Sending code…" : "Email me a code"}</Button>
+              </form>
+            </>
+          ) : (
+            <form onSubmit={verify} className="mt-8 space-y-4">
+              <div>
+                <Label htmlFor="otp">6-digit code</Label>
+                <Input id="otp" inputMode="numeric" pattern="[0-9]{6}" maxLength={6} required autoFocus autoComplete="one-time-code" placeholder="••••••" className="h-14 text-center text-2xl font-semibold tracking-[0.5em] tabular-nums" value={otp} onChange={(e) => setOtp(e.target.value.replace(/\D/g, ""))} />
+                <Hint>Use the newest email if you asked more than once.</Hint>
+              </div>
+              <Button type="submit" disabled={busy || otp.length !== 6} className="h-12 w-full text-[15px]">{busy ? "Checking…" : "Sign in"}</Button>
+              <button type="button" className="h-11 w-full cursor-pointer text-sm text-primary hover:underline" onClick={() => { setSent(false); setErr(null); }}>
+                Use a different email or resend
+              </button>
+            </form>
+          )}
+          {err && <p role="alert" className="mt-4 rounded-lg bg-bad-soft p-3 text-sm text-bad">{err}</p>}
+          <p className="mt-8 text-[13px] leading-relaxed text-muted-foreground">
+            By continuing you agree to our <Link href="/privacy" className="underline underline-offset-2 hover:text-foreground">privacy notice</Link>. We&apos;ll ask before using your resume.
+          </p>
+        </div>
+      </section>
     </main>
   );
 }

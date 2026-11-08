@@ -1,6 +1,6 @@
 "use client";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { Check } from "lucide-react";
+import { Check, ChevronLeft, FileText, Lock, Sparkles, Target, UserCheck } from "lucide-react";
 import { useEffect, useState } from "react";
 import { PreferencesForm } from "@/components/preferences-form";
 import { ResumeReview, ResumeUpload, type ResumeData } from "@/components/resume-form";
@@ -12,14 +12,17 @@ const STEPS = ["Your data", "Resume", "Preferences"] as const;
 
 function Stepper({ step }: { step: number }) {
   return (
-    <ol className="mb-8 grid grid-cols-3 gap-2" aria-label="Onboarding progress">
+    <ol className="mb-8 flex items-center" aria-label="Onboarding progress">
       {STEPS.map((label, i) => (
-        <li key={label} className="text-xs sm:text-sm" aria-current={i === step ? "step" : undefined}>
-          <div className={cn("mb-2 h-1.5 rounded-full", i <= step ? "bg-primary" : "bg-muted")} />
-          <span className={cn("inline-flex items-center gap-1", i === step ? "font-medium" : "text-muted-foreground")}>
-            {i < step && <Check className="size-3.5 text-primary" aria-hidden="true" />}
-            {i + 1}. {label}
+        <li key={label} className={cn("flex items-center", i < STEPS.length - 1 && "flex-1")} aria-current={i === step ? "step" : undefined}>
+          <span className="flex items-center gap-2">
+            <span className={cn("grid size-8 shrink-0 place-items-center rounded-full text-sm font-semibold transition-colors", i < step ? "bg-primary text-primary-foreground" : i === step ? "bg-primary-soft text-primary ring-2 ring-primary" : "bg-muted text-muted-foreground")}>
+              {i < step ? <Check className="size-4" aria-hidden="true" /> : i + 1}
+            </span>
+            <span className={cn("hidden text-sm sm:inline", i === step ? "font-medium" : "text-muted-foreground")}>{label}</span>
+            <span className="sr-only">{i < step ? " (done)" : i === step ? " (current step)" : ""}</span>
           </span>
+          {i < STEPS.length - 1 && <span className={cn("mx-3 h-0.5 flex-1 rounded-full", i < step ? "bg-primary" : "bg-border")} aria-hidden="true" />}
         </li>
       ))}
     </ol>
@@ -47,30 +50,38 @@ export default function Onboarding() {
     else setStep(2);
   }, [data, step]);
 
-  if (!data || step === null) return <p className="text-muted-foreground" role="status">Loading…</p>;
+  if (!data || step === null) return <div className="space-y-4" aria-busy="true"><div className="h-8 w-48 animate-pulse rounded bg-muted" /><div className="h-64 animate-pulse rounded-xl bg-muted" /></div>;
   const p = data.profile;
 
   return (
     <div>
-      <h1 className="mb-1 text-2xl font-semibold tracking-tight">Set up your feed</h1>
-      <p className="mb-6 text-sm text-muted-foreground">Three short steps. You can change everything later in Settings.</p>
+      <p className="text-sm font-medium text-primary">Step {step + 1} of 3</p>
+      <h1 className="mt-1 text-[26px] font-semibold tracking-tight">Set up your matches</h1>
+      <p className="mb-6 mt-1 text-sm text-muted-foreground">About two minutes. You can change everything later in Settings.</p>
       <Stepper step={step} />
 
       {step === 0 && (
         <section aria-labelledby="consent-h" className="space-y-4">
           <h2 id="consent-h" className="text-lg font-semibold">How we use your data</h2>
-          <div className="space-y-3 rounded-xl border bg-card p-4 text-sm leading-relaxed">
-            <p><b>What we collect:</b> your email; your resume (PDF); details we read from it (skills, experience, education, graduation year, projects); your job preferences; and which jobs you hide, open or report.</p>
-            <p><b>Why:</b> {data.consentPurposes.join("; ")}. Nothing else. We don&apos;t sell or share your data.</p>
-            <p><b>How:</b> your resume is stored encrypted and read on our own server. It is never sent to an outside AI service. Job matching runs on our server too.</p>
-            <p><b>Your rights:</b> download all your data, change it, withdraw this consent, or delete your account at any time in Settings. Deletion removes your resume and profile immediately and your login within 7 days.</p>
-            <p><b>Questions or complaints:</b> see our <a className="text-primary underline" href="/privacy" target="_blank">privacy notice</a> for the grievance contact.</p>
-          </div>
-          <label className="flex min-h-11 cursor-pointer items-start gap-3">
-            <input type="checkbox" className="mt-0.5 size-5 accent-[var(--primary)]" checked={agree} onChange={(e) => setAgree(e.target.checked)} />
+          <ul className="divide-y rounded-xl border bg-card">
+            {[
+              { icon: FileText, t: "What we collect", d: "Your email, your resume PDF, the details we read from it (skills, experience, education, projects), your preferences, and which jobs you hide, open or report." },
+              { icon: Target, t: "Why", d: `To ${data.consentPurposes.join(", ")}. Nothing else. We never sell or share your data.` },
+              { icon: Lock, t: "How", d: "Your resume is stored encrypted and read on our own servers. It is never sent to an outside AI service." },
+              { icon: UserCheck, t: "Your rights", d: "Download, correct or delete your data, or withdraw this consent, any time in Settings. Deleting removes your resume and profile immediately." },
+            ].map(({ icon: Icon, t, d }) => (
+              <li key={t} className="flex gap-3.5 p-4">
+                <span className="grid size-9 shrink-0 place-items-center rounded-lg bg-primary-soft text-primary"><Icon className="size-4.5" aria-hidden="true" /></span>
+                <span><b className="block text-sm font-medium">{t}</b><span className="mt-0.5 block text-sm leading-relaxed text-muted-foreground">{d}</span></span>
+              </li>
+            ))}
+          </ul>
+          <p className="text-[13px] text-muted-foreground">Questions or complaints: see the <a className="text-primary underline underline-offset-2" href="/privacy" target="_blank">privacy notice</a> for our grievance officer.</p>
+          <label className="flex min-h-11 cursor-pointer items-start gap-3 rounded-xl border bg-card p-4 has-[:checked]:border-primary has-[:checked]:bg-primary-soft">
+            <input type="checkbox" className="mt-0.5 size-5 shrink-0 accent-[var(--primary)]" checked={agree} onChange={(e) => setAgree(e.target.checked)} />
             <span className="text-sm">I agree to Job Radar using my data for the purposes above (notice version {data.consentVersion}).</span>
           </label>
-          <Button className="h-11" disabled={!agree || consent.isPending} onClick={() => consent.mutate({ version: data.consentVersion as "2026-11-08" })}>
+          <Button size="lg" className="w-full sm:w-auto" disabled={!agree || consent.isPending} onClick={() => consent.mutate({ version: data.consentVersion as "2026-11-08" })}>
             {consent.isPending ? "Saving…" : "Agree and continue"}
           </Button>
           {consent.error && <p role="alert" className="text-sm text-bad">{consent.error.message}</p>}
@@ -83,14 +94,14 @@ export default function Onboarding() {
           {!draft && (
             <>
               <ResumeUpload hasResume={!!p.resumeKey} onParsed={(d) => setDraft({ name: d.name ?? p.name ?? "", skills: d.skills, experienceMonths: d.experienceMonths, education: d.education, gradYear: d.gradYear ?? null, projects: d.projects })} />
-              <button type="button" className="h-11 cursor-pointer text-sm text-primary underline" onClick={() => setDraft({ name: p.name ?? "", skills: p.skills, experienceMonths: p.experienceMonths, education: p.education ?? "", gradYear: p.gradYear, projects: p.projects })}>
+              <button type="button" className="h-11 cursor-pointer text-sm text-primary hover:underline" onClick={() => setDraft({ name: p.name ?? "", skills: p.skills, experienceMonths: p.experienceMonths, education: p.education ?? "", gradYear: p.gradYear, projects: p.projects })}>
                 No resume handy? Fill it in yourself
               </button>
             </>
           )}
           {draft && (
             <>
-              <p className="rounded-lg bg-muted p-3 text-sm">Check what we picked up and fix anything that&apos;s wrong. Matching uses exactly this.</p>
+              <p className="flex items-start gap-2.5 rounded-xl border border-primary/30 bg-primary-soft p-3.5 text-sm text-primary"><Sparkles className="mt-0.5 size-4 shrink-0" aria-hidden="true" />Check what we picked up and fix anything that&apos;s wrong. Matching uses exactly this.</p>
               <ResumeReview initial={draft} saving={saveResume.isPending} submitLabel="Looks right, continue" onSave={(d) => saveResume.mutate({ ...d, name: d.name ?? undefined, education: d.education ?? undefined })} />
               {saveResume.error && <p role="alert" className="text-sm text-bad">{saveResume.error.message}</p>}
             </>
@@ -109,7 +120,7 @@ export default function Onboarding() {
             onSave={(v) => savePrefs.mutate({ ...v, cities: v.cities as never, tracks: v.tracks as never, avoidKinds: v.avoidKinds as never, finishOnboarding: true })}
           />
           {savePrefs.error && <p role="alert" className="text-sm text-bad">{savePrefs.error.message}</p>}
-          <button type="button" className="h-11 cursor-pointer text-sm text-muted-foreground underline" onClick={() => { setDraft(null); setStep(1); }}>Back to resume</button>
+          <button type="button" className="inline-flex h-11 cursor-pointer items-center gap-1 text-sm text-muted-foreground hover:text-foreground" onClick={() => { setDraft(null); setStep(1); }}><ChevronLeft className="size-4" aria-hidden="true" />Back to resume</button>
         </section>
       )}
     </div>

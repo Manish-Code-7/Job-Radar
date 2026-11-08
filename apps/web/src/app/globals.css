@@ -2,58 +2,84 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* Job Radar design tokens: flat, high-contrast, professional blue + "verified" green. */
 :root {
-  --background: oklch(0.99 0 0);
-  --foreground: oklch(0.18 0.01 260);
-  --muted: oklch(0.96 0.005 260);
-  --muted-foreground: oklch(0.5 0.015 260);
+  --background: oklch(0.985 0.004 250);
+  --foreground: oklch(0.21 0.03 265);
   --card: oklch(1 0 0);
-  --border: oklch(0.91 0.005 260);
-  --primary: oklch(0.5 0.13 237); /* professional blue (#0369A1) */
+  --muted: oklch(0.965 0.007 250);
+  --muted-foreground: oklch(0.5 0.02 260);
+  --border: oklch(0.915 0.008 255);
+  --primary: oklch(0.5 0.13 237); /* #0369A1 */
   --primary-foreground: oklch(0.99 0 0);
-  --ok: oklch(0.52 0.15 150); /* verified green (#16A34A) */
-  --warn: oklch(0.7 0.15 75);
-  --bad: oklch(0.58 0.2 25);
-  --radius: 0.6rem;
+  --primary-soft: oklch(0.955 0.028 237);
+  --ok: oklch(0.52 0.14 150); /* #15803D */
+  --ok-soft: oklch(0.96 0.04 150);
+  --warn: oklch(0.6 0.15 65);
+  --warn-soft: oklch(0.97 0.04 85);
+  --bad: oklch(0.55 0.2 27);
+  --bad-soft: oklch(0.96 0.03 25);
+  --radius: 0.75rem;
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: oklch(0.16 0.01 260);
-    --foreground: oklch(0.95 0.005 260);
-    --muted: oklch(0.22 0.01 260);
-    --muted-foreground: oklch(0.7 0.01 260);
-    --card: oklch(0.19 0.01 260);
-    --border: oklch(0.3 0.01 260);
-    --primary: oklch(0.74 0.12 230);
-    --primary-foreground: oklch(0.16 0.01 260);
+    --background: oklch(0.16 0.014 262);
+    --foreground: oklch(0.96 0.005 260);
+    --card: oklch(0.2 0.015 262);
+    --muted: oklch(0.245 0.016 262);
+    --muted-foreground: oklch(0.72 0.015 260);
+    --border: oklch(0.3 0.016 262);
+    --primary: oklch(0.75 0.12 232);
+    --primary-foreground: oklch(0.17 0.02 262);
+    --primary-soft: oklch(0.29 0.05 240);
+    --ok: oklch(0.76 0.15 152);
+    --ok-soft: oklch(0.28 0.05 152);
+    --warn: oklch(0.8 0.14 80);
+    --warn-soft: oklch(0.3 0.05 80);
+    --bad: oklch(0.72 0.17 25);
+    --bad-soft: oklch(0.3 0.06 25);
   }
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-card: var(--card);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
-  --color-card: var(--card);
   --color-border: var(--border);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
+  --color-primary-soft: var(--primary-soft);
   --color-ok: var(--ok);
+  --color-ok-soft: var(--ok-soft);
   --color-warn: var(--warn);
+  --color-warn-soft: var(--warn-soft);
   --color-bad: var(--bad);
+  --color-bad-soft: var(--bad-soft);
   --radius-lg: var(--radius);
-  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 }
 
+html {
+  -webkit-text-size-adjust: 100%;
+}
 body {
   background: var(--background);
   color: var(--foreground);
+  font-feature-settings: "cv11", "ss01";
 }
 * {
   border-color: var(--border);
 }
-
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  border-radius: 6px;
 }
-:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+::selection {
+  background: var(--primary-soft);
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}

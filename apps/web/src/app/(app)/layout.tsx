@@ -10,7 +10,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
   return (
     <>
       <SiteHeader />
-      <main className="mx-auto max-w-3xl px-4 pb-16 pt-6">{children}</main>
+      <main className="mx-auto max-w-3xl px-4 pb-28 pt-6 sm:pb-16 sm:pt-8">{children}</main>
     </>
   );
 }

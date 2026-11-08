@@ -104,6 +104,7 @@ export const meRouter = router({
           lastVerifiedAt: jobs.lastVerifiedAt,
           firstSeenAt: jobs.firstSeenAt,
           flags: jobs.flags,
+          classifierVersion: jobs.classifierVersion,
           score: matches.score,
           reasons: matches.reasons,
           gaps: matches.gaps,
@@ -129,6 +130,7 @@ export const meRouter = router({
       return {
         computedAt: p.matchesComputedAt,
         profileUpdatedAt: p.updatedAt,
+        upToDate: !!p.matchesProfileVersion && p.matchesProfileVersion.getTime() >= p.updatedAt.getTime(),
         jobs: rows.map((r) => ({ ...r, badge: displayBadge(r.status, r.lastVerifiedAt), matchedSkills: r.skills.filter((s) => mine.has(s.toLowerCase())) })),
       };
     }),

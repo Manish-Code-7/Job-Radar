@@ -1,0 +1,1 @@
+ALTER TABLE "profiles" ADD COLUMN "matches_profile_version" timestamp with time zone;
