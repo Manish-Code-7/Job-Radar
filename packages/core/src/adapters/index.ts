@@ -36,4 +36,4 @@ export * from "./jsonld";
 export * from "./oracle";
 export * from "./workday";
 export * from "./detect";
-export { requireSlug, toDate } from "./util";
+export { compact, requireSlug, toDate } from "./util";

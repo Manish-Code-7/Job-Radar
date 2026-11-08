@@ -1,0 +1,33 @@
+{
+  "name": "@job-radar/worker",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "bin": { "worker": "./bin/worker.mjs" },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "cli": "tsx src/cli.ts",
+    "start": "tsx src/cli.ts start",
+    "seed": "tsx src/cli.ts seed"
+  },
+  "dependencies": {
+    "@job-radar/core": "workspace:*",
+    "@job-radar/db": "workspace:*",
+    "@google/genai": "^1.30.0",
+    "@huggingface/transformers": "^3.2.4",
+    "@mendable/firecrawl-js": "^1.29.3",
+    "apify-client": "^2.12.0",
+    "crawlee": "^3.12.1",
+    "got-scraping": "^4.0.8",
+    "pg-boss": "^10.1.6",
+    "playwright": "^1.49.1",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.8"
+  }
+}
