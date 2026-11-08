@@ -90,15 +90,43 @@ export function parseResumeRules(text: string, now = new Date()): ParsedResume {
   const experienceMonths = monthsInRanges(workOnly, now);
 
   const projects: ParsedResume["projects"] = [];
-  let cur: ParsedResume["projects"][number] | null = null;
-  for (const line of secs.get("projects") ?? []) {
-    const bullet = /^[•\-*–·]/.test(line);
-    if (!bullet && line.length <= 90) {
-      cur = { title: line.replace(/\s*[|–-]\s*(github|link|demo).*$/i, "") };
+  let cur: (ParsedResume["projects"][number] & { stack?: string }) | null = null;
+  let lastWasBullet = false;
+  const LINK_WORDS = /(?:\s*[|•·,–-]?\s*\b(?:live(?:\s+demo)?|code|github|git\s*hub|demo|link|repo|source|deployed)\b)+\s*$/i;
+  const DATE_TAIL = /\s*[|,–-]?\s*((jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec)[a-z]*\.?\s*)?\d{4}(\s*[–-]\s*(((jan|feb|mar|apr|may|jun|jul|aug|sep|sept|oct|nov|dec)[a-z]*\.?\s*)?\d{4}|present|ongoing))?\s*$/i;
+  // "Python, NLP, Machine Learning, REST API" or "Tech: React, Node.js": a stack line, not a new project.
+  const isStack = (l: string) => {
+    const body = l.replace(/^(tech(nologies|\s*stack)?|stack|tools|built\s+with)\s*[:\-–]\s*/i, "");
+    const parts = body.split(/\s*[,|/]\s*/).filter(Boolean);
+    return (/^(tech|stack|tools|built\s+with)/i.test(l) || parts.length >= 3) && parts.every((x) => x.split(/\s+/).length <= 3) && !/[.!?]$/.test(body);
+  };
+  const addSummary = (t: string) => {
+    if (cur) cur.summary = normalizeWs(`${cur.summary ?? ""} ${t}`).slice(0, 300);
+  };
+  for (const raw of secs.get("projects") ?? []) {
+    const line = raw.trim();
+    if (!line) continue;
+    const bullet = /^[•\-*–·▪●◦]/.test(line);
+    const text = line.replace(/^[•\-*–·▪●◦]\s*/, "");
+    if (bullet) {
+      addSummary(text);
+      lastWasBullet = true;
+    } else if (cur && isStack(line)) {
+      cur.stack = line.replace(/^(tech(nologies|\s*stack)?|stack|tools|built\s+with)\s*[:\-–]\s*/i, "");
+      lastWasBullet = false;
+    } else if (cur && (line.length > 90 || (lastWasBullet && /^[a-z(\d%&]/.test(line)) || (!!cur.summary && /^[a-z]/.test(line)))) {
+      addSummary(line); // wrapped continuation of the previous sentence
+    } else {
+      const title = line.replace(LINK_WORDS, "").replace(DATE_TAIL, "").replace(LINK_WORDS, "").replace(/\s*[|–-]\s*$/, "").trim();
+      if (!title) continue;
+      cur = { title };
       projects.push(cur);
-    } else if (cur) {
-      cur.summary = normalizeWs(`${cur.summary ?? ""} ${line.replace(/^[•\-*–·]\s*/, "")}`).slice(0, 300);
+      lastWasBullet = false;
     }
+  }
+  for (const p of projects as (ParsedResume["projects"][number] & { stack?: string })[]) {
+    if (p.stack) p.summary = p.summary ? `${p.stack}. ${p.summary}` : p.stack;
+    delete p.stack;
   }
   for (const p of projects) p.skills = skillsFromText(`${p.title} ${p.summary ?? ""}`, 8);
 

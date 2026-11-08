@@ -115,3 +115,25 @@ describe("resume files", () => {
     expect(isPdf(Buffer.from("hello world"))).toBe(false);
   });
 });
+
+describe("project parsing (real-world layout)", () => {
+  it("strips link labels, keeps the stack line with its project", () => {
+    const text = `M Manish
+PROJECTS
+Mental Stress Detection System Live Code
+Python, NLP, Machine Learning, REST API
+• Built a tool that reads what someone writes and flags whether they might be stressed, reaching
+77% accuracy after cleaning the data and tuning it.
+ConvoAI – Real-Time AI Meeting Platform Code
+Tech: Next.js, WebRTC, OpenAI
+• Real-time meeting assistant with live transcripts
+Portfolio Website | GitHub | Jan 2024 – Mar 2024
+EDUCATION
+B.Tech CSE 2026`;
+    const r = parseResumeRules(text, NOW);
+    expect(r.projects.map((p) => p.title)).toEqual(["Mental Stress Detection System", "ConvoAI – Real-Time AI Meeting Platform", "Portfolio Website"]);
+    expect(r.projects[0]!.summary).toBe("Python, NLP, Machine Learning, REST API. Built a tool that reads what someone writes and flags whether they might be stressed, reaching 77% accuracy after cleaning the data and tuning it.");
+    expect(r.projects[1]!.summary).toContain("Next.js, WebRTC, OpenAI");
+    expect(r.projects[0]!.skills).toEqual(expect.arrayContaining(["Python", "NLP", "Machine Learning"]));
+  });
+});
