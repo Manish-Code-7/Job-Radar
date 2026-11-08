@@ -54,6 +54,12 @@ describe("politeness", () => {
     expect(sleeps).toEqual([3500, 3500]);
   });
 
+  it("undefined options fall back to defaults (GitHub Actions mode has no DB store)", async () => {
+    const { client } = fakeHttp([[/./, () => ({ body: "ok" })]]);
+    const f = new PoliteFetcher({ http: client, contactUrl: "x", store: undefined, cache: undefined, respectRobots: false, minDelayMs: 0, maxDelayMs: 0 });
+    expect((await f.fetch({ url: "https://a.com/1" })).body).toBe("ok");
+  });
+
   it("sends the bot User-Agent", async () => {
     const { f, calls } = clocked([[/./, () => ({ body: "ok" })]], { respectRobots: false });
     await f.fetch({ url: "https://a.com/1" });

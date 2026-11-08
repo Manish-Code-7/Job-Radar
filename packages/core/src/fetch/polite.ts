@@ -105,7 +105,8 @@ export class PoliteFetcher {
       sleep: (ms) => new Promise((r) => setTimeout(r, ms)),
       random: Math.random,
       log: () => {},
-      ...opts,
+      // Explicitly-undefined options (e.g. `store: undefined` when there is no database) keep the default.
+      ...(Object.fromEntries(Object.entries(opts).filter(([, v]) => v !== undefined)) as PoliteOptions),
     };
   }
 
