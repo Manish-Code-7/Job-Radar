@@ -27,6 +27,7 @@ const { positionals, values } = parseArgs({
     sample: { type: "string", default: "50" },
     apply: { type: "string", default: "10" },
     pending: { type: "boolean", default: false },
+    url: { type: "string" },
   },
 });
 const cmd = positionals[0];
@@ -125,6 +126,16 @@ async function main() {
         }
         break;
       }
+      case "render": {
+        // Debug: what does our own Playwright see on a page? (robots.txt respected)
+        if (!values.url) throw new Error("render needs --url");
+        if (!(await deps.http.isAllowed(values.url))) throw new Error("robots.txt disallows this URL");
+        const p = await deps.browser().render(values.url, { scrolls: 2, captureJson: /\/(api|graphql|jobs?|careers?|postings?|openings?)\b/i });
+        console.log(`status ${p.status} · final ${p.finalUrl} · title "${p.title}" · ${p.links.length} links · ${p.json.length} JSON responses · ${p.text.length} chars text`);
+        for (const l of p.links.slice(0, 60)) console.log(`  ${l.text.slice(0, 50).padEnd(50)} ${l.href}`);
+        for (const j of p.json.slice(0, 10)) console.log(`  JSON ${j.status} ${j.url}`);
+        break;
+      }
       case "report":
         await verificationReport(deps, Number(values.sample), Number(values.apply));
         break;
@@ -145,6 +156,7 @@ async function main() {
   pnpm worker crawl --shard N --of M          (GitHub Actions pool when INGEST_URL is set and DATABASE_URL is not)
   pnpm worker verify --job <id> | --company <name>
   pnpm worker report --sample 50 --apply 10   (verification report → reports/)
+  pnpm worker render --url <url>               (debug: what our Playwright sees)
   pnpm worker audit
   pnpm worker start                            (long-running pg-boss worker)`);
     }

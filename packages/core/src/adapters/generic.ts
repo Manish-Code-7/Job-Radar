@@ -166,15 +166,23 @@ export async function fetchPosting(
   cfg: BrowserAtsConfig,
 ): Promise<{ job: RawJob; method: ExtractMethod } | null> {
   if (!cfg.detailNeedsRender) {
-    const res = await ctx.http.fetch({ url });
-    if (res.status === 404 || res.status === 410) return null;
-    if (res.status === 200) {
-      const r = await extractJobFromPage({ html: res.body, url: res.url }, cfg.ats, ctx);
-      if (r && (r.method !== "selectors" || !ctx.browser)) return r;
+    try {
+      const res = await ctx.http.fetch({ url });
+      if (res.status === 404 || res.status === 410) return null;
+      if (res.status === 200) {
+        const r = await extractJobFromPage({ html: res.body, url: res.url }, cfg.ats, ctx);
+        if (r && (r.method !== "selectors" || !ctx.browser)) return r;
+      }
+    } catch (e) {
+      // Blocked plain HTTP (403 challenge / open circuit) → escalate to our own browser; anything else is fatal.
+      const blocked = isFetchError(e) && (e.kind === "blocked" || e.kind === "circuit_open" || e.status === 403 || e.status === 429);
+      if (!blocked || !ctx.browser) throw e;
     }
   }
   if (!ctx.browser) return null;
+  if (!(await ctx.http.isAllowed(url))) throw new FetchError("robots_disallowed", "robots", url);
   const page = await ctx.browser.render(url);
+  if (page.status === 403 || page.status === 429) throw new FetchError("blocked", `browser also blocked (${page.status})`, url, page.status);
   if (page.status === 404 || page.status === 410) return null;
   return extractJobFromPage({ html: page.html, text: page.text, url: page.finalUrl }, cfg.ats, ctx);
 }
@@ -196,6 +204,8 @@ export function makeBrowserAdapter(cfg: BrowserAtsConfig): Adapter {
       }
       let budget = ctx.maxDetailFetches ?? 25;
       const jobs: RawJob[] = [];
+      let fetched = 0;
+      let blockedBoth = false;
       for (const url of urls) {
         const id = idOf(url);
         if (ctx.knownJobIds?.has(id) || budget <= 0) {
@@ -213,12 +223,18 @@ export function makeBrowserAdapter(cfg: BrowserAtsConfig): Adapter {
         budget--;
         try {
           const r = await fetchPosting(ctx, url, cfg);
+          fetched++;
           if (r) jobs.push({ ...r.job, sourceJobId: id, url });
         } catch (e) {
           ctx.log?.("posting fetch failed", { url, err: (e as Error).message });
-          if (isFetchError(e) && e.kind === "circuit_open") break;
+          if (isFetchError(e) && e.kind === "blocked" && /browser also blocked/.test(e.message)) {
+            blockedBoth = true; // both our paths are blocked: stop for today
+            break;
+          }
         }
       }
+      // Nothing readable and both our paths blocked → report it, so the budget router can escalate (Apify) and admins see it.
+      if (blockedBoth && fetched === 0) throw new FetchError("blocked", `${cfg.ats}: postings blocked for HTTP and browser`, listUrl);
       // Link discovery can miss postings, so never claim a complete snapshot (S1 can't close jobs here).
       return { jobs, complete: false };
     },
@@ -239,8 +255,9 @@ export const BROWSER_CONFIGS: Record<string, BrowserAtsConfig> = {
   },
   successfactors: {
     ats: "successfactors",
-    jobLink: /(\/job\/[^/]+\/\d+\/?$|career_job_req_id=\d+)/i,
-    idFromUrl: (u) => u.match(/career_job_req_id=(\d+)/)?.[1] ?? u.match(/\/(\d+)\/?$/)?.[1] ?? defaultIdFromUrl(u),
+    // RMK sites: /job/<slug>/<id>/ or /<lang>/jobs/<id>/<slug>/; classic: career_job_req_id=<id>
+    jobLink: /(\/job\/[^/]+\/\d+\/?$|\/jobs?\/\d{6,}\/[^/?#]+|career_job_req_id=\d+)/i,
+    idFromUrl: (u) => u.match(/career_job_req_id=(\d+)/)?.[1] ?? u.match(/\/jobs?\/(\d{6,})\//)?.[1] ?? u.match(/\/(\d+)\/?$/)?.[1] ?? defaultIdFromUrl(u),
   },
   phenom: {
     ats: "phenom",

@@ -1,13 +1,117 @@
 [
-  { "name": "CRED", "area": "Indiranagar, Bengaluru", "kind": "Startup", "ats": "lever", "slug": "cred", "careers": "https://jobs.lever.co/cred", "readable": true, "note": "SAMPLE ROW (stand-in until data/directory.json is provided)" },
-  { "name": "Meesho", "area": "Bengaluru", "kind": "Startup", "ats": "lever", "slug": "meesho", "careers": "https://jobs.lever.co/meesho", "readable": true, "note": "SAMPLE ROW" },
-  { "name": "Groww", "area": "Bengaluru", "kind": "Product", "ats": "greenhouse", "slug": "groww", "careers": "https://job-boards.greenhouse.io/groww", "readable": true, "note": "SAMPLE ROW" },
-  { "name": "Razorpay", "area": "Bengaluru", "kind": "Product", "ats": "greenhouse", "slug": "razorpaysoftwareprivatelimited", "careers": "https://job-boards.greenhouse.io/razorpaysoftwareprivatelimited", "readable": true, "note": "SAMPLE ROW" },
-  { "name": "Sarvam AI", "area": "Bengaluru", "kind": "Startup", "ats": "ashby", "slug": "sarvam", "careers": "https://jobs.ashbyhq.com/sarvam", "readable": true, "note": "SAMPLE ROW" },
-  { "name": "Bosch", "area": "Bengaluru", "kind": "MNC", "ats": "smartrecruiters", "slug": "BoschGroup", "careers": "https://careers.smartrecruiters.com/BoschGroup", "readable": true, "note": "SAMPLE ROW" },
-  { "name": "Amazon", "area": "Bengaluru", "kind": "MNC", "ats": "amazon", "careers": "https://www.amazon.jobs/en/search?country[]=IND", "readable": true, "note": "SAMPLE ROW" },
-  { "name": "NVIDIA", "area": "Bengaluru", "kind": "MNC", "ats": "workday", "careers": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite", "readable": true, "note": "SAMPLE ROW" },
-  { "name": "JPMorgan Chase", "area": "Bengaluru", "kind": "GCC", "ats": "oracle", "slug": "CX_1001", "careers": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001", "readable": true, "note": "SAMPLE ROW" },
-  { "name": "Infosys", "area": "Bengaluru", "kind": "Services", "ats": "unknown", "careers": "https://www.infosys.com/careers/", "readable": false, "note": "SAMPLE ROW — excluded (services)" },
-  { "name": "Zerodha", "area": "Bengaluru", "kind": "Product", "ats": "unknown", "careers": "https://zerodha.com/careers/", "readable": true, "note": "SAMPLE ROW — detector demo" }
+  {
+    "name": "CRED",
+    "area": "Indiranagar, Bengaluru",
+    "kind": "Startup",
+    "ats": "lever",
+    "slug": "cred",
+    "careers": "https://jobs.lever.co/cred",
+    "readable": true,
+    "note": "SAMPLE ROW (stand-in until data/directory.json is provided)"
+  },
+  {
+    "name": "Meesho",
+    "area": "Bengaluru",
+    "kind": "Startup",
+    "ats": "lever",
+    "slug": "meesho",
+    "careers": "https://jobs.lever.co/meesho",
+    "readable": true,
+    "note": "SAMPLE ROW"
+  },
+  {
+    "name": "Groww",
+    "area": "Bengaluru",
+    "kind": "Product",
+    "ats": "greenhouse",
+    "slug": "groww",
+    "careers": "https://job-boards.greenhouse.io/groww",
+    "readable": true,
+    "note": "SAMPLE ROW"
+  },
+  {
+    "name": "Razorpay",
+    "area": "Bengaluru",
+    "kind": "Product",
+    "ats": "greenhouse",
+    "slug": "razorpaysoftwareprivatelimited",
+    "careers": "https://job-boards.greenhouse.io/razorpaysoftwareprivatelimited",
+    "readable": true,
+    "note": "SAMPLE ROW"
+  },
+  {
+    "name": "Sarvam AI",
+    "area": "Bengaluru",
+    "kind": "Startup",
+    "ats": "ashby",
+    "slug": "sarvam",
+    "careers": "https://jobs.ashbyhq.com/sarvam",
+    "readable": true,
+    "note": "SAMPLE ROW"
+  },
+  {
+    "name": "Bosch",
+    "area": "Bengaluru",
+    "kind": "MNC",
+    "ats": "smartrecruiters",
+    "slug": "BoschGroup",
+    "careers": "https://careers.smartrecruiters.com/BoschGroup",
+    "readable": true,
+    "note": "SAMPLE ROW"
+  },
+  {
+    "name": "Amazon",
+    "area": "Bengaluru",
+    "kind": "MNC",
+    "ats": "amazon",
+    "careers": "https://www.amazon.jobs/en/search?country[]=IND",
+    "readable": true,
+    "note": "SAMPLE ROW"
+  },
+  {
+    "name": "NVIDIA",
+    "area": "Bengaluru",
+    "kind": "MNC",
+    "ats": "workday",
+    "careers": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite",
+    "readable": true,
+    "note": "SAMPLE ROW"
+  },
+  {
+    "name": "JPMorgan Chase",
+    "area": "Bengaluru",
+    "kind": "GCC",
+    "ats": "oracle",
+    "slug": "CX_1001",
+    "careers": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001",
+    "readable": true,
+    "note": "SAMPLE ROW"
+  },
+  {
+    "name": "SAP Labs India",
+    "area": "Whitefield, Bengaluru",
+    "kind": "MNC",
+    "ats": "successfactors",
+    "careers": "https://jobs.sap.com/",
+    "readable": true,
+    "note": "SAMPLE ROW — browser tier (SuccessFactors RMK)"
+  },
+  {
+    "name": "Infosys",
+    "area": "Bengaluru",
+    "kind": "Services",
+    "ats": "unknown",
+    "careers": "https://www.infosys.com/careers/",
+    "readable": false,
+    "note": "SAMPLE ROW — excluded (services)"
+  },
+  {
+    "name": "Zerodha",
+    "area": "Bengaluru",
+    "kind": "Product",
+    "ats": "unknown",
+    "careers": "https://zerodha.com/careers/",
+    "readable": true,
+    "note": "SAMPLE ROW — detector demo"
+  }
 ]

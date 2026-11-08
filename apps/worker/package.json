@@ -21,7 +21,7 @@
     "crawlee": "^3.12.1",
     "got-scraping": "^4.0.8",
     "pg-boss": "^10.1.6",
-    "playwright": "^1.49.1",
+    "playwright": "1.65.0",
     "zod": "^3.23.8"
   },
   "devDependencies": {

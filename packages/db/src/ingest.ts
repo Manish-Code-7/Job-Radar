@@ -148,9 +148,16 @@ export async function ingestSnapshot(
     seen.add(raw.sourceJobId);
     const prev = byId.get(raw.sourceJobId);
     if (!prev) {
-      const c = await classify(raw, companyRef, o.ai);
+      const c = await classify(raw, companyRef, raw.detailFetched ? o.ai : undefined);
       if (!c.inIndia) {
         report.skippedNonIndia++;
+        // Remember it (archived) so adapters treat it as known and never re-fetch its detail page.
+        if (!o.dry && raw.detailFetched) {
+          await db
+            .insert(s.jobs)
+            .values({ companyId: company.id, ...jobValues(raw, c), status: "archived", closedReason: "not in India", firstSeenAt: now, lastSeenAt: now })
+            .onConflictDoNothing();
+        }
         continue;
       }
       report.newJobs.push({ title: raw.title, url: raw.url, classified: c });
