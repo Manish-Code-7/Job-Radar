@@ -1,0 +1,101 @@
+# Job Radar: everything on one Oracle Cloud Always Free Arm VM (linux/arm64).
+# Local: `docker compose up -d --build` (works on x86 too; images are multi-arch).
+name: job-radar
+
+x-env: &env
+  env_file: .env
+  restart: unless-stopped
+
+services:
+  postgres:
+    image: pgvector/pgvector:pg16
+    platform: ${PLATFORM:-linux/arm64}
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: jobradar
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-jobradar}
+      POSTGRES_DB: jobradar
+    volumes: [pgdata:/var/lib/postgresql/data]
+    ports: ["127.0.0.1:5432:5432"]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U jobradar"]
+      interval: 5s
+      retries: 20
+    # 12 GB VM: keep Postgres modest so 3–4 Chromium instances fit.
+    command: ["postgres", "-c", "shared_buffers=512MB", "-c", "work_mem=16MB", "-c", "max_connections=60"]
+
+  migrate:
+    <<: *env
+    build:
+      context: .
+      dockerfile: apps/worker/Dockerfile
+      platforms: ["${PLATFORM:-linux/arm64}"]
+    platform: ${PLATFORM:-linux/arm64}
+    restart: "no"
+    environment:
+      DATABASE_URL: postgres://jobradar:${POSTGRES_PASSWORD:-jobradar}@postgres:5432/jobradar
+    command: ["pnpm", "--filter", "@job-radar/db", "migrate"]
+    depends_on: { postgres: { condition: service_healthy } }
+
+  worker:
+    <<: *env
+    build:
+      context: .
+      dockerfile: apps/worker/Dockerfile
+      platforms: ["${PLATFORM:-linux/arm64}"]
+    platform: ${PLATFORM:-linux/arm64}
+    environment:
+      DATABASE_URL: postgres://jobradar:${POSTGRES_PASSWORD:-jobradar}@postgres:5432/jobradar
+      OLLAMA_URL: http://ollama:11434
+      WORKER_NAME: oracle
+    command: ["pnpm", "--filter", "@job-radar/worker", "start"]
+    shm_size: 1gb # Chromium needs shared memory
+    depends_on:
+      postgres: { condition: service_healthy }
+      migrate: { condition: service_completed_successfully }
+
+  web:
+    <<: *env
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+      platforms: ["${PLATFORM:-linux/arm64}"]
+    platform: ${PLATFORM:-linux/arm64}
+    environment:
+      DATABASE_URL: postgres://jobradar:${POSTGRES_PASSWORD:-jobradar}@postgres:5432/jobradar
+    ports: ["127.0.0.1:3000:3000"]
+    depends_on:
+      migrate: { condition: service_completed_successfully }
+
+  ollama:
+    image: ollama/ollama:0.5.4
+    platform: ${PLATFORM:-linux/arm64}
+    restart: unless-stopped
+    volumes: [ollama:/root/.ollama]
+    profiles: ["ai"] # Phase 2 (resume parsing). Start with: docker compose --profile ai up -d
+
+  backup:
+    build:
+      context: ops/backup
+      platforms: ["${PLATFORM:-linux/arm64}"]
+    platform: ${PLATFORM:-linux/arm64}
+    <<: *env
+    environment:
+      PGHOST: postgres
+      PGUSER: jobradar
+      PGPASSWORD: ${POSTGRES_PASSWORD:-jobradar}
+      PGDATABASE: jobradar
+    depends_on: { postgres: { condition: service_healthy } }
+
+  # Exposes `web` through Cloudflare without opening ports. Set CLOUDFLARE_TUNNEL_TOKEN in .env.
+  cloudflared:
+    image: cloudflare/cloudflared:2024.12.2
+    platform: ${PLATFORM:-linux/arm64}
+    restart: unless-stopped
+    command: ["tunnel", "--no-autoupdate", "run", "--token", "${CLOUDFLARE_TUNNEL_TOKEN:-}"]
+    profiles: ["tunnel"]
+    depends_on: [web]
+
+volumes:
+  pgdata:
+  ollama:
