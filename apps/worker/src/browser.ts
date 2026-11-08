@@ -110,7 +110,8 @@ export class PlaywrightDriver implements BrowserDriver {
         const hasForm = async () =>
           (await page.locator("form input[type=file], form input[type=email], input[name*=resume i], input[name*=email i]").count()) > 0;
         if (await hasForm()) return { outcome: "form", finalUrl: page.url(), detail: "form on page" };
-        const APPLY = /^\s*(apply( now| for (this )?(job|position|role))?|apply online|submit (your )?application|i'?m interested|easy apply)\s*$/i;
+        // Accessible names are often longer ("Apply now for Software Engineer I"), so only anchor the start.
+        const APPLY = /^\s*(apply\b|submit (your )?application|i'?m interested|easy apply)/i;
         const apply = page.getByRole("button", { name: APPLY }).or(page.getByRole("link", { name: APPLY })).first();
         // SPAs (Oracle, Workday) render the button late.
         await apply.waitFor({ state: "visible", timeout: 10_000 }).catch(() => {});

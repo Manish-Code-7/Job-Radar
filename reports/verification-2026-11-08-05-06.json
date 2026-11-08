@@ -2,8 +2,8 @@
   {
     "company": "Amazon",
     "ats": "amazon",
-    "title": "System Development Engineer I, Amazon",
-    "url": "https://www.amazon.jobs/en/jobs/10576573/system-development-engineer-i-amazon",
+    "title": "QAE I FTC, L4, IESP Merchant Tech",
+    "url": "https://www.amazon.jobs/en/jobs/10551634/qae-i-ftc-l4-iesp-merchant-tech",
     "verdict": "open",
     "reason": "present in feed",
     "s2": {
@@ -22,17 +22,17 @@
       "reasons": []
     },
     "s5": {
-      "outcome": "error",
-      "detail": "locator.click: Timeout 5000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('a, button').filter({ hasText: /^\\s*(apply( now| for (this )?(job|position|role))?|apply online|submit application|i'?m interested)\\s*$/i }).first()\u001b[22m\n\u001b[2m    - locator resolved to <a id=\"apply-button\" class=\"btn btn-primary \" href=\"https://www.amazon.jobs/applicant/jobs/10576573/apply\" aria-label=\"Apply now for System Development Engineer I, Amazon\">Apply now</a>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\u001b[2m    - done scrolling\u001b[22m\n\u001b[2m    - performing click action\u001b[22m\n\u001b[2m    - click action done\u001b[22m\n\u001b[2m    - waiting for scheduled navigations to finish\u001b[22m\n"
+      "outcome": "no_button",
+      "finalUrl": "https://www.amazon.jobs/en/jobs/10551634/qae-i-ftc-l4-iesp-merchant-tech"
     },
     "attempts": "http:ok",
-    "latencyMs": 2499
+    "latencyMs": 1393
   },
   {
-    "company": "JPMorgan Chase",
-    "ats": "oracle",
-    "title": "Research Modernization - Business Intelligence Developer",
-    "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210805766",
+    "company": "NVIDIA",
+    "ats": "workday",
+    "title": "Cyber Security Engineer",
+    "url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/India-Pune/Cyber-Security-Engineer_JR2026874",
     "verdict": "open",
     "reason": "present in feed",
     "s2": {
@@ -41,7 +41,7 @@
       "hops": 1
     },
     "s3": {
-      "via": "jina",
+      "via": "playwright",
       "pageType": "job_posting",
       "hasApply": true
     },
@@ -51,42 +51,69 @@
       "reasons": []
     },
     "s5": {
-      "outcome": "no_button",
-      "finalUrl": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210805766"
+      "outcome": "login",
+      "finalUrl": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/India-Pune/Cyber-Security-Engineer_JR2026874"
     },
-    "attempts": "http:ok → playwright:null → jina:ok",
-    "latencyMs": 42939
+    "attempts": "http:ok → playwright:ok",
+    "latencyMs": 11105
   },
   {
-    "company": "NVIDIA",
-    "ats": "workday",
-    "title": "DFT Engineer - Hardware",
-    "url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/India-Bengaluru/DFT-Engineer---Hardware_JR2018054",
-    "verdict": "changed",
-    "reason": "identity: title \"DFT Engineer - Hardware\" → \"CAREERS AT NVIDIA\" (0.00)",
+    "company": "JPMorgan Chase",
+    "ats": "oracle",
+    "title": "Valuation Controller-Associate",
+    "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210803765",
+    "verdict": "open",
+    "reason": "present in feed",
     "s2": {
       "outcome": "needs_render",
       "status": 200,
       "hops": 1
     },
     "s3": {
-      "via": "jina",
+      "via": "playwright",
       "pageType": "job_posting",
       "hasApply": true
     },
     "s4": {
-      "pass": false,
-      "titleSimilarity": 0,
-      "reasons": [
-        "title \"DFT Engineer - Hardware\" → \"CAREERS AT NVIDIA\" (0.00)"
-      ]
+      "pass": true,
+      "titleSimilarity": 1,
+      "reasons": []
     },
     "s5": {
-      "outcome": "login",
-      "finalUrl": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/India-Bengaluru/DFT-Engineer---Hardware_JR2018054"
+      "outcome": "form",
+      "finalUrl": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210803765/apply/email"
     },
-    "attempts": "http:ok → playwright:null → jina:ok",
-    "latencyMs": 22443
+    "attempts": "http:ok → playwright:ok",
+    "latencyMs": 11394
+  },
+  {
+    "company": "Sarvam AI",
+    "ats": "ashby",
+    "title": "Technical Writer",
+    "url": "https://jobs.ashbyhq.com/sarvam/a0ccec8b-c0da-4394-b29c-f4a98c4e514d",
+    "verdict": "open",
+    "reason": "present in feed",
+    "s2": {
+      "outcome": "needs_render",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "playwright",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": true,
+      "titleSimilarity": 1,
+      "reasons": []
+    },
+    "s5": {
+      "outcome": "form",
+      "finalUrl": "https://jobs.ashbyhq.com/sarvam/a0ccec8b-c0da-4394-b29c-f4a98c4e514d/application"
+    },
+    "attempts": "http:ok → playwright:ok",
+    "latencyMs": 4944
   },
   {
     "company": "CRED",
@@ -115,7 +142,7 @@
       "finalUrl": "https://jobs.lever.co/cred/84aa0489-b7e1-4670-bfa9-7a9654197cc3/apply"
     },
     "attempts": "http:ok",
-    "latencyMs": 987
+    "latencyMs": 2074
   },
   {
     "company": "Groww",
@@ -145,229 +172,7 @@
       "detail": "form on page"
     },
     "attempts": "http:ok",
-    "latencyMs": 754
-  },
-  {
-    "company": "Sarvam AI",
-    "ats": "ashby",
-    "title": "Product & Strategy Associate",
-    "url": "https://jobs.ashbyhq.com/sarvam/786e9a1b-e52d-4075-932d-66e4ad8e06c2",
-    "verdict": "open",
-    "reason": "present in feed",
-    "s2": {
-      "outcome": "needs_render",
-      "status": 200,
-      "hops": 1
-    },
-    "s3": {
-      "via": "playwright",
-      "pageType": "job_posting",
-      "hasApply": true
-    },
-    "s4": {
-      "pass": true,
-      "titleSimilarity": 1,
-      "reasons": []
-    },
-    "s5": {
-      "outcome": "form",
-      "finalUrl": "https://jobs.ashbyhq.com/sarvam/786e9a1b-e52d-4075-932d-66e4ad8e06c2/application"
-    },
-    "attempts": "http:ok → playwright:ok",
-    "latencyMs": 6540
-  },
-  {
-    "company": "Meesho",
-    "ats": "lever",
-    "title": "Instructional Designer- ValMo Training",
-    "url": "https://jobs.lever.co/meesho/3826c751-3f51-4f36-8c75-d2d65f172214",
-    "verdict": "open",
-    "reason": "present in feed",
-    "s2": {
-      "outcome": "ok",
-      "status": 200,
-      "hops": 1
-    },
-    "s3": {
-      "via": "http",
-      "pageType": "job_posting",
-      "hasApply": true
-    },
-    "s4": {
-      "pass": true,
-      "titleSimilarity": 1,
-      "reasons": []
-    },
-    "s5": {
-      "outcome": "form",
-      "finalUrl": "https://jobs.lever.co/meesho/3826c751-3f51-4f36-8c75-d2d65f172214/apply"
-    },
-    "attempts": "http:ok",
-    "latencyMs": 1444
-  },
-  {
-    "company": "JPMorgan Chase",
-    "ats": "oracle",
-    "title": "Client Technical Onboarding Analyst",
-    "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210805043",
-    "verdict": "open",
-    "reason": "present in feed",
-    "s2": {
-      "outcome": "needs_render",
-      "status": 200,
-      "hops": 1
-    },
-    "s3": {
-      "via": "playwright",
-      "pageType": "job_posting",
-      "hasApply": true
-    },
-    "s4": {
-      "pass": true,
-      "titleSimilarity": 1,
-      "reasons": []
-    },
-    "s5": {
-      "outcome": "form",
-      "finalUrl": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210805043/apply/email"
-    },
-    "attempts": "http:ok → playwright:ok",
-    "latencyMs": 13625
-  },
-  {
-    "company": "Amazon",
-    "ats": "amazon",
-    "title": "Software Dev Engineer II, Amazon International Seller Services",
-    "url": "https://www.amazon.jobs/en/jobs/10598513/software-dev-engineer-ii-amazon-international-seller-services",
-    "verdict": "open",
-    "reason": "present in feed",
-    "s2": {
-      "outcome": "ok",
-      "status": 200,
-      "hops": 1
-    },
-    "s3": {
-      "via": "http",
-      "pageType": "job_posting",
-      "hasApply": true
-    },
-    "s4": {
-      "pass": true,
-      "titleSimilarity": 1,
-      "reasons": []
-    },
-    "s5": {
-      "outcome": "form",
-      "finalUrl": "https://passport.amazon.jobs/"
-    },
-    "attempts": "http:ok",
-    "latencyMs": 1168
-  },
-  {
-    "company": "NVIDIA",
-    "ats": "workday",
-    "title": "SOC Verification Engineer",
-    "url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/India-Bengaluru/SOC-Verification-Engineer_JR2023239",
-    "verdict": "changed",
-    "reason": "identity: location India, Bengaluru, India",
-    "s2": {
-      "outcome": "needs_render",
-      "status": 200,
-      "hops": 1
-    },
-    "s3": {
-      "via": "playwright",
-      "pageType": "job_posting",
-      "hasApply": true
-    },
-    "s4": {
-      "pass": false,
-      "titleSimilarity": 1,
-      "reasons": [
-        "location India, Bengaluru, India"
-      ]
-    },
-    "s5": {
-      "outcome": "login",
-      "finalUrl": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/India-Bengaluru/SOC-Verification-Engineer_JR2023239"
-    },
-    "attempts": "http:ok → playwright:ok",
-    "latencyMs": 8922
-  },
-  {
-    "company": "Groww",
-    "ats": "greenhouse",
-    "title": "Product Research Specialist (W from Groww)",
-    "url": "https://job-boards.eu.greenhouse.io/groww/jobs/4714061101",
-    "verdict": "open",
-    "reason": "present in feed",
-    "s2": {
-      "outcome": "ok",
-      "status": 200,
-      "hops": 1
-    },
-    "s3": {
-      "via": "http",
-      "pageType": "job_posting",
-      "hasApply": true
-    },
-    "s4": {
-      "pass": true,
-      "titleSimilarity": 1,
-      "reasons": []
-    },
-    "attempts": "http:ok",
-    "latencyMs": 1542
-  },
-  {
-    "company": "CRED",
-    "ats": "lever",
-    "title": "threat detection engineer",
-    "url": "https://jobs.lever.co/cred/b3da0ae4-d0a8-45ce-a1e5-73be12b4bfe3",
-    "verdict": "open",
-    "reason": "present in feed",
-    "s2": {
-      "outcome": "ok",
-      "status": 200,
-      "hops": 1
-    },
-    "s3": {
-      "via": "http",
-      "pageType": "job_posting",
-      "hasApply": true
-    },
-    "s4": {
-      "pass": true,
-      "titleSimilarity": 1,
-      "reasons": []
-    },
-    "attempts": "http:ok",
-    "latencyMs": 782
-  },
-  {
-    "company": "Sarvam AI",
-    "ats": "ashby",
-    "title": "Infrastructure Engineer",
-    "url": "https://jobs.ashbyhq.com/sarvam/f09b6a35-e2d1-4833-8bc5-2b495991d882",
-    "verdict": "open",
-    "reason": "present in feed",
-    "s2": {
-      "outcome": "needs_render",
-      "status": 200,
-      "hops": 1
-    },
-    "s3": {
-      "via": "playwright",
-      "pageType": "job_posting",
-      "hasApply": true
-    },
-    "s4": {
-      "pass": true,
-      "titleSimilarity": 1,
-      "reasons": []
-    },
-    "attempts": "http:ok → playwright:ok",
-    "latencyMs": 6264
+    "latencyMs": 1027
   },
   {
     "company": "Meesho",
@@ -391,64 +196,18 @@
       "titleSimilarity": 1,
       "reasons": []
     },
-    "attempts": "http:ok",
-    "latencyMs": 810
-  },
-  {
-    "company": "JPMorgan Chase",
-    "ats": "oracle",
-    "title": "Analyst - Project Finance & Infrastructure Credit Risk",
-    "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210778995",
-    "verdict": "open",
-    "reason": "present in feed",
-    "s2": {
-      "outcome": "needs_render",
-      "status": 200,
-      "hops": 1
-    },
-    "s3": {
-      "via": "playwright",
-      "pageType": "job_posting",
-      "hasApply": true
-    },
-    "s4": {
-      "pass": true,
-      "titleSimilarity": 1,
-      "reasons": []
-    },
-    "attempts": "http:ok → playwright:ok",
-    "latencyMs": 16087
-  },
-  {
-    "company": "Amazon",
-    "ats": "amazon",
-    "title": "Quality Associate",
-    "url": "https://www.amazon.jobs/en/jobs/10528167/quality-associate",
-    "verdict": "open",
-    "reason": "present in feed",
-    "s2": {
-      "outcome": "ok",
-      "status": 200,
-      "hops": 1
-    },
-    "s3": {
-      "via": "http",
-      "pageType": "job_posting",
-      "hasApply": true
-    },
-    "s4": {
-      "pass": true,
-      "titleSimilarity": 1,
-      "reasons": []
+    "s5": {
+      "outcome": "form",
+      "finalUrl": "https://jobs.lever.co/meesho/f8bdf9a3-74a5-441d-b0b3-9eac7b9836ad/apply"
     },
     "attempts": "http:ok",
-    "latencyMs": 1093
+    "latencyMs": 1105
   },
   {
     "company": "NVIDIA",
     "ats": "workday",
-    "title": "Chip Power Estimation Engineer",
-    "url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/India-Bengaluru/Chip-Power-Estimation-Engineer_JR2025565",
+    "title": "CAD Layout Design Engineer",
+    "url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/India-Bengaluru/CAD-Layout-Design-Engineer_JR2013307",
     "verdict": "open",
     "reason": "present in feed",
     "s2": {
@@ -466,114 +225,18 @@
       "titleSimilarity": 1,
       "reasons": []
     },
-    "attempts": "http:ok → playwright:ok",
-    "latencyMs": 12096
-  },
-  {
-    "company": "CRED",
-    "ats": "lever",
-    "title": "cloud security engineer",
-    "url": "https://jobs.lever.co/cred/9a746e68-0858-4190-9144-54b19a2cbf2c",
-    "verdict": "open",
-    "reason": "present in feed",
-    "s2": {
-      "outcome": "ok",
-      "status": 200,
-      "hops": 1
-    },
-    "s3": {
-      "via": "http",
-      "pageType": "job_posting",
-      "hasApply": true
-    },
-    "s4": {
-      "pass": true,
-      "titleSimilarity": 1,
-      "reasons": []
-    },
-    "attempts": "http:ok",
-    "latencyMs": 1210
-  },
-  {
-    "company": "Sarvam AI",
-    "ats": "ashby",
-    "title": "GTM Strategy - Chanakya",
-    "url": "https://jobs.ashbyhq.com/sarvam/6e8354d0-8e75-4e31-a361-21dfd91bfdfa",
-    "verdict": "open",
-    "reason": "present in feed",
-    "s2": {
-      "outcome": "needs_render",
-      "status": 200,
-      "hops": 1
-    },
-    "s3": {
-      "via": "playwright",
-      "pageType": "job_posting",
-      "hasApply": true
-    },
-    "s4": {
-      "pass": true,
-      "titleSimilarity": 1,
-      "reasons": []
+    "s5": {
+      "outcome": "login",
+      "finalUrl": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/India-Bengaluru/CAD-Layout-Design-Engineer_JR2013307"
     },
     "attempts": "http:ok → playwright:ok",
-    "latencyMs": 6053
-  },
-  {
-    "company": "Groww",
-    "ats": "greenhouse",
-    "title": "Associate - Content (Digest)",
-    "url": "https://job-boards.eu.greenhouse.io/groww/jobs/4880153101",
-    "verdict": "open",
-    "reason": "present in feed",
-    "s2": {
-      "outcome": "ok",
-      "status": 200,
-      "hops": 1
-    },
-    "s3": {
-      "via": "http",
-      "pageType": "job_posting",
-      "hasApply": true
-    },
-    "s4": {
-      "pass": true,
-      "titleSimilarity": 1,
-      "reasons": []
-    },
-    "attempts": "http:ok",
-    "latencyMs": 386
-  },
-  {
-    "company": "JPMorgan Chase",
-    "ats": "oracle",
-    "title": "Asset Serving Associate",
-    "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210794788",
-    "verdict": "open",
-    "reason": "present in feed",
-    "s2": {
-      "outcome": "needs_render",
-      "status": 200,
-      "hops": 1
-    },
-    "s3": {
-      "via": "playwright",
-      "pageType": "job_posting",
-      "hasApply": true
-    },
-    "s4": {
-      "pass": true,
-      "titleSimilarity": 1,
-      "reasons": []
-    },
-    "attempts": "http:ok → playwright:ok",
-    "latencyMs": 9676
+    "latencyMs": 6821
   },
   {
     "company": "Amazon",
     "ats": "amazon",
-    "title": "Associate II, ML Data Operations, GO-AI Operations",
-    "url": "https://www.amazon.jobs/en/jobs/10388366/associate-ii-ml-data-operations-go-ai-operations",
+    "title": "System Development Engineer, UTR Tech in Last Mile",
+    "url": "https://www.amazon.jobs/en/jobs/10594981/system-development-engineer-utr-tech-in-last-mile",
     "verdict": "open",
     "reason": "present in feed",
     "s2": {
@@ -591,14 +254,18 @@
       "titleSimilarity": 1,
       "reasons": []
     },
+    "s5": {
+      "outcome": "no_button",
+      "finalUrl": "https://www.amazon.jobs/en/jobs/10594981/system-development-engineer-utr-tech-in-last-mile"
+    },
     "attempts": "http:ok",
-    "latencyMs": 1673
+    "latencyMs": 1193
   },
   {
-    "company": "NVIDIA",
-    "ats": "workday",
-    "title": "Verification Engineer - GPU Fullchip",
-    "url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/India-Bengaluru/Verification-Engineer---GPU-Fullchip_JR2019165",
+    "company": "JPMorgan Chase",
+    "ats": "oracle",
+    "title": "Control Management-Associate",
+    "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210795316",
     "verdict": "open",
     "reason": "present in feed",
     "s2": {
@@ -616,33 +283,12 @@
       "titleSimilarity": 1,
       "reasons": []
     },
+    "s5": {
+      "outcome": "form",
+      "finalUrl": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210795316/apply/email"
+    },
     "attempts": "http:ok → playwright:ok",
-    "latencyMs": 8731
-  },
-  {
-    "company": "CRED",
-    "ats": "lever",
-    "title": "fraud analyst",
-    "url": "https://jobs.lever.co/cred/913a6616-78c9-4ca3-8c92-67ddea8a80df",
-    "verdict": "open",
-    "reason": "present in feed",
-    "s2": {
-      "outcome": "ok",
-      "status": 200,
-      "hops": 1
-    },
-    "s3": {
-      "via": "http",
-      "pageType": "job_posting",
-      "hasApply": true
-    },
-    "s4": {
-      "pass": true,
-      "titleSimilarity": 1,
-      "reasons": []
-    },
-    "attempts": "http:ok",
-    "latencyMs": 877
+    "latencyMs": 11968
   },
   {
     "company": "Sarvam AI",
@@ -667,13 +313,113 @@
       "reasons": []
     },
     "attempts": "http:ok → playwright:ok",
-    "latencyMs": 6275
+    "latencyMs": 4709
   },
   {
-    "company": "JPMorgan Chase",
-    "ats": "oracle",
-    "title": "Valuation Controller-Associate",
-    "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210803765",
+    "company": "CRED",
+    "ats": "lever",
+    "title": "cloud security engineer",
+    "url": "https://jobs.lever.co/cred/9a746e68-0858-4190-9144-54b19a2cbf2c",
+    "verdict": "open",
+    "reason": "present in feed",
+    "s2": {
+      "outcome": "ok",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "http",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": true,
+      "titleSimilarity": 1,
+      "reasons": []
+    },
+    "attempts": "http:ok",
+    "latencyMs": 852
+  },
+  {
+    "company": "Groww",
+    "ats": "greenhouse",
+    "title": "Product Research Specialist (W from Groww)",
+    "url": "https://job-boards.eu.greenhouse.io/groww/jobs/4714061101",
+    "verdict": "open",
+    "reason": "present in feed",
+    "s2": {
+      "outcome": "ok",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "http",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": true,
+      "titleSimilarity": 1,
+      "reasons": []
+    },
+    "attempts": "http:ok",
+    "latencyMs": 386
+  },
+  {
+    "company": "Meesho",
+    "ats": "lever",
+    "title": "Instructional Designer- ValMo Training",
+    "url": "https://jobs.lever.co/meesho/3826c751-3f51-4f36-8c75-d2d65f172214",
+    "verdict": "open",
+    "reason": "present in feed",
+    "s2": {
+      "outcome": "ok",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "http",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": true,
+      "titleSimilarity": 1,
+      "reasons": []
+    },
+    "attempts": "http:ok",
+    "latencyMs": 1459
+  },
+  {
+    "company": "Amazon",
+    "ats": "amazon",
+    "title": "Quality Assurance Technician, EasyShip",
+    "url": "https://www.amazon.jobs/en/jobs/10589649/quality-assurance-technician-easyship",
+    "verdict": "open",
+    "reason": "present in feed",
+    "s2": {
+      "outcome": "ok",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "http",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": true,
+      "titleSimilarity": 1,
+      "reasons": []
+    },
+    "attempts": "http:ok",
+    "latencyMs": 1013
+  },
+  {
+    "company": "NVIDIA",
+    "ats": "workday",
+    "title": "ASIC Verification Engineer",
+    "url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/India-Bengaluru/ASIC-Verification-Engineer_JR2024390-1",
     "verdict": "open",
     "reason": "present in feed",
     "s2": {
@@ -692,7 +438,282 @@
       "reasons": []
     },
     "attempts": "http:ok → playwright:ok",
-    "latencyMs": 20924
+    "latencyMs": 6437
+  },
+  {
+    "company": "JPMorgan Chase",
+    "ats": "oracle",
+    "title": "MRGR Treasury- Associate",
+    "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210738394",
+    "verdict": "open",
+    "reason": "present in feed",
+    "s2": {
+      "outcome": "needs_render",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "playwright",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": true,
+      "titleSimilarity": 1,
+      "reasons": []
+    },
+    "attempts": "http:ok → playwright:ok",
+    "latencyMs": 9910
+  },
+  {
+    "company": "Sarvam AI",
+    "ats": "ashby",
+    "title": "Infrastructure Engineer",
+    "url": "https://jobs.ashbyhq.com/sarvam/f09b6a35-e2d1-4833-8bc5-2b495991d882",
+    "verdict": "open",
+    "reason": "present in feed",
+    "s2": {
+      "outcome": "needs_render",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "playwright",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": true,
+      "titleSimilarity": 1,
+      "reasons": []
+    },
+    "attempts": "http:ok → playwright:ok",
+    "latencyMs": 4493
+  },
+  {
+    "company": "CRED",
+    "ats": "lever",
+    "title": "fraud analyst",
+    "url": "https://jobs.lever.co/cred/913a6616-78c9-4ca3-8c92-67ddea8a80df",
+    "verdict": "open",
+    "reason": "present in feed",
+    "s2": {
+      "outcome": "ok",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "http",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": true,
+      "titleSimilarity": 1,
+      "reasons": []
+    },
+    "attempts": "http:ok",
+    "latencyMs": 473
+  },
+  {
+    "company": "Groww",
+    "ats": "greenhouse",
+    "title": "Associate - Content (Digest)",
+    "url": "https://job-boards.eu.greenhouse.io/groww/jobs/4880153101",
+    "verdict": "open",
+    "reason": "present in feed",
+    "s2": {
+      "outcome": "ok",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "http",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": true,
+      "titleSimilarity": 1,
+      "reasons": []
+    },
+    "attempts": "http:ok",
+    "latencyMs": 924
+  },
+  {
+    "company": "NVIDIA",
+    "ats": "workday",
+    "title": "ASIC Design Engineer - Performance Monitoring",
+    "url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/India-Bengaluru/ASIC-Design-Engineer---Performance-Monitoring_JR2027619",
+    "verdict": "open",
+    "reason": "present in feed",
+    "s2": {
+      "outcome": "needs_render",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "playwright",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": true,
+      "titleSimilarity": 1,
+      "reasons": []
+    },
+    "attempts": "http:ok → playwright:ok",
+    "latencyMs": 6752
+  },
+  {
+    "company": "JPMorgan Chase",
+    "ats": "oracle",
+    "title": "Alternative Fund Services - Private Fund Services - Portfolio Administration - Team Leader - Bangalore",
+    "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210798045",
+    "verdict": "open",
+    "reason": "present in feed",
+    "s2": {
+      "outcome": "needs_render",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "playwright",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": true,
+      "titleSimilarity": 1,
+      "reasons": []
+    },
+    "attempts": "http:ok → playwright:ok",
+    "latencyMs": 10472
+  },
+  {
+    "company": "Amazon",
+    "ats": "amazon",
+    "title": "Oracle Applications Functional Analyst, FinTech Cash Application, OFA Cash Application",
+    "url": "https://www.amazon.jobs/en/jobs/10452662/oracle-applications-functional-analyst-fintech-cash-application-ofa-cash-application",
+    "verdict": "open",
+    "reason": "present in feed",
+    "s2": {
+      "outcome": "ok",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "http",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": true,
+      "titleSimilarity": 1,
+      "reasons": []
+    },
+    "attempts": "http:ok",
+    "latencyMs": 1077
+  },
+  {
+    "company": "Sarvam AI",
+    "ats": "ashby",
+    "title": "Product & Strategy Associate",
+    "url": "https://jobs.ashbyhq.com/sarvam/786e9a1b-e52d-4075-932d-66e4ad8e06c2",
+    "verdict": "open",
+    "reason": "present in feed",
+    "s2": {
+      "outcome": "needs_render",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "playwright",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": true,
+      "titleSimilarity": 1,
+      "reasons": []
+    },
+    "attempts": "http:ok → playwright:ok",
+    "latencyMs": 4243
+  },
+  {
+    "company": "CRED",
+    "ats": "lever",
+    "title": "threat detection engineer",
+    "url": "https://jobs.lever.co/cred/b3da0ae4-d0a8-45ce-a1e5-73be12b4bfe3",
+    "verdict": "open",
+    "reason": "present in feed",
+    "s2": {
+      "outcome": "ok",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "http",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": true,
+      "titleSimilarity": 1,
+      "reasons": []
+    },
+    "attempts": "http:ok",
+    "latencyMs": 656
+  },
+  {
+    "company": "NVIDIA",
+    "ats": "workday",
+    "title": "ASIC CAD Engineer, Clocks Methodology",
+    "url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/India-Bengaluru/ASIC-CAD-Engineer--Clocks-Methodology_JR2025033",
+    "verdict": "open",
+    "reason": "present in feed",
+    "s2": {
+      "outcome": "needs_render",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "playwright",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": true,
+      "titleSimilarity": 1,
+      "reasons": []
+    },
+    "attempts": "http:ok → playwright:ok",
+    "latencyMs": 6995
+  },
+  {
+    "company": "JPMorgan Chase",
+    "ats": "oracle",
+    "title": "Loan Servicing Associate",
+    "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210698405",
+    "verdict": "open",
+    "reason": "present in feed",
+    "s2": {
+      "outcome": "needs_render",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "playwright",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": true,
+      "titleSimilarity": 1,
+      "reasons": []
+    },
+    "attempts": "http:ok → playwright:ok",
+    "latencyMs": 9872
   },
   {
     "company": "Amazon",
@@ -717,38 +738,13 @@
       "reasons": []
     },
     "attempts": "http:ok",
-    "latencyMs": 1107
-  },
-  {
-    "company": "NVIDIA",
-    "ats": "workday",
-    "title": "Software Solutions Engineer",
-    "url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/India-Pune/Software-Solutions-Engineer_JR2018442-1",
-    "verdict": "open",
-    "reason": "present in feed",
-    "s2": {
-      "outcome": "needs_render",
-      "status": 200,
-      "hops": 1
-    },
-    "s3": {
-      "via": "playwright",
-      "pageType": "job_posting",
-      "hasApply": true
-    },
-    "s4": {
-      "pass": true,
-      "titleSimilarity": 1,
-      "reasons": []
-    },
-    "attempts": "http:ok → playwright:ok",
-    "latencyMs": 9611
+    "latencyMs": 907
   },
   {
     "company": "Sarvam AI",
     "ats": "ashby",
-    "title": "Technical Writer",
-    "url": "https://jobs.ashbyhq.com/sarvam/a0ccec8b-c0da-4394-b29c-f4a98c4e514d",
+    "title": "GTM Strategy - Chanakya",
+    "url": "https://jobs.ashbyhq.com/sarvam/6e8354d0-8e75-4e31-a361-21dfd91bfdfa",
     "verdict": "open",
     "reason": "present in feed",
     "s2": {
@@ -767,38 +763,13 @@
       "reasons": []
     },
     "attempts": "http:ok → playwright:ok",
-    "latencyMs": 5841
-  },
-  {
-    "company": "JPMorgan Chase",
-    "ats": "oracle",
-    "title": "Client Tax - Associate",
-    "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210796250",
-    "verdict": "open",
-    "reason": "present in feed",
-    "s2": {
-      "outcome": "needs_render",
-      "status": 200,
-      "hops": 1
-    },
-    "s3": {
-      "via": "playwright",
-      "pageType": "job_posting",
-      "hasApply": true
-    },
-    "s4": {
-      "pass": true,
-      "titleSimilarity": 1,
-      "reasons": []
-    },
-    "attempts": "http:ok → playwright:ok",
-    "latencyMs": 13006
+    "latencyMs": 4511
   },
   {
     "company": "NVIDIA",
     "ats": "workday",
-    "title": "GPU Core Pipeline IP Verification Engineer",
-    "url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/India-Bengaluru/GPU-Core-Pipeline-IP-Verification-Engineer_JR2020914",
+    "title": "Verification Engineer - PCIE",
+    "url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/India-Bengaluru/Verification-Engineer---PCIE_JR2023400",
     "verdict": "open",
     "reason": "present in feed",
     "s2": {
@@ -817,38 +788,13 @@
       "reasons": []
     },
     "attempts": "http:ok → playwright:ok",
-    "latencyMs": 8993
-  },
-  {
-    "company": "Amazon",
-    "ats": "amazon",
-    "title": "QAE I FTC, L4, IESP Merchant Tech",
-    "url": "https://www.amazon.jobs/en/jobs/10551634/qae-i-ftc-l4-iesp-merchant-tech",
-    "verdict": "open",
-    "reason": "present in feed",
-    "s2": {
-      "outcome": "ok",
-      "status": 200,
-      "hops": 1
-    },
-    "s3": {
-      "via": "http",
-      "pageType": "job_posting",
-      "hasApply": true
-    },
-    "s4": {
-      "pass": true,
-      "titleSimilarity": 1,
-      "reasons": []
-    },
-    "attempts": "http:ok",
-    "latencyMs": 1153
+    "latencyMs": 6179
   },
   {
     "company": "JPMorgan Chase",
     "ats": "oracle",
-    "title": "Commercial and Investment Bank Credit Risk Control Management – Associate",
-    "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210780484",
+    "title": "Asset Management Business Management - Associate",
+    "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210785338",
     "verdict": "open",
     "reason": "present in feed",
     "s2": {
@@ -867,115 +813,13 @@
       "reasons": []
     },
     "attempts": "http:ok → playwright:ok",
-    "latencyMs": 16096
-  },
-  {
-    "company": "Amazon",
-    "ats": "amazon",
-    "title": "SDE-II, AB Mobile",
-    "url": "https://www.amazon.jobs/en/jobs/10591201/sde-ii-ab-mobile",
-    "verdict": "open",
-    "reason": "present in feed",
-    "s2": {
-      "outcome": "ok",
-      "status": 200,
-      "hops": 1
-    },
-    "s3": {
-      "via": "http",
-      "pageType": "job_posting",
-      "hasApply": true
-    },
-    "s4": {
-      "pass": true,
-      "titleSimilarity": 1,
-      "reasons": []
-    },
-    "attempts": "http:ok",
-    "latencyMs": 1376
-  },
-  {
-    "company": "NVIDIA",
-    "ats": "workday",
-    "title": "Formal Verification Engineer",
-    "url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/India-Bengaluru/Formal-Verification-Engineer_JR2025305",
-    "verdict": "changed",
-    "reason": "identity: location India, Bengaluru, India",
-    "s2": {
-      "outcome": "needs_render",
-      "status": 200,
-      "hops": 1
-    },
-    "s3": {
-      "via": "playwright",
-      "pageType": "job_posting",
-      "hasApply": true
-    },
-    "s4": {
-      "pass": false,
-      "titleSimilarity": 1,
-      "reasons": [
-        "location India, Bengaluru, India"
-      ]
-    },
-    "attempts": "http:ok → playwright:ok",
-    "latencyMs": 12269
-  },
-  {
-    "company": "JPMorgan Chase",
-    "ats": "oracle",
-    "title": "Markets Operations (Funding & Nostro) - Analyst",
-    "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210805007",
-    "verdict": "open",
-    "reason": "present in feed",
-    "s2": {
-      "outcome": "needs_render",
-      "status": 200,
-      "hops": 1
-    },
-    "s3": {
-      "via": "playwright",
-      "pageType": "job_posting",
-      "hasApply": true
-    },
-    "s4": {
-      "pass": true,
-      "titleSimilarity": 1,
-      "reasons": []
-    },
-    "attempts": "http:ok → playwright:ok",
-    "latencyMs": 12156
-  },
-  {
-    "company": "NVIDIA",
-    "ats": "workday",
-    "title": "CPU Verification Engineer",
-    "url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/India-Bengaluru/CPU-Verification-Engineer_JR2015980",
-    "verdict": "open",
-    "reason": "present in feed",
-    "s2": {
-      "outcome": "needs_render",
-      "status": 200,
-      "hops": 1
-    },
-    "s3": {
-      "via": "playwright",
-      "pageType": "job_posting",
-      "hasApply": true
-    },
-    "s4": {
-      "pass": true,
-      "titleSimilarity": 1,
-      "reasons": []
-    },
-    "attempts": "http:ok → playwright:ok",
-    "latencyMs": 8602
+    "latencyMs": 10015
   },
   {
     "company": "Amazon",
     "ats": "amazon",
     "title": "Software Development Engineer I",
-    "url": "https://www.amazon.jobs/en/jobs/10580014/software-development-engineer-i",
+    "url": "https://www.amazon.jobs/en/jobs/10580013/software-development-engineer-i",
     "verdict": "open",
     "reason": "present in feed",
     "s2": {
@@ -994,13 +838,13 @@
       "reasons": []
     },
     "attempts": "http:ok",
-    "latencyMs": 1619
+    "latencyMs": 918
   },
   {
     "company": "JPMorgan Chase",
     "ats": "oracle",
-    "title": "Document & Business Solutions Cash Operations Support - Analyst",
-    "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210792863",
+    "title": "Associate - Global Program Management",
+    "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210799209",
     "verdict": "open",
     "reason": "present in feed",
     "s2": {
@@ -1019,38 +863,13 @@
       "reasons": []
     },
     "attempts": "http:ok → playwright:ok",
-    "latencyMs": 11056
-  },
-  {
-    "company": "Amazon",
-    "ats": "amazon",
-    "title": "Salesforce Developer & Administrator, Amazon Business India",
-    "url": "https://www.amazon.jobs/en/jobs/10533783/salesforce-developer-administrator-amazon-business-india",
-    "verdict": "open",
-    "reason": "present in feed",
-    "s2": {
-      "outcome": "ok",
-      "status": 200,
-      "hops": 1
-    },
-    "s3": {
-      "via": "http",
-      "pageType": "job_posting",
-      "hasApply": true
-    },
-    "s4": {
-      "pass": true,
-      "titleSimilarity": 1,
-      "reasons": []
-    },
-    "attempts": "http:ok",
-    "latencyMs": 1040
+    "latencyMs": 10420
   },
   {
     "company": "NVIDIA",
     "ats": "workday",
-    "title": "ASIC Design Engineer, High Speed IO",
-    "url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/India-Bengaluru/ASIC-Design-Engineer--High-Speed-IO_JR2028797",
+    "title": "ASIC Verification Engineer",
+    "url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/India-Hyderabad/ASIC-Verification-Engineer_JR2020484",
     "verdict": "open",
     "reason": "present in feed",
     "s2": {
@@ -1069,38 +888,13 @@
       "reasons": []
     },
     "attempts": "http:ok → playwright:ok",
-    "latencyMs": 9330
-  },
-  {
-    "company": "JPMorgan Chase",
-    "ats": "oracle",
-    "title": "Client Support - Associate",
-    "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210803846",
-    "verdict": "open",
-    "reason": "present in feed",
-    "s2": {
-      "outcome": "needs_render",
-      "status": 200,
-      "hops": 1
-    },
-    "s3": {
-      "via": "playwright",
-      "pageType": "job_posting",
-      "hasApply": true
-    },
-    "s4": {
-      "pass": true,
-      "titleSimilarity": 1,
-      "reasons": []
-    },
-    "attempts": "http:ok → playwright:ok",
-    "latencyMs": 13099
+    "latencyMs": 6557
   },
   {
     "company": "Amazon",
     "ats": "amazon",
-    "title": "Applied Scientist I, Amazon Shipping",
-    "url": "https://www.amazon.jobs/en/jobs/10557374/applied-scientist-i-amazon-shipping",
+    "title": "Data Engineer I FTC, Payfort",
+    "url": "https://www.amazon.jobs/en/jobs/10506499/data-engineer-i-ftc-payfort",
     "verdict": "open",
     "reason": "present in feed",
     "s2": {
@@ -1119,38 +913,13 @@
       "reasons": []
     },
     "attempts": "http:ok",
-    "latencyMs": 1120
-  },
-  {
-    "company": "NVIDIA",
-    "ats": "workday",
-    "title": "IP Verification Engineer - GPU Core Pipeline",
-    "url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/India-Bengaluru/IP-Verification-Engineer---GPU-Core-Pipeline_JR2019962",
-    "verdict": "open",
-    "reason": "present in feed",
-    "s2": {
-      "outcome": "needs_render",
-      "status": 200,
-      "hops": 1
-    },
-    "s3": {
-      "via": "playwright",
-      "pageType": "job_posting",
-      "hasApply": true
-    },
-    "s4": {
-      "pass": true,
-      "titleSimilarity": 1,
-      "reasons": []
-    },
-    "attempts": "http:ok → playwright:ok",
-    "latencyMs": 7822
+    "latencyMs": 977
   },
   {
     "company": "JPMorgan Chase",
     "ats": "oracle",
-    "title": "Control Management-Associate",
-    "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210795316",
+    "title": "Client Technical Onboarding Specialist",
+    "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210805041",
     "verdict": "open",
     "reason": "present in feed",
     "s2": {
@@ -1169,115 +938,15 @@
       "reasons": []
     },
     "attempts": "http:ok → playwright:ok",
-    "latencyMs": 9399
-  },
-  {
-    "company": "NVIDIA",
-    "ats": "workday",
-    "title": "Front-End Integration Engineer",
-    "url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/India-Bengaluru/Front-End-Integration-Engineer_JR2024228",
-    "verdict": "open",
-    "reason": "present in feed",
-    "s2": {
-      "outcome": "needs_render",
-      "status": 200,
-      "hops": 1
-    },
-    "s3": {
-      "via": "playwright",
-      "pageType": "job_posting",
-      "hasApply": true
-    },
-    "s4": {
-      "pass": true,
-      "titleSimilarity": 1,
-      "reasons": []
-    },
-    "attempts": "http:ok → playwright:ok",
-    "latencyMs": 8044
-  },
-  {
-    "company": "Amazon",
-    "ats": "amazon",
-    "title": "Oracle Applications Functional Analyst, FinTech Cash Application, OFA Cash Application",
-    "url": "https://www.amazon.jobs/en/jobs/10427783/oracle-applications-functional-analyst-fintech-cash-application-ofa-cash-application",
-    "verdict": "open",
-    "reason": "present in feed",
-    "s2": {
-      "outcome": "ok",
-      "status": 200,
-      "hops": 1
-    },
-    "s3": {
-      "via": "http",
-      "pageType": "job_posting",
-      "hasApply": true
-    },
-    "s4": {
-      "pass": true,
-      "titleSimilarity": 1,
-      "reasons": []
-    },
-    "attempts": "http:ok",
-    "latencyMs": 1056
-  },
-  {
-    "company": "JPMorgan Chase",
-    "ats": "oracle",
-    "title": "Associate - Treasury Liquidity Controllers",
-    "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210805063",
-    "verdict": "open",
-    "reason": "present in feed",
-    "s2": {
-      "outcome": "needs_render",
-      "status": 200,
-      "hops": 1
-    },
-    "s3": {
-      "via": "playwright",
-      "pageType": "job_posting",
-      "hasApply": true
-    },
-    "s4": {
-      "pass": true,
-      "titleSimilarity": 1,
-      "reasons": []
-    },
-    "attempts": "http:ok → playwright:ok",
-    "latencyMs": 10677
-  },
-  {
-    "company": "Amazon",
-    "ats": "amazon",
-    "title": "Applied Scientist, International Machine Learning",
-    "url": "https://www.amazon.jobs/en/jobs/10458636/applied-scientist-international-machine-learning",
-    "verdict": "open",
-    "reason": "present in feed",
-    "s2": {
-      "outcome": "ok",
-      "status": 200,
-      "hops": 1
-    },
-    "s3": {
-      "via": "http",
-      "pageType": "job_posting",
-      "hasApply": true
-    },
-    "s4": {
-      "pass": true,
-      "titleSimilarity": 1,
-      "reasons": []
-    },
-    "attempts": "http:ok",
-    "latencyMs": 1200
+    "latencyMs": 10396
   },
   {
     "company": "NVIDIA",
     "ats": "workday",
     "title": "Cyber Security Analyst",
     "url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/India-Bengaluru/Cyber-Security-Analyst_JR2015853",
-    "verdict": "changed",
-    "reason": "identity: location India, Bengaluru, India",
+    "verdict": "open",
+    "reason": "present in feed",
     "s2": {
       "outcome": "needs_render",
       "status": 200,
@@ -1289,13 +958,336 @@
       "hasApply": true
     },
     "s4": {
-      "pass": false,
+      "pass": true,
       "titleSimilarity": 1,
-      "reasons": [
-        "location India, Bengaluru, India"
-      ]
+      "reasons": []
     },
     "attempts": "http:ok → playwright:ok",
-    "latencyMs": 10212
+    "latencyMs": 6455
+  },
+  {
+    "company": "Amazon",
+    "ats": "amazon",
+    "title": "Applied Scientist, CMT",
+    "url": "https://www.amazon.jobs/en/jobs/10530901/applied-scientist-cmt",
+    "verdict": "open",
+    "reason": "present in feed",
+    "s2": {
+      "outcome": "ok",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "http",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": true,
+      "titleSimilarity": 1,
+      "reasons": []
+    },
+    "attempts": "http:ok",
+    "latencyMs": 1048
+  },
+  {
+    "company": "JPMorgan Chase",
+    "ats": "oracle",
+    "title": "Valuation Controller - Anayst",
+    "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210801181",
+    "verdict": "open",
+    "reason": "present in feed",
+    "s2": {
+      "outcome": "needs_render",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "playwright",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": true,
+      "titleSimilarity": 1,
+      "reasons": []
+    },
+    "attempts": "http:ok → playwright:ok",
+    "latencyMs": 10132
+  },
+  {
+    "company": "NVIDIA",
+    "ats": "workday",
+    "title": "Verification Engineer, Memory Subsystem",
+    "url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/India-Bengaluru/Verification-Engineer--Memory-Subsystem_JR2019261",
+    "verdict": "open",
+    "reason": "present in feed",
+    "s2": {
+      "outcome": "needs_render",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "playwright",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": true,
+      "titleSimilarity": 1,
+      "reasons": []
+    },
+    "attempts": "http:ok → playwright:ok",
+    "latencyMs": 6915
+  },
+  {
+    "company": "Amazon",
+    "ats": "amazon",
+    "title": "Software Dev Engineer I FTC",
+    "url": "https://www.amazon.jobs/en/jobs/10470829/software-dev-engineer-i-ftc",
+    "verdict": "open",
+    "reason": "present in feed",
+    "s2": {
+      "outcome": "ok",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "http",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": true,
+      "titleSimilarity": 1,
+      "reasons": []
+    },
+    "attempts": "http:ok",
+    "latencyMs": 974
+  },
+  {
+    "company": "JPMorgan Chase",
+    "ats": "oracle",
+    "title": "Real Estate Appraisal Analyst",
+    "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210777422",
+    "verdict": "open",
+    "reason": "present in feed",
+    "s2": {
+      "outcome": "needs_render",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "playwright",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": true,
+      "titleSimilarity": 1,
+      "reasons": []
+    },
+    "attempts": "http:ok → playwright:ok",
+    "latencyMs": 10657
+  },
+  {
+    "company": "NVIDIA",
+    "ats": "workday",
+    "title": "Formal Verification Engineer",
+    "url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/India-Bengaluru/Formal-Verification-Engineer_JR2025305",
+    "verdict": "open",
+    "reason": "present in feed",
+    "s2": {
+      "outcome": "needs_render",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "playwright",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": true,
+      "titleSimilarity": 1,
+      "reasons": []
+    },
+    "attempts": "http:ok → playwright:ok",
+    "latencyMs": 6512
+  },
+  {
+    "company": "Amazon",
+    "ats": "amazon",
+    "title": "SDE I FTC",
+    "url": "https://www.amazon.jobs/en/jobs/10563602/sde-i-ftc",
+    "verdict": "open",
+    "reason": "present in feed",
+    "s2": {
+      "outcome": "ok",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "http",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": true,
+      "titleSimilarity": 1,
+      "reasons": []
+    },
+    "attempts": "http:ok",
+    "latencyMs": 967
+  },
+  {
+    "company": "JPMorgan Chase",
+    "ats": "oracle",
+    "title": "Data Analytics Associate",
+    "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210803884",
+    "verdict": "open",
+    "reason": "present in feed",
+    "s2": {
+      "outcome": "needs_render",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "playwright",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": true,
+      "titleSimilarity": 1,
+      "reasons": []
+    },
+    "attempts": "http:ok → playwright:ok",
+    "latencyMs": 12261
+  },
+  {
+    "company": "NVIDIA",
+    "ats": "workday",
+    "title": "DFT Engineer - Hardware",
+    "url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/India-Bengaluru/DFT-Engineer---Hardware_JR2018054",
+    "verdict": "open",
+    "reason": "present in feed",
+    "s2": {
+      "outcome": "needs_render",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "playwright",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": true,
+      "titleSimilarity": 1,
+      "reasons": []
+    },
+    "attempts": "http:ok → playwright:ok",
+    "latencyMs": 7538
+  },
+  {
+    "company": "Amazon",
+    "ats": "amazon",
+    "title": "Front-End Engineer II, FBA Placement",
+    "url": "https://www.amazon.jobs/en/jobs/10583561/front-end-engineer-ii-fba-placement",
+    "verdict": "open",
+    "reason": "present in feed",
+    "s2": {
+      "outcome": "ok",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "http",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": true,
+      "titleSimilarity": 1,
+      "reasons": []
+    },
+    "attempts": "http:ok",
+    "latencyMs": 970
+  },
+  {
+    "company": "JPMorgan Chase",
+    "ats": "oracle",
+    "title": "Associate - Treasury Liquidity Controllers",
+    "url": "https://jpmc.fa.oraclecloud.com/hcmUI/CandidateExperience/en/sites/CX_1001/job/210805064",
+    "verdict": "open",
+    "reason": "present in feed",
+    "s2": {
+      "outcome": "needs_render",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "playwright",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": true,
+      "titleSimilarity": 1,
+      "reasons": []
+    },
+    "attempts": "http:ok → playwright:ok",
+    "latencyMs": 11486
+  },
+  {
+    "company": "NVIDIA",
+    "ats": "workday",
+    "title": "ASIC Design Engineer, BOOT and Power Management",
+    "url": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite/job/India-Bengaluru/ASIC-Design-Engineer--BOOT-and-Power-Management_JR2028799-1",
+    "verdict": "open",
+    "reason": "present in feed",
+    "s2": {
+      "outcome": "needs_render",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "playwright",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": true,
+      "titleSimilarity": 1,
+      "reasons": []
+    },
+    "attempts": "http:ok → playwright:ok",
+    "latencyMs": 10072
+  },
+  {
+    "company": "Amazon",
+    "ats": "amazon",
+    "title": "Applied Scientist II, Grocery, Retail & In-Store Experience (GRAISE)",
+    "url": "https://www.amazon.jobs/en/jobs/10575126/applied-scientist-ii-grocery-retail-in-store-experience-graise",
+    "verdict": "open",
+    "reason": "present in feed",
+    "s2": {
+      "outcome": "ok",
+      "status": 200,
+      "hops": 1
+    },
+    "s3": {
+      "via": "http",
+      "pageType": "job_posting",
+      "hasApply": true
+    },
+    "s4": {
+      "pass": true,
+      "titleSimilarity": 1,
+      "reasons": []
+    },
+    "attempts": "http:ok",
+    "latencyMs": 1939
   }
 ]

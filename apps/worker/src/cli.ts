@@ -136,6 +136,13 @@ async function main() {
         for (const j of p.json.slice(0, 10)) console.log(`  JSON ${j.status} ${j.url}`);
         break;
       }
+      case "probe": {
+        // Debug: run the S5 Apply-click probe on one URL.
+        if (!values.url) throw new Error("probe needs --url");
+        if (!(await deps.http.isAllowed(values.url))) throw new Error("robots.txt disallows this URL");
+        console.log(JSON.stringify(await deps.browser().applyProbe(values.url)));
+        break;
+      }
       case "report":
         await verificationReport(deps, Number(values.sample), Number(values.apply));
         break;
@@ -157,6 +164,7 @@ async function main() {
   pnpm worker verify --job <id> | --company <name>
   pnpm worker report --sample 50 --apply 10   (verification report → reports/)
   pnpm worker render --url <url>               (debug: what our Playwright sees)
+  pnpm worker probe --url <url>                (debug: S5 Apply-click probe)
   pnpm worker audit
   pnpm worker start                            (long-running pg-boss worker)`);
     }
