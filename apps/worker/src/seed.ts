@@ -87,7 +87,16 @@ export async function seed(db: Db, file: string, enqueueDetect?: (companyId: str
       .onConflictDoUpdate({
         target: companies.name,
         // Never overwrite an ATS the detector or an admin already set with "unknown".
-        set: { ...values, ats: sql`case when excluded.ats = 'unknown' then ${companies.ats} else excluded.ats end`, updatedAt: new Date() },
+        set: {
+          ...values,
+          // When the directory says "unknown"/"own" but we already know the ATS (detector or admin),
+          // keep that ATS together with its URL and slug: they only make sense as a set.
+          ats: sql`case when excluded.ats = 'unknown' then ${companies.ats} else excluded.ats end`,
+          careersUrl: sql`case when excluded.ats = 'unknown' and ${companies.ats} <> 'unknown' then ${companies.careersUrl} else excluded.careers_url end`,
+          atsSlug: sql`case when excluded.ats = 'unknown' and ${companies.ats} <> 'unknown' then ${companies.atsSlug} else excluded.ats_slug end`,
+          tier: sql`case when excluded.ats = 'unknown' and ${companies.ats} <> 'unknown' then ${companies.tier} else excluded.tier end`,
+          updatedAt: new Date(),
+        },
       })
       .returning({ id: companies.id, ats: companies.ats, inserted: sql<boolean>`(xmax = 0)` });
     if (res?.inserted) inserted++;

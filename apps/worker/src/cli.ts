@@ -28,6 +28,8 @@ const { positionals, values } = parseArgs({
     apply: { type: "string", default: "10" },
     pending: { type: "boolean", default: false },
     url: { type: "string" },
+    details: { type: "string" },
+    all: { type: "boolean", default: false },
   },
 });
 const cmd = positionals[0];
@@ -99,7 +101,7 @@ async function main() {
         if (values.company) {
           const c = await findCompany(deps, values.company);
           console.log(`crawl ${c.name} [ats=${c.ats} tier=${c.tier}]${values.dry ? " (dry run: nothing written)" : ""}`);
-          printCrawl(await crawlCompany(deps, c, { dry: values.dry, force: values.force || values.dry }));
+          printCrawl(await crawlCompany(deps, c, { dry: values.dry, force: values.force || values.dry, maxDetailFetches: values.details ? Number(values.details) : undefined }));
           if (!values.dry) await verifyCompanyJobs(deps, c);
         } else if (values.shard !== undefined) {
           const shard = Number(values.shard);
@@ -143,6 +145,11 @@ async function main() {
         console.log(JSON.stringify(await deps.browser().applyProbe(values.url)));
         break;
       }
+      case "match": {
+        const { recomputeAll } = await import("./matching");
+        console.log(await recomputeAll(deps));
+        break;
+      }
       case "ai-check": {
         // End-to-end check of the AI route (Neon AI Gateway or Gemini) on one public job posting.
         if (!deps.ai) throw new Error("no AI configured (NEON_AI_GATEWAY_TOKEN or GEMINI_API_KEY)");
@@ -172,7 +179,8 @@ async function main() {
         console.log(`usage:
   pnpm worker seed [--file data/directory.json]
   pnpm worker detect --company <name> | --pending [--dry]
-  pnpm worker crawl --company <name> [--dry] [--force]
+  pnpm worker crawl --company <name> [--dry] [--force] [--details N]   (N = max full postings to fetch)
+  pnpm worker match --all                      (recompute every user's matches)
   pnpm worker crawl --shard N --of M          (GitHub Actions pool when INGEST_URL is set and DATABASE_URL is not)
   pnpm worker verify --job <id> | --company <name>
   pnpm worker report --sample 50 --apply 10   (verification report → reports/)

@@ -34,7 +34,8 @@ const TRACK_NEEDS_CONTEXT = new Set([
 ]);
 
 function toRaw(j: SampleJob): RawJob {
-  const text = j.exp === "Not stated" ? "" : `Experience: ${j.exp}.`;
+  // A fetched posting either states experience or doesn't; it is never empty (empty = not fetched yet).
+  const text = j.exp === "Not stated" ? `About the role: ${j.title} at ${j.company}. You will design, build and ship software with the team.` : `Experience: ${j.exp}.`;
   return {
     source: "custom",
     sourceJobId: j.url,

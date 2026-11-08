@@ -151,6 +151,20 @@ describe("salary", () => {
   it("ignores unrelated numbers", () => expect(parseSalary("We have 300 engineers in 4 offices")).toEqual({}));
 });
 
+describe("title-only listings", () => {
+  it("are held back until the full posting is fetched (NVIDIA SSE case)", () => {
+    const c = classifyRules({ ...raw("System Software Engineer - Performance Verification Infrastructure"), descriptionText: "", detailFetched: false }, acme);
+    expect(c.freshersEligible).toBe(false);
+    expect(c.rejectReasons).toContain("details not fetched yet");
+  });
+  it("once fetched, the posting's 3+ years requirement rejects it", () => {
+    const text = "What we need to see:\n• BS/MS in Computer Science.\n• 3+ years of software engineering experience, primarily in C++, with Python for tooling.\n• Docker and Kubernetes is a plus.";
+    const c = classifyRules(raw("System Software Engineer - Performance Verification Infrastructure", text), acme);
+    expect(c.minYears).toBe(3);
+    expect(c.freshersEligible).toBe(false);
+  });
+});
+
 describe("staffing", () => {
   it("rejects 'hiring for our client'", () => {
     const c = classifyRules(raw("Software Engineer", "We are hiring for our client, a leading fintech."), acme);

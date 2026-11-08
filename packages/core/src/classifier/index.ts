@@ -107,6 +107,9 @@ export function classifyRules(raw: RawJob, company: ClassifyCompany): Classified
   if (company.kind === "staffing") rejectReasons.push("staffing company");
   if (company.kind === "services" || isItServicesEmployer(company.name)) flags.push("it services employer");
 
+  // A listing without its description can't be judged (the experience line is in the text): hold it back
+  // until a crawl fetches the full posting. Never show a title-only job as a match.
+  if (!raw.detailFetched || !text.trim()) rejectReasons.push("details not fetched yet");
   if (exp.minYears === undefined) flags.push("experience not stated");
   if (emp === "unknown") flags.push("employment type not stated");
   if (!raw.detailFetched || text.length < 200) flags.push("thin description");
