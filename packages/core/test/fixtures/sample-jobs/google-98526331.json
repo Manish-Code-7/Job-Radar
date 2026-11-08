@@ -1,0 +1,22 @@
+{
+  "added": "28 Sep",
+  "addedAt": "2026-09-28T03:10:00Z",
+  "closed": true,
+  "company": "Google",
+  "exp": "1 yr min",
+  "location": "Bengaluru · On-site",
+  "note": "Early-career SWE role on YouTube in Bengaluru; minimum is a bachelor's plus 1 year of software development, which your internships plus consulting work should cover. Expect a DSA-heavy interview loop. (Auto-expired: couldn't confirm it's still open after 21 days.)",
+  "portal": "google.com/about/careers",
+  "skills": [
+    "Python",
+    "Java",
+    "JavaScript",
+    "Data structures"
+  ],
+  "status": "skip",
+  "tier": "match",
+  "title": "Software Engineer, YouTube",
+  "track": "Software",
+  "url": "https://www.google.com/about/careers/applications/jobs/results/98526331318215366-software-engineer-youtube",
+  "verify": false
+}

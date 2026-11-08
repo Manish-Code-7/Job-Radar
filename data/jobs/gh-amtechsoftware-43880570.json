@@ -1,0 +1,22 @@
+{
+  "added": "8 Oct",
+  "addedAt": "2026-10-08T03:04:37Z",
+  "company": "Amtech Software",
+  "exp": "Entry-level",
+  "lastChecked": "2026-11-02T02:49:30Z",
+  "location": "Bengaluru",
+  "note": "Entry-level engineer on Amtech's manufacturing ERP platform. Junior by design, but the stack is C#/.NET and SQL Server, not JS/TS, so expect to pick up .NET.",
+  "portal": "job-boards.greenhouse.io/amtechsoftware",
+  "skills": [
+    "C#/.NET",
+    "SQL",
+    "Unit testing",
+    "Git"
+  ],
+  "status": "new",
+  "tier": "match",
+  "title": "Associate Software Engineer (C#/.NET)",
+  "track": "Software",
+  "url": "https://job-boards.greenhouse.io/amtechsoftware/jobs/4388057009",
+  "verify": false
+}

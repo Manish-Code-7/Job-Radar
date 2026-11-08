@@ -1,0 +1,22 @@
+{
+  "added": "8 Oct",
+  "addedAt": "2026-10-08T03:04:37Z",
+  "closed": true,
+  "company": "bswift",
+  "exp": "2–3 yrs",
+  "location": "Bengaluru · Hybrid",
+  "note": "US benefits-administration SaaS building LLM and agentic tools for enrollment and HR automation. Strong match for your LLM/agents and AWS work, but it asks for 2–3 years, so it's a stretch. (Posting closed, checked 2 Nov.)",
+  "portal": "job-boards.greenhouse.io/bswiftindia",
+  "skills": [
+    "Python",
+    "LangChain/LangGraph",
+    "RAG",
+    "AWS"
+  ],
+  "status": "skip",
+  "tier": "stretch",
+  "title": "AI Engineer",
+  "track": "AI-ML",
+  "url": "https://job-boards.greenhouse.io/bswiftindia/jobs/4623067006",
+  "verify": false
+}

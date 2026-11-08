@@ -1,0 +1,22 @@
+{
+  "added": "8 Oct",
+  "addedAt": "2026-10-08T03:04:37Z",
+  "company": "Amtech Software",
+  "exp": "0–2 yrs",
+  "lastChecked": "2026-11-02T02:49:30Z",
+  "location": "Bengaluru",
+  "note": "Amtech makes ERP software for packaging and print manufacturers. Entry SRE role (on-call with senior backup) that values your AWS, Docker and Kubernetes work; it also touches Windows Server and VMware.",
+  "portal": "job-boards.greenhouse.io/amtechsoftware",
+  "skills": [
+    "AWS",
+    "Python/Bash",
+    "Linux",
+    "Terraform/Docker"
+  ],
+  "status": "new",
+  "tier": "match",
+  "title": "Associate Site Reliability Engineer",
+  "track": "DevOps",
+  "url": "https://job-boards.greenhouse.io/amtechsoftware/jobs/4361524009",
+  "verify": false
+}

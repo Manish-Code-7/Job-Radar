@@ -1,0 +1,22 @@
+{
+  "added": "5 Oct",
+  "addedAt": "2026-10-05T03:06:00Z",
+  "company": "Digantara",
+  "exp": "1–2 yrs",
+  "lastChecked": "2026-11-02T02:49:30Z",
+  "location": "Bengaluru (Hebbal) · On-site",
+  "note": "Digantara builds space-situational-awareness satellites and software; this SRE-1 role runs Docker-based cloud deployments, CI/CD and Prometheus/Grafana monitoring, matching your Docker/AWS/Kubernetes side. Gaps: Terraform/Ansible and some Windows admin, plus 5 days on-site and occasional client-site deployments.",
+  "portal": "careers.kula.ai/digantara",
+  "skills": [
+    "Docker",
+    "AWS",
+    "Terraform/Ansible",
+    "GitHub Actions"
+  ],
+  "status": "new",
+  "tier": "match",
+  "title": "Site Reliability Engineer-1",
+  "track": "DevOps",
+  "url": "https://careers.kula.ai/digantara/54886-site-reliability-engineer-1",
+  "verify": false
+}

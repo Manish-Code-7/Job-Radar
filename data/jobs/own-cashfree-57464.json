@@ -1,0 +1,22 @@
+{
+  "added": "4 Oct",
+  "addedAt": "2026-10-04T03:30:00Z",
+  "closed": true,
+  "company": "Cashfree Payments",
+  "exp": "0–1 yrs",
+  "location": "Bengaluru · On-site (Bellandur)",
+  "note": "Cashfree runs payment gateway and payouts infrastructure for Indian businesses. Explicitly 0–1 yrs and wants Kubernetes, cloud and Python, which match your Docker/K8s/AWS work; Terraform and observability tooling (Prometheus/Grafana) would be new. (Posting closed, checked 2 Nov.)",
+  "portal": "careers.kula.ai/cashfree",
+  "skills": [
+    "Kubernetes",
+    "AWS/GCP",
+    "Terraform",
+    "Python/Go"
+  ],
+  "status": "skip",
+  "tier": "match",
+  "title": "Software Development Engineer Infra - 1",
+  "track": "DevOps",
+  "url": "https://careers.kula.ai/cashfree/57464-software-development-engineer-infra-1",
+  "verify": false
+}

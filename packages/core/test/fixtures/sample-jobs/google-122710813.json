@@ -1,0 +1,22 @@
+{
+  "added": "23 Sep",
+  "addedAt": "2026-09-23T10:45:00Z",
+  "closed": true,
+  "company": "Google",
+  "exp": "1 yr min",
+  "location": "Bengaluru",
+  "note": "Early-career SWE on Search, with a 1-year minimum. Expect a DSA-heavy interview loop; worth serious prep. (Auto-expired: couldn't confirm it's still open after 21 days.)",
+  "portal": "google.com/about/careers",
+  "skills": [
+    "Data structures",
+    "Algorithms",
+    "Java/C++/Python",
+    "Distributed systems"
+  ],
+  "status": "skip",
+  "tier": "match",
+  "title": "Software Engineer, Search",
+  "track": "Software",
+  "url": "https://www.google.com/about/careers/applications/jobs/results/122710813273137862-software-engineer-search",
+  "verify": false
+}

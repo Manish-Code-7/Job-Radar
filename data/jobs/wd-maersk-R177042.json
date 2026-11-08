@@ -1,0 +1,21 @@
+{
+  "added": "25 Sep",
+  "addedAt": "2026-09-25T02:56:39Z",
+  "company": "Maersk",
+  "exp": "Not stated",
+  "location": "Bengaluru",
+  "note": "Couldn't open the Workday page automatically. Check the experience line before applying. Maersk's Bengaluru tech centre builds logistics and shipping platforms; its Associate SE roles usually take freshers with Java/.NET plus cloud, so your AWS/Docker work helps. Java or C# may be a gap.",
+  "portal": "maersk.wd3.myworkdayjobs.com",
+  "skills": [
+    "Java/C#",
+    "Cloud (Azure/AWS)",
+    "REST APIs",
+    "React"
+  ],
+  "status": "new",
+  "tier": "match",
+  "title": "Associate Software Engineer",
+  "track": "Software",
+  "url": "https://maersk.wd3.myworkdayjobs.com/en-US/Maersk_Careers/job/India-Bengaluru-560064/Associate-Software-Engineer_R177042",
+  "verify": true
+}

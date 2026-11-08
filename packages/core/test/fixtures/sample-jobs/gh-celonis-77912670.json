@@ -1,0 +1,22 @@
+{
+  "added": "1 Oct",
+  "addedAt": "2026-10-01T03:05:00Z",
+  "company": "Celonis",
+  "exp": "1–3 yrs",
+  "lastChecked": "2026-11-02T02:49:30Z",
+  "location": "Bengaluru",
+  "note": "Celonis builds process-mining software for enterprises; this team supports its on-prem apps and is moving them to the cloud. Your backend and Docker experience fits the 1–3 yr ask, but it's Java/Spring rather than Node/TypeScript.",
+  "portal": "job-boards.greenhouse.io/celonis",
+  "skills": [
+    "Java",
+    "Spring Boot",
+    "Microservices",
+    "DSA"
+  ],
+  "status": "new",
+  "tier": "match",
+  "title": "Associate Software Engineer - Java",
+  "track": "Software",
+  "url": "https://job-boards.greenhouse.io/celonis/jobs/7791267003",
+  "verify": false
+}

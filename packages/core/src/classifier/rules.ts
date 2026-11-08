@@ -85,7 +85,8 @@ export function seniorityFromTitle(title: string): SeniorityResult {
   const roman = t.match(/\b(I{1,3}|IV|V)\b/);
   const digit = t.match(/\b(?:SDE|SWE|engineer|developer|analyst|L|level|grade)[\s-]*([1-6])\b/i);
   const lvl = roman ? ({ I: 1, II: 2, III: 3, IV: 4, V: 5 } as Record<string, number>)[roman[1]!] : digit ? Number(digit[1]) : undefined;
-  if (lvl !== undefined && lvl >= 3) return { seniority: "mid", level: lvl, reject: `level ${lvl}` };
+  if (lvl !== undefined && lvl >= 4) return { seniority: "mid", level: lvl, reject: `level ${lvl}` };
+  if (lvl === 3) return { seniority: "mid", level: 3 }; // decided with the stated experience (see classifyRules)
   if (lvl === 2) return { seniority: "mid", level: 2 };
   if (lvl === 1 || ENTRY_WORDS.test(t)) return { seniority: "entry", level: lvl ?? 1 };
   return { seniority: "unknown" };
@@ -155,7 +156,9 @@ export function parseExperience(text: string): ExperienceResult {
   for (const m of s.matchAll(new RegExp(`${NUM}\\s*${UNIT}(?:'s)?\\s+(?:of\\s+)?(?:[a-z/+#.-]+\\s+){0,4}experience`, "gi")))
     push(m, toYears(Number(m[1]), m[2]!));
 
-  const fresher = /\b(freshers?|fresh graduates?|new grads?|recent graduates?|0\s*years?|no (prior )?experience (is )?required|entry[- ]level)\b/i.test(s);
+  const fresher =
+    /\b(freshers?|fresh graduates?|new grads?|recent graduates?|0\s*years?|no (prior )?experience (is )?required|entry[- ]level)\b/i.test(s) ||
+    /\b20\d\d(\s*[/&,-]\s*20\d\d)?\s+(graduates?|grads?|batch|pass[- ]?outs?)\b/i.test(s);
 
   const required = hits.filter((h) => !h.preferred);
   const pool = required.length ? required : [];
@@ -218,7 +221,7 @@ export function parseSalary(text: string): SalaryResult {
 /* -------------------------------- Track -------------------------------- */
 const TRACK_RULES: [Track, RegExp, RegExp?][] = [
   ["ai_ml", /\b(machine learning|deep learning|data scien\w*|computer vision|nlp|natural language|llm|gen ?ai|generative ai|artificial intelligence|mlops|applied scientist|research scientist)\b/i, /\b(AI|ML)\b/],
-  ["devops", /\b(devops|dev ops|site reliability|sre|platform engineer\w*|infrastructure|cloud engineer|cloud ops|devsecops|kubernetes|release engineer)\b/i],
+  ["devops", /\b(devops|dev ops|site reliability|sre|platform engineer\w*|infrastructure|infra|cloud engineer|cloud ops|devsecops|kubernetes|release engineer)\b/i],
   ["data", /\b(data engineer\w*|data analyst|analytics engineer|business intelligence|bi developer|etl|big data|data platform|data analytics)\b/i],
   ["qa", /\b(qa|quality assurance|quality engineer|test(ing)? engineer|sdet|automation test\w*|tester)\b/i],
   ["software", /\b(software|developer|sde|swe|engineer|programmer|frontend|front-end|backend|back-end|full[- ]?stack|mobile|android|ios|web|application)\b/i],

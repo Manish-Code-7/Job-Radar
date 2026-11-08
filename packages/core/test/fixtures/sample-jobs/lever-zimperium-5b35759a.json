@@ -1,0 +1,22 @@
+{
+  "added": "23 Sep",
+  "addedAt": "2026-09-23T09:33:00Z",
+  "company": "Zimperium",
+  "exp": "Not stated",
+  "lastChecked": "2026-11-02T02:49:30Z",
+  "location": "Remote · India / Bengaluru",
+  "note": "Platform/SRE-flavoured role combining Python backend work with IaC and CI/CD. It doesn't list years of experience and reads mid-level, so it's worth a shot but a stretch.",
+  "portal": "jobs.lever.co/zimperium",
+  "skills": [
+    "Python",
+    "Docker",
+    "Kubernetes",
+    "Terraform"
+  ],
+  "status": "new",
+  "tier": "stretch",
+  "title": "AI Software Engineer (Python)",
+  "track": "DevOps",
+  "url": "https://jobs.lever.co/zimperium/5b35759a-d445-4fcb-b255-d719330af055",
+  "verify": true
+}

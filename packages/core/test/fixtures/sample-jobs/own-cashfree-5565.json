@@ -1,0 +1,22 @@
+{
+  "added": "4 Oct",
+  "addedAt": "2026-10-04T03:30:00Z",
+  "closed": true,
+  "company": "Cashfree Payments",
+  "exp": "1+ yrs",
+  "location": "Bengaluru · On-site (Bellandur)",
+  "note": "Backend SDE 1 on Cashfree's payments platform. Your backend and DB experience transfers, but the stack is Java/Go rather than Node, so expect a DSA-heavy interview. (Posting closed, checked 2 Nov.)",
+  "portal": "careers.kula.ai/cashfree",
+  "skills": [
+    "Java/Go",
+    "DSA",
+    "NoSQL",
+    "Distributed systems"
+  ],
+  "status": "skip",
+  "tier": "match",
+  "title": "Software Development Engineer 1",
+  "track": "Software",
+  "url": "https://careers.kula.ai/cashfree/5565-software-development-engineer-1",
+  "verify": false
+}

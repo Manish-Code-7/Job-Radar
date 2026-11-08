@@ -1,0 +1,22 @@
+{
+  "added": "29 Sep",
+  "addedAt": "2026-09-29T02:58:47Z",
+  "company": "Amazon",
+  "exp": "2026 graduates",
+  "lastChecked": "2026-11-02T02:49:30Z",
+  "location": "Bengaluru · Hyderabad · Chennai",
+  "note": "Amazon's university-hire SDE I, open specifically to 2026 CS graduates, with Bengaluru as one of the locations. You fit the graduation-year requirement exactly. Expect a DSA-heavy interview loop.",
+  "portal": "amazon.jobs",
+  "skills": [
+    "Data structures",
+    "Distributed systems",
+    "Java/Python",
+    "Agile"
+  ],
+  "status": "new",
+  "tier": "match",
+  "title": "Software Dev Engineer I, Amazon University Talent Acquisition",
+  "track": "Software",
+  "url": "https://amazon.jobs/en/jobs/10454438/software-dev-engineer-i-amazon-university-talent-acquisition",
+  "verify": false
+}

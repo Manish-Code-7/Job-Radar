@@ -1,0 +1,22 @@
+{
+  "added": "1 Nov",
+  "addedAt": "2026-11-01T02:46:34Z",
+  "company": "Safe Security",
+  "exp": "2–4 yrs",
+  "lastChecked": "2026-11-02T02:49:30Z",
+  "location": "Bengaluru · On-site",
+  "note": "Safe Security makes AI-driven cyber-risk quantification. This team builds GPU and LLM-serving infrastructure, so your Kubernetes, AWS and LLM work is relevant, but the 2-year minimum and the CUDA/vLLM depth make it a stretch.",
+  "portal": "jobs.lever.co/safe",
+  "skills": [
+    "Kubernetes & Docker",
+    "Python/Go",
+    "AWS + Terraform",
+    "LLM serving (vLLM/KServe)"
+  ],
+  "status": "new",
+  "tier": "stretch",
+  "title": "SDE II – AI Platform",
+  "track": "AI-ML",
+  "url": "https://jobs.lever.co/safe/fb78afcd-5711-44d4-8533-56a6349dd528",
+  "verify": false
+}

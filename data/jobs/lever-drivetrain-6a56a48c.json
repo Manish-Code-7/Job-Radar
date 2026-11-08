@@ -1,0 +1,22 @@
+{
+  "added": "14 Oct",
+  "addedAt": "2026-10-14T03:15:00Z",
+  "company": "Drivetrain",
+  "exp": "Not stated",
+  "lastChecked": "2026-11-02T02:49:30Z",
+  "location": "Remote · India",
+  "note": "Same FP&A platform; backend SDE owning automation frameworks and performance. Your QA internship, Playwright and Node/Python work fit well; no years stated, but it asks for a 'proven track record' in backend optimisation.",
+  "portal": "jobs.lever.co/drivetrain",
+  "skills": [
+    "Python/Node.js",
+    "REST/GraphQL",
+    "Test automation",
+    "Docker/K8s"
+  ],
+  "status": "new",
+  "tier": "stretch",
+  "title": "SDE (Automation & Quality Focus)",
+  "track": "Software",
+  "url": "https://jobs.lever.co/drivetrain/6a56a48c-32e0-43ee-ac4b-b6638c83f81f",
+  "verify": false
+}

@@ -1,0 +1,22 @@
+{
+  "added": "24 Sep",
+  "addedAt": "2026-09-24T03:26:38Z",
+  "company": "Conga",
+  "exp": "1–3 yrs",
+  "lastChecked": "2026-11-02T02:49:30Z",
+  "location": "Bengaluru · Hybrid (Electronic City)",
+  "note": "Conga builds contract and revenue lifecycle SaaS and is adding GenAI features. Your Python, LLM agents, Docker and Kubernetes fit well; GCP/Vertex AI and LangGraph may be new.",
+  "portal": "job-boards.greenhouse.io/conga",
+  "skills": [
+    "Python",
+    "LangChain/LangGraph",
+    "GCP Vertex AI",
+    "Docker/K8s"
+  ],
+  "status": "new",
+  "tier": "match",
+  "title": "Associate Software Engineer, AI",
+  "track": "AI-ML",
+  "url": "https://job-boards.greenhouse.io/conga/jobs/5209092007",
+  "verify": false
+}

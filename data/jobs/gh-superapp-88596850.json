@@ -1,0 +1,22 @@
+{
+  "added": "8 Oct",
+  "addedAt": "2026-10-08T03:04:37Z",
+  "closed": true,
+  "company": "SuperApp",
+  "exp": "1–2 yrs",
+  "location": "Bengaluru · Hybrid",
+  "note": "Bengaluru startup building a multiplayer AI collaboration workspace and an enterprise document-AI hub. Explicit early-careers backend role; the stack is Go/Python microservices rather than Node/TS, so Go is the gap to close. (Auto-expired: couldn't confirm it's still open after 21 days.)",
+  "portal": "job-boards.greenhouse.io/superapp",
+  "skills": [
+    "Go",
+    "Python",
+    "gRPC",
+    "Kafka/Redis"
+  ],
+  "status": "skip",
+  "tier": "match",
+  "title": "Software Engineer, Backend (Early Careers)",
+  "track": "Software",
+  "url": "https://job-boards.greenhouse.io/superapp/jobs/8859685002",
+  "verify": false
+}

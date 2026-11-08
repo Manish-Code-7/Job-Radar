@@ -30,7 +30,8 @@ export function mapKind(k: string): { kind: CompanyKind; excluded: boolean; reas
 
 export function mapAts(a: string): Ats {
   const s = a.trim().toLowerCase().replace(/[^a-z]/g, "");
-  const alias: Record<string, Ats> = { sapsuccessfactors: "successfactors", sf: "successfactors", oraclerecruiting: "oracle", oraclecloud: "oracle", taleo: "oracle", zohorecruit: "zoho", amazonjobs: "amazon", googlecareers: "google", none: "unknown", "": "unknown" };
+  // "own" = the company's own careers site: often a known ATS underneath, so let the detector decide.
+  const alias: Record<string, Ats> = { sapsuccessfactors: "successfactors", sf: "successfactors", oraclerecruiting: "oracle", oraclecloud: "oracle", taleo: "oracle", zohorecruit: "zoho", amazonjobs: "amazon", googlecareers: "google", own: "unknown", atlassian: "custom", none: "unknown", "": "unknown" };
   return alias[s] ?? (ATS_VALUES as readonly string[]).find((x) => x === s) as Ats ?? "unknown";
 }
 
@@ -54,7 +55,10 @@ function crawlHourFor(name: string, ats: Ats): number {
 
 export async function seed(db: Db, file: string, enqueueDetect?: (companyId: string) => Promise<void>) {
   if (!existsSync(file)) throw new Error(`seed file not found: ${file}. Unzip job-radar-data.zip into ./data first.`);
-  const rows = z.array(DirectoryRow).parse(JSON.parse(readFileSync(file, "utf8")));
+  // Accept either a bare array or { companies: [...], note, updated }.
+  const parsedFile = JSON.parse(readFileSync(file, "utf8")) as unknown;
+  const list = Array.isArray(parsedFile) ? parsedFile : (parsedFile as { companies?: unknown }).companies;
+  const rows = z.array(DirectoryRow).parse(list);
   let inserted = 0;
   let updated = 0;
   const unknown: string[] = [];
@@ -66,7 +70,7 @@ export async function seed(db: Db, file: string, enqueueDetect?: (companyId: str
     const values = {
       name: r.name.trim(),
       domain: domainOf(r.careers),
-      cities: r.area ? [r.area.includes(",") ? r.area.split(",").pop()!.trim() : "Bengaluru"] : ["Bengaluru"],
+      cities: ["Bengaluru"], // the directory is Bengaluru-only; `area` (e.g. "Manyata Tech Park") is kept in seedMeta
       kind: services ? ("services" as const) : k.kind,
       ats,
       atsSlug: r.slug ?? null,

@@ -1,0 +1,22 @@
+{
+  "added": "8 Oct",
+  "addedAt": "2026-10-08T03:04:37Z",
+  "closed": true,
+  "company": "Commvault",
+  "exp": "Not stated",
+  "location": "Bengaluru (or Hyderabad/Pune)",
+  "note": "Data-protection and cyber-resilience company hiring a non-senior GenAI engineer for chatbots and CRM-facing AI. Fits your Gemini/NLP/agents work; the posting gives no years, and PyTorch/TensorFlow depth may be a gap. (Auto-expired: couldn't confirm it's still open after 21 days.)",
+  "portal": "job-boards.greenhouse.io/commvault",
+  "skills": [
+    "Python",
+    "NLP",
+    "GenAI/chatbots",
+    "Cloud AI"
+  ],
+  "status": "skip",
+  "tier": "stretch",
+  "title": "Software Engineer (AI with Gen AI)",
+  "track": "AI-ML",
+  "url": "https://job-boards.greenhouse.io/commvault/jobs/5425593008",
+  "verify": false
+}

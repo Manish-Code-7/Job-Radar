@@ -95,9 +95,12 @@ export function classifyRules(raw: RawJob, company: ClassifyCompany): Classified
   if (!loc.inIndia) rejectReasons.push("not in India");
   if (REJECTED_EMPLOYMENT.includes(emp)) rejectReasons.push(`employment type: ${emp}`);
   if (sen.reject) rejectReasons.push(sen.reject);
-  if (sen.level === 2 && !(exp.minYears !== undefined && exp.minYears <= 2)) {
-    rejectReasons.push("level II without ≤2 years stated");
+  // Levels II and III vary by company (Google's SWE III is early-career): keep them only when the posting
+  // itself states ≤ 2 years. Level IV+ is always out.
+  if ((sen.level === 2 || sen.level === 3) && !(exp.minYears !== undefined && exp.minYears <= 2)) {
+    rejectReasons.push(`level ${sen.level === 2 ? "II" : "III"} without ≤2 years stated`);
   }
+  if (sen.level === 3 && exp.minYears !== undefined && exp.minYears <= 2) flags.push("level III (stretch)");
   if (exp.minYears !== undefined && exp.minYears > 2) rejectReasons.push(`requires ${exp.minYears}+ years`);
   const staffing = staffingSignal(text, company.name);
   if (staffing) rejectReasons.push(staffing);

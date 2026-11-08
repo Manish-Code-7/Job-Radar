@@ -1,0 +1,22 @@
+{
+  "added": "5 Oct",
+  "addedAt": "2026-10-05T03:06:00Z",
+  "closed": true,
+  "company": "Conga",
+  "exp": "6 months min",
+  "location": "Bengaluru",
+  "note": "Conga builds revenue-lifecycle/contract software and is hiring Python GenAI engineers (FastAPI, LangChain/LangGraph); fits your LLM/agents and Python work. This is a second requisition alongside the Conga AI role already on the board, so one application may cover both. (Posting closed, checked 2 Nov.)",
+  "portal": "job-boards.greenhouse.io/conga",
+  "skills": [
+    "Python/FastAPI",
+    "LangChain/LangGraph",
+    "GenAI",
+    "CI/CD"
+  ],
+  "status": "skip",
+  "tier": "match",
+  "title": "Associate Software Engineer, AI",
+  "track": "AI-ML",
+  "url": "https://job-boards.greenhouse.io/conga/jobs/5066175007",
+  "verify": false
+}

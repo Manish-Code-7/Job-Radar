@@ -1,0 +1,2807 @@
+{
+  "companies": [
+    {
+      "area": "Manyata Tech Park",
+      "ats": "own",
+      "careers": "https://www.ibm.com/careers/search?field_keyword_05[0]=India",
+      "kind": "MNC",
+      "name": "IBM",
+      "readable": false
+    },
+    {
+      "area": "Manyata Tech Park",
+      "ats": "own",
+      "careers": "https://careers.cognizant.com/global-en/jobs/?location=Bengaluru",
+      "kind": "Services",
+      "name": "Cognizant",
+      "readable": false
+    },
+    {
+      "area": "Manyata Tech Park",
+      "ats": "workday",
+      "careers": "https://philips.wd3.myworkdayjobs.com/jobs-and-careers",
+      "kind": "MNC",
+      "name": "Philips",
+      "readable": false
+    },
+    {
+      "area": "Manyata Tech Park",
+      "ats": "own",
+      "careers": "https://www.nokia.com/about-us/careers/",
+      "kind": "MNC",
+      "name": "Nokia",
+      "readable": false
+    },
+    {
+      "area": "Manyata Tech Park",
+      "ats": "workday",
+      "careers": "https://target.wd5.myworkdayjobs.com/targetcareers",
+      "kind": "MNC",
+      "name": "Target",
+      "readable": false
+    },
+    {
+      "area": "Manyata Tech Park",
+      "ats": "workday",
+      "careers": "https://fmr.wd1.myworkdayjobs.com/FidelityCareers",
+      "kind": "MNC",
+      "name": "Fidelity Investments",
+      "readable": false
+    },
+    {
+      "area": "Manyata Tech Park",
+      "ats": "own",
+      "careers": "https://www.commbank.com.au/about-us/careers.html",
+      "kind": "MNC",
+      "name": "Commonwealth Bank (CBA India)",
+      "readable": false
+    },
+    {
+      "area": "Manyata Tech Park",
+      "ats": "own",
+      "careers": "https://careers.anz.com/",
+      "kind": "MNC",
+      "name": "ANZ",
+      "readable": false
+    },
+    {
+      "area": "Manyata Tech Park",
+      "ats": "workday",
+      "careers": "https://careers.rolls-royce.com/",
+      "kind": "MNC",
+      "name": "Rolls-Royce",
+      "readable": false
+    },
+    {
+      "area": "Manyata Tech Park",
+      "ats": "own",
+      "careers": "https://careers.unisys.com/",
+      "kind": "Services",
+      "name": "Unisys",
+      "readable": false
+    },
+    {
+      "area": "Manyata Tech Park",
+      "ats": "own",
+      "careers": "https://careers.oracle.com/",
+      "kind": "MNC",
+      "name": "Oracle Health (Cerner)",
+      "readable": false
+    },
+    {
+      "area": "Manyata Tech Park",
+      "ats": "workday",
+      "careers": "https://careers.lamresearch.com/",
+      "kind": "MNC",
+      "name": "Lam Research",
+      "readable": false
+    },
+    {
+      "area": "Whitefield (EPIP)",
+      "ats": "own",
+      "careers": "https://jobs.sap.com/search/?locationsearch=Bangalore",
+      "kind": "MNC",
+      "name": "SAP Labs India",
+      "readable": false
+    },
+    {
+      "area": "Whitefield (EPIP)",
+      "ats": "own",
+      "careers": "https://jobs.gecareers.com/",
+      "kind": "MNC",
+      "name": "GE Aerospace / GE HealthCare",
+      "readable": false
+    },
+    {
+      "area": "Whitefield (EPIP)",
+      "ats": "own",
+      "careers": "https://group.mercedes-benz.com/careers/",
+      "kind": "MNC",
+      "name": "Mercedes-Benz R&D India",
+      "readable": false
+    },
+    {
+      "area": "Whitefield",
+      "ats": "workday",
+      "careers": "https://dell.wd1.myworkdayjobs.com/External",
+      "kind": "MNC",
+      "name": "Dell Technologies",
+      "readable": false
+    },
+    {
+      "area": "Whitefield / Kadubeesanahalli",
+      "ats": "own",
+      "careers": "https://careers.oracle.com/",
+      "kind": "MNC",
+      "name": "Oracle",
+      "readable": false
+    },
+    {
+      "area": "Whitefield",
+      "ats": "own",
+      "careers": "https://career.huawei.com/",
+      "kind": "MNC",
+      "name": "Huawei India",
+      "readable": false
+    },
+    {
+      "area": "Whitefield",
+      "ats": "workday",
+      "careers": "https://harman.wd3.myworkdayjobs.com/HARMAN",
+      "kind": "MNC",
+      "name": "Harman",
+      "readable": false
+    },
+    {
+      "area": "Whitefield",
+      "ats": "workday",
+      "careers": "https://careers.se.com/",
+      "kind": "MNC",
+      "name": "Schneider Electric",
+      "readable": false
+    },
+    {
+      "area": "Whitefield",
+      "ats": "own",
+      "careers": "https://www.tesco-careers.com/",
+      "kind": "MNC",
+      "name": "Tesco Technology",
+      "readable": false
+    },
+    {
+      "area": "Whitefield",
+      "ats": "own",
+      "careers": "https://www.sasken.com/careers",
+      "kind": "Services",
+      "name": "Sasken",
+      "readable": false
+    },
+    {
+      "area": "Whitefield",
+      "ats": "own",
+      "careers": "https://careers.mphasis.com/",
+      "kind": "Services",
+      "name": "Mphasis",
+      "readable": false
+    },
+    {
+      "area": "Whitefield",
+      "ats": "workday",
+      "careers": "https://careers.unilever.com/",
+      "kind": "MNC",
+      "name": "Unilever (Hindustan Unilever tech)",
+      "readable": false
+    },
+    {
+      "area": "Whitefield / Mahadevapura",
+      "ats": "workday",
+      "careers": "https://www.shell.in/careers.html",
+      "kind": "MNC",
+      "name": "Shell Technology Centre",
+      "readable": false
+    },
+    {
+      "area": "Electronic City",
+      "ats": "own",
+      "careers": "https://career.infosys.com/",
+      "kind": "Services",
+      "name": "Infosys",
+      "readable": false
+    },
+    {
+      "area": "Electronic City / Sarjapur",
+      "ats": "own",
+      "careers": "https://careers.wipro.com/",
+      "kind": "Services",
+      "name": "Wipro",
+      "readable": false
+    },
+    {
+      "area": "Whitefield / Electronic City",
+      "ats": "own",
+      "careers": "https://ibegin.tcs.com/",
+      "kind": "Services",
+      "name": "TCS",
+      "readable": false
+    },
+    {
+      "area": "Electronic City",
+      "ats": "own",
+      "careers": "https://jobs.siemens.com/",
+      "kind": "MNC",
+      "name": "Siemens",
+      "readable": false
+    },
+    {
+      "area": "Electronic City",
+      "ats": "own",
+      "careers": "https://www.syngeneintl.com/careers/",
+      "kind": "MNC",
+      "name": "Biocon / Syngene tech",
+      "readable": false
+    },
+    {
+      "area": "Electronic City",
+      "ats": "own",
+      "careers": "https://www.hcltech.com/careers",
+      "kind": "Services",
+      "name": "HCLTech",
+      "readable": false
+    },
+    {
+      "area": "Electronic City",
+      "ats": "own",
+      "careers": "https://careers.techmahindra.com/",
+      "kind": "Services",
+      "name": "Tech Mahindra",
+      "readable": false
+    },
+    {
+      "area": "Global Village Tech Park",
+      "ats": "own",
+      "careers": "https://www.ltimindtree.com/careers/",
+      "kind": "Services",
+      "name": "LTIMindtree",
+      "readable": false
+    },
+    {
+      "area": "Global Village Tech Park / multiple",
+      "ats": "own",
+      "careers": "https://www.accenture.com/in-en/careers/jobsearch?jk=&sb=1&vw=0&is_rj=0&pg=1&lc=Bengaluru",
+      "kind": "Services",
+      "name": "Accenture",
+      "readable": false
+    },
+    {
+      "area": "Electronic City / Global Village",
+      "ats": "own",
+      "careers": "https://www.happiestminds.com/careers/",
+      "kind": "Services",
+      "name": "Happiest Minds",
+      "readable": false
+    },
+    {
+      "area": "Embassy Tech Village (ORR)",
+      "ats": "own",
+      "careers": "https://www.flipkartcareers.com/",
+      "kind": "Product",
+      "name": "Flipkart",
+      "readable": false
+    },
+    {
+      "area": "Prestige Tech Park (ORR)",
+      "ats": "own",
+      "careers": "https://careers.jpmorgan.com/in/en/home",
+      "kind": "MNC",
+      "name": "JPMorgan Chase",
+      "readable": false
+    },
+    {
+      "area": "Prestige Tech Park (ORR)",
+      "ats": "greenhouse",
+      "kind": "Product",
+      "name": "Samsara",
+      "readable": true,
+      "slug": "samsara"
+    },
+    {
+      "area": "Cessna Business Park (ORR)",
+      "ats": "workday",
+      "careers": "https://cisco.wd5.myworkdayjobs.com/Cisco_Careers",
+      "kind": "MNC",
+      "name": "Cisco",
+      "readable": false
+    },
+    {
+      "area": "ORR (Devarabeesanahalli)",
+      "ats": "workday",
+      "careers": "https://intel.wd1.myworkdayjobs.com/External",
+      "kind": "MNC",
+      "name": "Intel",
+      "readable": false
+    },
+    {
+      "area": "Prestige Ferns Galaxy / ORR",
+      "ats": "own",
+      "careers": "https://jobs.careers.microsoft.com/global/en/search?lc=Bangalore%2C%20Karnataka%2C%20India",
+      "kind": "MNC",
+      "name": "Microsoft",
+      "readable": false
+    },
+    {
+      "area": "Bagmane / ORR",
+      "ats": "google",
+      "careers": "https://www.google.com/about/careers/applications/jobs/results/?location=Bengaluru%2C%20India&target_level=EARLY&employment_type=FULL_TIME&q=software",
+      "kind": "MNC",
+      "name": "Google",
+      "readable": true
+    },
+    {
+      "area": "Bagmane / multiple",
+      "ats": "amazon",
+      "careers": "https://www.amazon.jobs/en/search.json?base_query=software%20development%20engineer&loc_query=Bengaluru&country=IND&result_limit=50&sort=recent",
+      "kind": "MNC",
+      "name": "Amazon",
+      "readable": true
+    },
+    {
+      "area": "Embassy Tech Village (ORR)",
+      "ats": "workday",
+      "careers": "https://walmart.wd5.myworkdayjobs.com/WalmartExternal",
+      "kind": "MNC",
+      "name": "Walmart Global Tech",
+      "readable": false
+    },
+    {
+      "area": "ORR (Crest / RMZ)",
+      "ats": "own",
+      "careers": "https://higher.gs.com/results?LOCATION=Bengaluru",
+      "kind": "MNC",
+      "name": "Goldman Sachs",
+      "readable": false
+    },
+    {
+      "area": "ORR (Embassy Tech Village)",
+      "ats": "own",
+      "careers": "https://www.wellsfargojobs.com/",
+      "kind": "MNC",
+      "name": "Wells Fargo",
+      "readable": false
+    },
+    {
+      "area": "ORR (Embassy Tech Village)",
+      "ats": "own",
+      "careers": "https://talent.lowes.com/in/en",
+      "kind": "MNC",
+      "name": "Lowe's India",
+      "readable": false
+    },
+    {
+      "area": "ORR",
+      "ats": "own",
+      "careers": "https://www.sonyindiasoftwarecentre.com/careers",
+      "kind": "MNC",
+      "name": "Sony India Software Centre",
+      "readable": false
+    },
+    {
+      "area": "ORR",
+      "ats": "workday",
+      "careers": "https://hpe.wd5.myworkdayjobs.com/Jobsathpe",
+      "kind": "MNC",
+      "name": "Juniper Networks (HPE)",
+      "readable": false
+    },
+    {
+      "area": "Mahadevapura / ORR",
+      "ats": "workday",
+      "careers": "https://hpe.wd5.myworkdayjobs.com/Jobsathpe",
+      "kind": "MNC",
+      "name": "Hewlett Packard Enterprise",
+      "readable": false
+    },
+    {
+      "area": "Mahadevapura",
+      "ats": "workday",
+      "careers": "https://hp.wd5.myworkdayjobs.com/ExternalCareerSite",
+      "kind": "MNC",
+      "name": "HP Inc",
+      "readable": false
+    },
+    {
+      "area": "ORR (Devarabeesanahalli)",
+      "ats": "own",
+      "careers": "https://careers.honeywell.com/",
+      "kind": "MNC",
+      "name": "Honeywell",
+      "readable": false
+    },
+    {
+      "area": "ORR / Bagmane",
+      "ats": "workday",
+      "careers": "https://visa.wd5.myworkdayjobs.com/Visa",
+      "kind": "MNC",
+      "name": "Visa",
+      "readable": false
+    },
+    {
+      "area": "ORR",
+      "ats": "workday",
+      "careers": "https://mastercard.wd1.myworkdayjobs.com/CorporateCareers",
+      "kind": "MNC",
+      "name": "Mastercard",
+      "readable": false
+    },
+    {
+      "area": "ORR (Bagmane)",
+      "ats": "workday",
+      "careers": "https://paypal.wd1.myworkdayjobs.com/jobs",
+      "kind": "MNC",
+      "name": "PayPal",
+      "readable": false
+    },
+    {
+      "area": "Prestige Tech Park / ORR",
+      "ats": "workday",
+      "careers": "https://adobe.wd5.myworkdayjobs.com/external_experienced",
+      "kind": "MNC",
+      "name": "Adobe",
+      "readable": false
+    },
+    {
+      "area": "ORR (Embassy / Prestige)",
+      "ats": "workday",
+      "careers": "https://salesforce.wd12.myworkdayjobs.com/External_Career_Site",
+      "kind": "MNC",
+      "name": "Salesforce",
+      "readable": false
+    },
+    {
+      "area": "ORR (Bagmane)",
+      "ats": "workday",
+      "careers": "https://nvidia.wd5.myworkdayjobs.com/NVIDIAExternalCareerSite",
+      "kind": "MNC",
+      "name": "NVIDIA",
+      "readable": false
+    },
+    {
+      "area": "ORR (Bagmane)",
+      "ats": "workday",
+      "careers": "https://broadcom.wd1.myworkdayjobs.com/External_Career",
+      "kind": "MNC",
+      "name": "Broadcom (VMware)",
+      "readable": false
+    },
+    {
+      "area": "ORR",
+      "ats": "workday",
+      "careers": "https://omnissa.wd501.myworkdayjobs.com/Omnissa_External_Career_Site",
+      "kind": "Product",
+      "name": "Omnissa",
+      "readable": false
+    },
+    {
+      "area": "ORR",
+      "ats": "workday",
+      "careers": "https://netapp.wd1.myworkdayjobs.com/NetAppCareers",
+      "kind": "MNC",
+      "name": "NetApp",
+      "readable": false
+    },
+    {
+      "area": "ORR",
+      "ats": "own",
+      "careers": "https://careers.nutanix.com/",
+      "kind": "Product",
+      "name": "Nutanix",
+      "readable": false
+    },
+    {
+      "area": "ORR",
+      "ats": "workday",
+      "careers": "https://autodesk.wd1.myworkdayjobs.com/Ext",
+      "kind": "MNC",
+      "name": "Autodesk",
+      "readable": false
+    },
+    {
+      "area": "ORR (Prestige)",
+      "ats": "own",
+      "careers": "https://jobs.intuit.com/",
+      "kind": "MNC",
+      "name": "Intuit",
+      "readable": false
+    },
+    {
+      "area": "ORR (Prestige)",
+      "ats": "own",
+      "careers": "https://www.uber.com/in/en/careers/list/?location=IND-Karnataka-Bangalore",
+      "kind": "Product",
+      "name": "Uber",
+      "readable": false
+    },
+    {
+      "area": "ORR (Embassy / remote)",
+      "ats": "atlassian",
+      "careers": "https://www.atlassian.com/endpoint/careers/listings",
+      "kind": "Product",
+      "name": "Atlassian",
+      "readable": true
+    },
+    {
+      "area": "ORR (RMZ Ecoworld)",
+      "ats": "own",
+      "careers": "https://careers.linkedin.com/",
+      "kind": "Product",
+      "name": "LinkedIn",
+      "readable": false
+    },
+    {
+      "area": "ORR (Bagmane)",
+      "ats": "own",
+      "careers": "https://careers.qualcomm.com/careers",
+      "kind": "MNC",
+      "name": "Qualcomm",
+      "readable": false
+    },
+    {
+      "area": "ORR",
+      "ats": "own",
+      "careers": "https://careers.amd.com/careers-home/jobs?location=Bangalore",
+      "kind": "MNC",
+      "name": "AMD",
+      "readable": false
+    },
+    {
+      "area": "ORR",
+      "ats": "own",
+      "careers": "https://careers.micron.com/",
+      "kind": "MNC",
+      "name": "Micron",
+      "readable": false
+    },
+    {
+      "area": "ORR (Bagmane)",
+      "ats": "own",
+      "careers": "https://careers.ti.com/",
+      "kind": "MNC",
+      "name": "Texas Instruments",
+      "readable": false
+    },
+    {
+      "area": "ORR",
+      "ats": "workday",
+      "careers": "https://analogdevices.wd1.myworkdayjobs.com/External",
+      "kind": "MNC",
+      "name": "Analog Devices",
+      "readable": false
+    },
+    {
+      "area": "ORR",
+      "ats": "workday",
+      "careers": "https://amat.wd1.myworkdayjobs.com/External",
+      "kind": "MNC",
+      "name": "Applied Materials",
+      "readable": false
+    },
+    {
+      "area": "ORR",
+      "ats": "workday",
+      "careers": "https://kla.wd1.myworkdayjobs.com/Search",
+      "kind": "MNC",
+      "name": "KLA",
+      "readable": false
+    },
+    {
+      "area": "ORR",
+      "ats": "workday",
+      "careers": "https://cadence.wd1.myworkdayjobs.com/External_Careers",
+      "kind": "MNC",
+      "name": "Cadence",
+      "readable": false
+    },
+    {
+      "area": "ORR",
+      "ats": "own",
+      "careers": "https://careers.synopsys.com/",
+      "kind": "MNC",
+      "name": "Synopsys",
+      "readable": false
+    },
+    {
+      "area": "ORR / Devanahalli",
+      "ats": "workday",
+      "careers": "https://boeing.wd1.myworkdayjobs.com/EXTERNAL_CAREERS",
+      "kind": "MNC",
+      "name": "Boeing India",
+      "readable": false
+    },
+    {
+      "area": "Devanahalli",
+      "ats": "workday",
+      "careers": "https://ag.wd3.myworkdayjobs.com/Airbus",
+      "kind": "MNC",
+      "name": "Airbus India",
+      "readable": false
+    },
+    {
+      "area": "Koramangala / Adugodi",
+      "ats": "smartrecruiters",
+      "careers": "https://jobs.smartrecruiters.com/BoschGroup",
+      "kind": "MNC",
+      "name": "Bosch Global Software (BGSW)",
+      "readable": false
+    },
+    {
+      "area": "ORR",
+      "ats": "workday",
+      "careers": "https://worldpay.wd5.myworkdayjobs.com/Worldpay_External_Careers_Site",
+      "kind": "MNC",
+      "name": "Visa Worldpay",
+      "readable": false
+    },
+    {
+      "area": "ORR",
+      "ats": "workday",
+      "careers": "https://workday.wd5.myworkdayjobs.com/Workday",
+      "kind": "Product",
+      "name": "Workday India",
+      "readable": false
+    },
+    {
+      "area": "ORR",
+      "ats": "smartrecruiters",
+      "careers": "https://careers.servicenow.com/",
+      "kind": "Product",
+      "name": "ServiceNow",
+      "readable": false
+    },
+    {
+      "area": "ORR",
+      "ats": "own",
+      "careers": "https://jobs.paloaltonetworks.com/",
+      "kind": "Product",
+      "name": "Palo Alto Networks",
+      "readable": false
+    },
+    {
+      "area": "ORR",
+      "ats": "greenhouse",
+      "kind": "Product",
+      "name": "Zscaler",
+      "readable": true,
+      "slug": "zscaler"
+    },
+    {
+      "area": "ORR",
+      "ats": "greenhouse",
+      "kind": "Product",
+      "name": "Rubrik",
+      "readable": true,
+      "slug": "rubrik"
+    },
+    {
+      "area": "ORR",
+      "ats": "greenhouse",
+      "kind": "Product",
+      "name": "Cloudflare",
+      "readable": true,
+      "slug": "cloudflare"
+    },
+    {
+      "area": "ORR",
+      "ats": "greenhouse",
+      "kind": "Product",
+      "name": "Twilio",
+      "readable": true,
+      "slug": "twilio"
+    },
+    {
+      "area": "ORR",
+      "ats": "greenhouse",
+      "kind": "Product",
+      "name": "Databricks",
+      "readable": true,
+      "slug": "databricks"
+    },
+    {
+      "area": "ORR",
+      "ats": "greenhouse",
+      "kind": "Product",
+      "name": "MongoDB",
+      "readable": true,
+      "slug": "mongodb"
+    },
+    {
+      "area": "ORR",
+      "ats": "greenhouse",
+      "kind": "Product",
+      "name": "Harness",
+      "readable": true,
+      "slug": "harnessinc"
+    },
+    {
+      "area": "ORR",
+      "ats": "greenhouse",
+      "kind": "Product",
+      "name": "Glean",
+      "readable": true,
+      "slug": "gleanwork"
+    },
+    {
+      "area": "HSR / ORR",
+      "ats": "own",
+      "careers": "https://ats.rippling.com/rippling/jobs",
+      "kind": "Product",
+      "name": "Rippling",
+      "readable": false
+    },
+    {
+      "area": "ORR",
+      "ats": "workday",
+      "careers": "https://sprinklr.wd1.myworkdayjobs.com/careers",
+      "kind": "Product",
+      "name": "Sprinklr",
+      "readable": false
+    },
+    {
+      "area": "Koramangala",
+      "ats": "greenhouse",
+      "kind": "Services",
+      "name": "Thoughtworks",
+      "readable": true,
+      "slug": "thoughtworks"
+    },
+    {
+      "area": "ORR",
+      "ats": "own",
+      "careers": "https://www.epam.com/careers",
+      "kind": "Services",
+      "name": "EPAM",
+      "readable": false
+    },
+    {
+      "area": "ORR",
+      "ats": "own",
+      "careers": "https://careers.publicissapient.com/",
+      "kind": "Services",
+      "name": "Publicis Sapient",
+      "readable": false
+    },
+    {
+      "area": "ORR",
+      "ats": "own",
+      "careers": "https://www.nagarro.com/en/careers",
+      "kind": "Services",
+      "name": "Nagarro",
+      "readable": false
+    },
+    {
+      "area": "ORR",
+      "ats": "own",
+      "careers": "https://fractal.ai/careers/",
+      "kind": "Product",
+      "name": "Fractal Analytics",
+      "readable": false
+    },
+    {
+      "area": "ORR",
+      "ats": "own",
+      "careers": "https://tredence.ripplehire.com/candidate/?token=rzuz0vttMaz0VxxVzDiY&source=CAREERSITE#list",
+      "kind": "Services",
+      "name": "Tredence",
+      "readable": false
+    },
+    {
+      "area": "ORR",
+      "ats": "greenhouse",
+      "careers": "https://www.sigmoid.com/careers/",
+      "kind": "Services",
+      "name": "Sigmoid",
+      "readable": true,
+      "slug": "sigmoid"
+    },
+    {
+      "area": "ORR",
+      "ats": "workday",
+      "careers": "https://quantiphi.wd1.myworkdayjobs.com/Careers_at_Quantiphi",
+      "kind": "Services",
+      "name": "Quantiphi",
+      "readable": false
+    },
+    {
+      "area": "ORR",
+      "ats": "greenhouse",
+      "careers": "https://tekion.com/careers",
+      "kind": "Product",
+      "name": "Tekion",
+      "readable": false,
+      "slug": "tekion"
+    },
+    {
+      "area": "ORR",
+      "ats": "greenhouse",
+      "careers": "https://www.druva.com/about/careers",
+      "kind": "Product",
+      "name": "Druva",
+      "readable": false,
+      "slug": "druva"
+    },
+    {
+      "area": "ORR",
+      "ats": "workday",
+      "careers": "https://infoblox.wd5.myworkdayjobs.com/Careers",
+      "kind": "Product",
+      "name": "Infoblox",
+      "readable": false
+    },
+    {
+      "area": "ORR",
+      "ats": "smartrecruiters",
+      "careers": "https://careers.smartrecruiters.com/aristanetworks",
+      "kind": "Product",
+      "name": "Arista Networks",
+      "readable": false
+    },
+    {
+      "area": "ORR",
+      "ats": "workday",
+      "careers": "https://ffive.wd5.myworkdayjobs.com/f5jobs",
+      "kind": "Product",
+      "name": "F5",
+      "readable": false
+    },
+    {
+      "area": "ORR",
+      "ats": "own",
+      "careers": "https://rakuten.careers/",
+      "kind": "MNC",
+      "name": "Rakuten India",
+      "readable": false
+    },
+    {
+      "area": "ORR (Embassy Tech Village)",
+      "ats": "own",
+      "careers": "https://careers.swiggy.com/",
+      "kind": "Product",
+      "name": "Swiggy",
+      "readable": false
+    },
+    {
+      "area": "Kudlu Gate",
+      "ats": "own",
+      "careers": "https://careers.myntra.com/",
+      "kind": "Product",
+      "name": "Myntra",
+      "readable": false
+    },
+    {
+      "area": "Bellandur / ORR",
+      "ats": "own",
+      "careers": "https://www.phonepe.com/careers/",
+      "kind": "Product",
+      "name": "PhonePe",
+      "readable": false
+    },
+    {
+      "area": "Koramangala",
+      "ats": "greenhouse",
+      "kind": "Product",
+      "name": "Razorpay",
+      "readable": true,
+      "slug": "razorpaysoftwareprivatelimited"
+    },
+    {
+      "area": "Indiranagar",
+      "ats": "lever",
+      "kind": "Product",
+      "name": "CRED",
+      "readable": true,
+      "slug": "cred"
+    },
+    {
+      "area": "HSR / Koramangala",
+      "ats": "greenhouse",
+      "kind": "Product",
+      "name": "Groww",
+      "readable": true,
+      "slug": "groww"
+    },
+    {
+      "area": "Bellandur",
+      "ats": "lever",
+      "kind": "Product",
+      "name": "Meesho",
+      "readable": true,
+      "slug": "meesho"
+    },
+    {
+      "area": "ORR (Embassy Tech Square)",
+      "ats": "greenhouse",
+      "kind": "Product",
+      "name": "InMobi",
+      "readable": true,
+      "slug": "inmobi"
+    },
+    {
+      "area": "JP Nagar",
+      "ats": "own",
+      "careers": "https://zerodha.com/careers/",
+      "kind": "Product",
+      "name": "Zerodha",
+      "readable": false
+    },
+    {
+      "area": "HSR / Bellandur",
+      "ats": "own",
+      "careers": "https://www.zepto.com/s/careers",
+      "kind": "Product",
+      "name": "Zepto",
+      "readable": false
+    },
+    {
+      "area": "Koramangala",
+      "ats": "own",
+      "careers": "https://www.olacabs.com/careers",
+      "kind": "Product",
+      "name": "Ola / Krutrim",
+      "readable": false
+    },
+    {
+      "area": "Koramangala",
+      "ats": "own",
+      "careers": "https://rapido.darwinbox.in/ms/candidate/careers",
+      "kind": "Product",
+      "name": "Rapido",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "own",
+      "careers": "https://careers.urbancompany.com/jobs",
+      "kind": "Product",
+      "name": "Urban Company",
+      "readable": false
+    },
+    {
+      "area": "Koramangala",
+      "ats": "own",
+      "careers": "https://juspay.io/careers",
+      "kind": "Product",
+      "name": "Juspay",
+      "readable": false
+    },
+    {
+      "area": "Indiranagar",
+      "ats": "greenhouse",
+      "kind": "Product",
+      "name": "Postman",
+      "readable": true,
+      "slug": "postman"
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "workday",
+      "careers": "https://browserstack.wd3.myworkdayjobs.com/External",
+      "kind": "Product",
+      "name": "BrowserStack",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "own",
+      "careers": "https://jobs.chargebee.com/",
+      "kind": "Product",
+      "name": "Chargebee",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "smartrecruiters",
+      "careers": "https://careers.smartrecruiters.com/Freshworks",
+      "kind": "Product",
+      "name": "Freshworks",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "own",
+      "careers": "https://www.zoho.com/careers/",
+      "kind": "Product",
+      "name": "Zoho",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "own",
+      "careers": "https://whatfix101.hire.trakstar.com/jobs",
+      "kind": "Product",
+      "name": "Whatfix",
+      "readable": true
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "own",
+      "careers": "https://innovaccer.com/careers/jobs",
+      "kind": "Product",
+      "name": "Innovaccer",
+      "readable": true
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "own",
+      "careers": "https://moengage.hire.trakstar.com/",
+      "kind": "Product",
+      "name": "MoEngage",
+      "readable": true
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "lever",
+      "careers": "https://clevertap.com/careers/",
+      "kind": "Product",
+      "name": "CleverTap",
+      "readable": true,
+      "slug": "clevertap"
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "lever",
+      "careers": "https://www.observe.ai/careers",
+      "kind": "Product",
+      "name": "Observe.AI",
+      "readable": false,
+      "slug": "observeai"
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "workday",
+      "careers": "https://uniphore.wd503.myworkdayjobs.com/Uniphore",
+      "kind": "Product",
+      "name": "Uniphore",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "own",
+      "careers": "https://hasura.freshteam.com/jobs",
+      "kind": "Product",
+      "name": "Hasura",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "own",
+      "careers": "https://setu.co/careers",
+      "kind": "Product",
+      "name": "Setu",
+      "readable": true
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "own",
+      "careers": "https://careers.m2pfintech.com/view-jobs/",
+      "kind": "Product",
+      "name": "M2P Fintech",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "own",
+      "careers": "https://perfios.darwinbox.in/ms/candidate/careers/",
+      "kind": "Product",
+      "name": "Perfios",
+      "readable": false
+    },
+    {
+      "area": "Koramangala",
+      "ats": "own",
+      "careers": "https://careers.kula.ai/slice",
+      "kind": "Product",
+      "name": "Slice",
+      "readable": true
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "own",
+      "careers": "https://jupiter.keka.com/careers",
+      "kind": "Product",
+      "name": "Jupiter",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "own",
+      "careers": "https://careers.udaan.com/",
+      "kind": "Product",
+      "name": "Udaan",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "own",
+      "careers": "https://www.licious.in/careers/jobs",
+      "kind": "Product",
+      "name": "Licious",
+      "readable": false
+    },
+    {
+      "area": "HSR",
+      "ats": "own",
+      "careers": "https://sharechat.com/careers",
+      "kind": "Product",
+      "name": "ShareChat",
+      "readable": false
+    },
+    {
+      "area": "HSR",
+      "ats": "own",
+      "careers": "https://unacademy.darwinbox.in/ms/candidate/careers",
+      "kind": "Product",
+      "name": "Unacademy",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "own",
+      "careers": "https://jobs.upgrad.com/",
+      "kind": "Product",
+      "name": "upGrad",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "lever",
+      "kind": "Product",
+      "name": "Leena AI",
+      "readable": true,
+      "slug": "leena"
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "lever",
+      "kind": "Product",
+      "name": "Gojek India",
+      "readable": true,
+      "slug": "GoToGroup"
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "unknown",
+      "careers": "https://www.dunzo.com/careers",
+      "kind": "Product",
+      "name": "Dunzo",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "own",
+      "careers": "https://careers.nykaa.com/",
+      "kind": "Product",
+      "name": "Nykaa tech",
+      "readable": false
+    },
+    {
+      "area": "Whitefield",
+      "ats": "own",
+      "careers": "https://www.tataelxsi.com/careers",
+      "kind": "Services",
+      "name": "Tata Elxsi",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "lever",
+      "kind": "Product",
+      "name": "Hevo Data",
+      "readable": true,
+      "slug": "hevodata"
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "lever",
+      "kind": "Product",
+      "name": "Revefi",
+      "readable": true,
+      "slug": "revefi"
+    },
+    {
+      "area": "Remote India",
+      "ats": "lever",
+      "kind": "Product",
+      "name": "Netomi",
+      "readable": true,
+      "slug": "netomi"
+    },
+    {
+      "area": "Remote India",
+      "ats": "lever",
+      "kind": "Product",
+      "name": "Zimperium",
+      "readable": true,
+      "slug": "zimperium"
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "lever",
+      "kind": "Product",
+      "name": "Stable Money",
+      "readable": true,
+      "slug": "stable-money1"
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "lever",
+      "kind": "Product",
+      "name": "Acceldata",
+      "readable": true,
+      "slug": "acceldata"
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "lever",
+      "kind": "Product",
+      "name": "Saviynt",
+      "readable": true,
+      "slug": "saviynt"
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "lever",
+      "kind": "Product",
+      "name": "Zeta",
+      "readable": true,
+      "slug": "zeta"
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "ashby",
+      "kind": "Product",
+      "name": "Sarvam AI",
+      "readable": true,
+      "slug": "sarvam"
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "ashby",
+      "kind": "Product",
+      "name": "AiPrise",
+      "readable": true,
+      "slug": "aiprise"
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "ashby",
+      "kind": "Product",
+      "name": "Granica",
+      "readable": true,
+      "slug": "granica"
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "ashby",
+      "kind": "Product",
+      "name": "Cartesia",
+      "readable": true,
+      "slug": "cartesia"
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "ashby",
+      "kind": "Product",
+      "name": "Ema",
+      "readable": true,
+      "slug": "ema"
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "ashby",
+      "kind": "Product",
+      "name": "Level AI",
+      "note": "Also posts on jobs.lever.co/levelai",
+      "readable": true,
+      "slug": "level-ai"
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "ashby",
+      "kind": "Product",
+      "name": "Parspec",
+      "readable": true,
+      "slug": "parspec"
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "greenhouse",
+      "kind": "Product",
+      "name": "HackerRank",
+      "readable": true,
+      "slug": "hackerrank"
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "greenhouse",
+      "kind": "Product",
+      "name": "Instead",
+      "readable": true,
+      "slug": "instead"
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "greenhouse",
+      "kind": "Product",
+      "name": "Instawork",
+      "readable": true,
+      "slug": "instawork"
+    },
+    {
+      "area": "Remote India",
+      "ats": "greenhouse",
+      "kind": "Product",
+      "name": "Canonical",
+      "readable": true,
+      "slug": "canonical"
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "greenhouse",
+      "kind": "Product",
+      "name": "Bloomreach",
+      "readable": true,
+      "slug": "bloomreach"
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "greenhouse",
+      "kind": "Product",
+      "name": "Vonage",
+      "readable": true,
+      "slug": "vonage"
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "greenhouse",
+      "kind": "Product",
+      "name": "StockX",
+      "readable": true,
+      "slug": "stockx"
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "lever",
+      "kind": "Product",
+      "name": "FamPay",
+      "readable": true,
+      "slug": "fampay"
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "ashby",
+      "kind": "Product",
+      "name": "Lumilens",
+      "readable": true,
+      "slug": "lumilens"
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "ashby",
+      "kind": "Product",
+      "name": "Wisdom AI",
+      "readable": true,
+      "slug": "Wisdom-AI"
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "ashby",
+      "kind": "Product",
+      "name": "Flagright",
+      "readable": true,
+      "slug": "flagright.com"
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "ashby",
+      "kind": "Product",
+      "name": "Broccoli AI",
+      "readable": true,
+      "slug": "broccoli"
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "ashby",
+      "kind": "Product",
+      "name": "Cerebras",
+      "readable": true,
+      "slug": "cerebras"
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "ashby",
+      "kind": "Product",
+      "name": "Meraki Labs",
+      "readable": true,
+      "slug": "Meraki-Labs"
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "ashby",
+      "kind": "Product",
+      "name": "Libra AI",
+      "readable": true,
+      "slug": "libra"
+    },
+    {
+      "area": "ORR / Embassy",
+      "ats": "own",
+      "careers": "https://morganstanley.eightfold.ai/careers?location=Bengaluru",
+      "kind": "MNC",
+      "name": "Morgan Stanley",
+      "readable": false
+    },
+    {
+      "area": "ORR / Pune",
+      "ats": "own",
+      "careers": "https://careers.db.com/",
+      "kind": "MNC",
+      "name": "Deutsche Bank",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru",
+      "ats": "own",
+      "careers": "https://jobs.standardchartered.com/",
+      "kind": "MNC",
+      "name": "Standard Chartered",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru",
+      "ats": "own",
+      "careers": "https://mycareer.hsbc.com/",
+      "kind": "MNC",
+      "name": "HSBC",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru",
+      "ats": "own",
+      "careers": "https://careers.societegenerale.com/",
+      "kind": "MNC",
+      "name": "Societe Generale GSC",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru",
+      "ats": "own",
+      "careers": "https://careers.bankofamerica.com/",
+      "kind": "MNC",
+      "name": "Bank of America",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru / Pune",
+      "ats": "own",
+      "careers": "https://jobs.citi.com/",
+      "kind": "MNC",
+      "name": "Citi",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru / Pune",
+      "ats": "own",
+      "careers": "https://search.jobs.barclays/",
+      "kind": "MNC",
+      "name": "Barclays",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru",
+      "ats": "own",
+      "careers": "https://aexp.eightfold.ai/careers",
+      "kind": "MNC",
+      "name": "American Express",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru / Mumbai",
+      "ats": "own",
+      "careers": "https://www.nomura.com/careers/",
+      "kind": "MNC",
+      "name": "Nomura",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru",
+      "ats": "own",
+      "careers": "https://careers.northerntrust.com/",
+      "kind": "MNC",
+      "name": "Northern Trust",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru",
+      "ats": "own",
+      "careers": "https://careers.statestreet.com/",
+      "kind": "MNC",
+      "name": "State Street",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru / Pune",
+      "ats": "own",
+      "careers": "https://bnymellon.eightfold.ai/careers",
+      "kind": "MNC",
+      "name": "BNY",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru / Gurugram",
+      "ats": "own",
+      "careers": "https://careers.fidelityinternational.com/",
+      "kind": "MNC",
+      "name": "Fidelity International",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru",
+      "ats": "workday",
+      "careers": "https://sabre.wd1.myworkdayjobs.com/SabreJobs",
+      "kind": "MNC",
+      "name": "Sabre",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru",
+      "ats": "own",
+      "careers": "https://jobs.amadeus.com/",
+      "kind": "MNC",
+      "name": "Amadeus",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru / Gurugram",
+      "ats": "own",
+      "careers": "https://careers.expediagroup.com/",
+      "kind": "MNC",
+      "name": "Expedia Group",
+      "readable": false
+    },
+    {
+      "area": "Bagmane / ORR",
+      "ats": "own",
+      "careers": "https://www.samsung.com/in/about-us/careers/",
+      "kind": "MNC",
+      "name": "Samsung R&D (SRI-B)",
+      "readable": false
+    },
+    {
+      "area": "ORR",
+      "ats": "own",
+      "careers": "https://www.lgsoftindia.com/careers",
+      "kind": "MNC",
+      "name": "LG Soft India",
+      "readable": false
+    },
+    {
+      "area": "Whitefield / Manyata",
+      "ats": "own",
+      "careers": "https://jobs.continental.com/",
+      "kind": "MNC",
+      "name": "Continental",
+      "readable": false
+    },
+    {
+      "area": "Whitefield",
+      "ats": "own",
+      "careers": "https://jobs.volvogroup.com/",
+      "kind": "MNC",
+      "name": "Volvo Group",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru",
+      "ats": "own",
+      "careers": "https://www.toyotaconnected.co.in/careers",
+      "kind": "MNC",
+      "name": "Toyota Connected India",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru",
+      "ats": "own",
+      "careers": "https://jobs.siemens-healthineers.com/",
+      "kind": "MNC",
+      "name": "Siemens Healthineers",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru",
+      "ats": "own",
+      "careers": "https://careers.abb/",
+      "kind": "MNC",
+      "name": "ABB",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru",
+      "ats": "own",
+      "careers": "https://www.hitachi.com/careers/",
+      "kind": "MNC",
+      "name": "Hitachi",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru",
+      "ats": "own",
+      "careers": "https://www.infineon.com/careers",
+      "kind": "MNC",
+      "name": "Infineon",
+      "readable": false
+    },
+    {
+      "area": "Manyata / Bengaluru",
+      "ats": "workday",
+      "careers": "https://nxp.wd3.myworkdayjobs.com/careers",
+      "kind": "MNC",
+      "name": "NXP",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru",
+      "ats": "workday",
+      "careers": "https://marvell.wd1.myworkdayjobs.com/MarvellCareers",
+      "kind": "MNC",
+      "name": "Marvell",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru",
+      "ats": "smartrecruiters",
+      "careers": "https://jobs.smartrecruiters.com/WesternDigital",
+      "kind": "MNC",
+      "name": "Western Digital / Sandisk",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru",
+      "ats": "own",
+      "careers": "https://seagatecareers.com/",
+      "kind": "MNC",
+      "name": "Seagate",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru",
+      "ats": "own",
+      "careers": "https://careers.arm.com/",
+      "kind": "MNC",
+      "name": "Arm",
+      "readable": false
+    },
+    {
+      "area": "Whitefield / multiple",
+      "ats": "own",
+      "careers": "https://www.capgemini.com/in-en/careers/",
+      "kind": "Services",
+      "name": "Capgemini",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru",
+      "ats": "own",
+      "careers": "https://www2.deloitte.com/in/en/careers.html",
+      "kind": "Services",
+      "name": "Deloitte India (USI)",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru",
+      "ats": "own",
+      "careers": "https://kpmg.com/in/en/careers.html",
+      "kind": "Services",
+      "name": "KPMG India",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru",
+      "ats": "own",
+      "careers": "https://careers.ey.com/",
+      "kind": "Services",
+      "name": "EY GDS",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru",
+      "ats": "own",
+      "careers": "https://www.pwc.in/careers.html",
+      "kind": "Services",
+      "name": "PwC India",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru",
+      "ats": "own",
+      "careers": "https://genpact.taleo.net/careersection/sgy_external_career_section/jobsearch.ftl",
+      "kind": "Services",
+      "name": "Genpact",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (Whitefield)",
+      "ats": "own",
+      "careers": "https://www.mu-sigma.com/careers",
+      "kind": "Services",
+      "name": "Mu Sigma",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru",
+      "ats": "own",
+      "careers": "https://www.tigeranalytics.com/careers/",
+      "kind": "Services",
+      "name": "Tiger Analytics",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru",
+      "ats": "own",
+      "careers": "https://www.capillarytech.com/careers/",
+      "kind": "MNC",
+      "name": "Capillary Technologies",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru",
+      "ats": "own",
+      "careers": "https://jobs.nike.com/",
+      "kind": "MNC",
+      "name": "Nike India Tech",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru",
+      "ats": "own",
+      "careers": "https://www.kotak.com/en/careers.html",
+      "kind": "MNC",
+      "name": "Kotak Mahindra (tech)",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru / Gurugram",
+      "ats": "own",
+      "careers": "https://careers.airtel.com/",
+      "kind": "MNC",
+      "name": "Airtel (Xtelify)",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru / Mumbai",
+      "ats": "own",
+      "careers": "https://careers.jio.com/",
+      "kind": "MNC",
+      "name": "Jio Platforms",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "own",
+      "careers": "https://careers.atherenergy.com/jobs",
+      "kind": "Product",
+      "name": "Ather Energy",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "own",
+      "careers": "https://ola.skillate.com/",
+      "kind": "Product",
+      "name": "Ola Electric",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "own",
+      "careers": "https://ats.careers.yulu.bike/",
+      "kind": "Product",
+      "name": "Yulu",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "unknown",
+      "kind": "Product",
+      "name": "Bounce",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "own",
+      "careers": "https://porter.in/careers",
+      "kind": "Product",
+      "name": "Porter",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "own",
+      "careers": "https://www.blackbuck.com/careers.php",
+      "kind": "Product",
+      "name": "BlackBuck",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "own",
+      "careers": "https://www.delhivery.com/careers",
+      "kind": "Product",
+      "name": "Delhivery",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "own",
+      "careers": "https://www.shadowfax.in/careers",
+      "kind": "Product",
+      "name": "Shadowfax",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "own",
+      "careers": "https://ninjacart.freshteam.com/jobs",
+      "kind": "Product",
+      "name": "Ninjacart",
+      "readable": true
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "own",
+      "careers": "https://blinkit.com/careers/jobs",
+      "kind": "Product",
+      "name": "Zomato / Blinkit",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "lever",
+      "kind": "Product",
+      "name": "Paytm",
+      "readable": true,
+      "slug": "paytm"
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "own",
+      "careers": "https://careers.makemytrip.com/",
+      "kind": "Product",
+      "name": "MakeMyTrip",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "own",
+      "careers": "https://myhr.darwinbox.in/ms/candidate/careers",
+      "kind": "Product",
+      "name": "PharmEasy",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "own",
+      "careers": "https://practo.app.param.ai/jobs/",
+      "kind": "Product",
+      "name": "Practo",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "own",
+      "careers": "https://careers.cult.fit/",
+      "kind": "Product",
+      "name": "Cult.fit",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "unknown",
+      "kind": "Product",
+      "name": "MPL (Mobile Premier League)",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "own",
+      "careers": "https://games24x7.darwinbox.in/ms/candidate/a6150564417204/careers",
+      "kind": "Product",
+      "name": "Games24x7",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "greenhouse",
+      "kind": "Product",
+      "name": "Zynga India",
+      "readable": false,
+      "slug": "zyngacareers"
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "own",
+      "careers": "https://khatabook.com/hiring/",
+      "kind": "Product",
+      "name": "Khatabook",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "own",
+      "careers": "https://changejar.applytojob.com/apply",
+      "kind": "Product",
+      "name": "Jar",
+      "readable": true
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "own",
+      "careers": "https://careers.coindcx.com/opportunities/openings",
+      "kind": "Product",
+      "name": "CoinDCX",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "own",
+      "careers": "https://recruiterflow.com/coinswitch/jobs",
+      "kind": "Product",
+      "name": "CoinSwitch",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "own",
+      "careers": "https://smallcase.freshteam.com/jobs",
+      "kind": "Product",
+      "name": "Smallcase",
+      "readable": true
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "unknown",
+      "kind": "Product",
+      "name": "INDmoney",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "lever",
+      "kind": "Product",
+      "name": "Fi Money",
+      "readable": false,
+      "slug": "epifi"
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "own",
+      "careers": "https://open.money/company/careers",
+      "kind": "Product",
+      "name": "Open Financial",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "own",
+      "careers": "https://niyo-solutions.jobsoid.com/",
+      "kind": "Product",
+      "name": "Niyo",
+      "readable": true
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "own",
+      "careers": "https://careers.kula.ai/cashfree",
+      "kind": "Product",
+      "name": "Cashfree Payments",
+      "readable": true
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "own",
+      "careers": "https://careers.payu.in/PayU/go/_/514880/",
+      "kind": "Product",
+      "name": "PayU",
+      "readable": true
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "own",
+      "careers": "https://www.pinelabs.com/careers/open-jobs",
+      "kind": "Product",
+      "name": "Pine Labs",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "ashby",
+      "kind": "Product",
+      "name": "Atlan",
+      "readable": false,
+      "slug": "atlan"
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "own",
+      "careers": "https://peerlist.io/company/toplyne/careers",
+      "kind": "Product",
+      "name": "Toplyne",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "own",
+      "careers": "https://www.simplilearn.com/job-openings",
+      "kind": "Product",
+      "name": "Simplilearn",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "unknown",
+      "careers": "",
+      "kind": "Product",
+      "name": "Vedantu",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "unknown",
+      "careers": "",
+      "kind": "Product",
+      "name": "Scaler / InterviewBit",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "unknown",
+      "careers": "",
+      "kind": "Product",
+      "name": "Physics Wallah (tech)",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "unknown",
+      "careers": "",
+      "kind": "Product",
+      "name": "Uplers",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "own",
+      "careers": "https://careers.kula.ai/plumhq",
+      "kind": "Product",
+      "name": "Plum",
+      "readable": true
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "own",
+      "careers": "https://careers.kula.ai/acko",
+      "kind": "Product",
+      "name": "Acko",
+      "readable": true
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "unknown",
+      "careers": "",
+      "kind": "Product",
+      "name": "Digit Insurance",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "unknown",
+      "careers": "",
+      "kind": "Product",
+      "name": "Navi",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "unknown",
+      "careers": "",
+      "kind": "Product",
+      "name": "Lenskart",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "unknown",
+      "careers": "",
+      "kind": "Product",
+      "name": "Pepperfry",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "unknown",
+      "careers": "",
+      "kind": "Product",
+      "name": "BigBasket",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "unknown",
+      "careers": "",
+      "kind": "Product",
+      "name": "Swiggy Instamart",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "unknown",
+      "careers": "",
+      "kind": "Product",
+      "name": "Dream Sports",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "unknown",
+      "careers": "",
+      "kind": "Product",
+      "name": "Kuku FM",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "unknown",
+      "careers": "",
+      "kind": "Product",
+      "name": "Pocket FM",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "unknown",
+      "careers": "",
+      "kind": "Product",
+      "name": "Eloelo",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "unknown",
+      "careers": "",
+      "kind": "Product",
+      "name": "Rephrase.ai",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "lever",
+      "kind": "Product",
+      "name": "Sprinto",
+      "readable": true,
+      "slug": "Sprinto"
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "unknown",
+      "careers": "",
+      "kind": "Product",
+      "name": "Spry / DevRev",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "greenhouse",
+      "careers": "https://job-boards.greenhouse.io/devrev",
+      "kind": "Product",
+      "name": "DevRev",
+      "readable": true,
+      "slug": "devrev"
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "unknown",
+      "careers": "",
+      "kind": "Product",
+      "name": "Nurix AI",
+      "note": "greenhouse slug nurix is Nurix Therapeutics, not Nurix AI; portal still unidentified.",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "unknown",
+      "careers": "",
+      "kind": "Product",
+      "name": "Composio",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "unknown",
+      "careers": "",
+      "kind": "Product",
+      "name": "Gupshup",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "unknown",
+      "careers": "",
+      "kind": "Product",
+      "name": "Yellow.ai",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "unknown",
+      "careers": "",
+      "kind": "Product",
+      "name": "Haptik",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "unknown",
+      "careers": "",
+      "kind": "Product",
+      "name": "Exotel",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "unknown",
+      "careers": "",
+      "kind": "Product",
+      "name": "Ozonetel",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "unknown",
+      "careers": "",
+      "kind": "Product",
+      "name": "LeadSquared",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "unknown",
+      "careers": "",
+      "kind": "Product",
+      "name": "Kapture CX",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "unknown",
+      "careers": "",
+      "kind": "Product",
+      "name": "Darwinbox",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "unknown",
+      "careers": "",
+      "kind": "Product",
+      "name": "Keka",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "unknown",
+      "careers": "",
+      "kind": "Product",
+      "name": "Zeta Suite",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "lever",
+      "kind": "Product",
+      "name": "Mindtickle",
+      "readable": true,
+      "slug": "mindtickle"
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "unknown",
+      "careers": "",
+      "kind": "Product",
+      "name": "Icertis",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "lever",
+      "careers": "",
+      "kind": "Product",
+      "name": "Clari",
+      "readable": true,
+      "slug": "clari"
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "unknown",
+      "careers": "",
+      "kind": "Product",
+      "name": "Highradius",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "greenhouse",
+      "careers": "",
+      "kind": "Product",
+      "name": "Commvault",
+      "readable": true,
+      "slug": "commvault"
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "unknown",
+      "careers": "",
+      "kind": "Product",
+      "name": "Tessell",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "greenhouse",
+      "careers": "",
+      "kind": "Product",
+      "name": "Couchbase",
+      "readable": true,
+      "slug": "couchbaseinc"
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "unknown",
+      "careers": "",
+      "kind": "Product",
+      "name": "Arcesium",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "unknown",
+      "careers": "",
+      "kind": "Product",
+      "name": "Tower Research (tech)",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "unknown",
+      "careers": "",
+      "kind": "Product",
+      "name": "Graviton",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "unknown",
+      "careers": "",
+      "kind": "Product",
+      "name": "Sahaj Software",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "unknown",
+      "careers": "",
+      "kind": "Product",
+      "name": "Thoughtspot",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "unknown",
+      "careers": "",
+      "kind": "Product",
+      "name": "Zeotap",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "unknown",
+      "careers": "",
+      "kind": "Product",
+      "name": "Sigtuple",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "unknown",
+      "careers": "",
+      "kind": "Product",
+      "name": "Niramai",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "own",
+      "careers": "https://career.qure.ai/jobs/Careers",
+      "kind": "Product",
+      "name": "Qure.ai",
+      "note": "Portal renders jobs client-side (PeoplePlus); not readable from cloud.",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "unknown",
+      "careers": "",
+      "kind": "Product",
+      "name": "SigNoz",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "unknown",
+      "careers": "",
+      "kind": "Product",
+      "name": "Appsmith",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "unknown",
+      "careers": "",
+      "kind": "Product",
+      "name": "ToolJet",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "unknown",
+      "careers": "",
+      "kind": "Product",
+      "name": "Plane",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "unknown",
+      "careers": "",
+      "kind": "Product",
+      "name": "Chatwoot",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "unknown",
+      "careers": "",
+      "kind": "Product",
+      "name": "Frappe",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "unknown",
+      "careers": "",
+      "kind": "Product",
+      "name": "Dyte",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "unknown",
+      "careers": "",
+      "kind": "Product",
+      "name": "Refyne",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "unknown",
+      "careers": "",
+      "kind": "Product",
+      "name": "Jupiter Money",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "greenhouse",
+      "kind": "Product",
+      "name": "Smartsheet",
+      "readable": true,
+      "slug": "smartsheet"
+    },
+    {
+      "area": "Electronic City",
+      "ats": "greenhouse",
+      "kind": "Product",
+      "name": "Conga",
+      "readable": true,
+      "slug": "conga"
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "workday",
+      "careers": "https://spgi.wd5.myworkdayjobs.com/SPGI_Careers",
+      "kind": "Bank/Finance GCC",
+      "name": "S&P Global",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "workday",
+      "careers": "https://condenast.wd5.myworkdayjobs.com/CondeCareers",
+      "kind": "MNC",
+      "name": "Condé Nast",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "workday",
+      "careers": "https://solera.wd5.myworkdayjobs.com/Global_Career_Site",
+      "kind": "MNC",
+      "name": "Solera",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "workday",
+      "careers": "https://alliancedata.wd5.myworkdayjobs.com/breadfinancial_India",
+      "kind": "Bank/Finance GCC",
+      "name": "Bread Financial",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "workday",
+      "careers": "https://maersk.wd3.myworkdayjobs.com/Maersk_Careers",
+      "kind": "MNC",
+      "name": "Maersk",
+      "readable": false
+    },
+    {
+      "area": "Whitefield/EPIP",
+      "ats": "workday",
+      "careers": "https://broadridge.wd5.myworkdayjobs.com/Careers",
+      "kind": "Bank/Finance GCC",
+      "name": "Broadridge",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "workday",
+      "careers": "https://lseg.wd3.myworkdayjobs.com/Careers",
+      "kind": "Bank/Finance GCC",
+      "name": "LSEG (London Stock Exchange Group)",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "workday",
+      "careers": "https://aptiv.wd5.myworkdayjobs.com/APTIV_CAREERS",
+      "kind": "Auto MNC",
+      "name": "Aptiv",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "greenhouse",
+      "kind": "Product",
+      "name": "Degreed",
+      "readable": true,
+      "slug": "degreed"
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "lever",
+      "kind": "Product",
+      "name": "Safe Security",
+      "readable": true,
+      "slug": "safe"
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "workday",
+      "careers": "https://resmed.wd3.myworkdayjobs.com/ResMed_External_Careers",
+      "kind": "MNC",
+      "name": "ResMed",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "workday",
+      "careers": "https://jiostar.wd102.myworkdayjobs.com/JioStar",
+      "kind": "Product",
+      "name": "JioStar",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "ashby",
+      "kind": "Startup",
+      "name": "Nanonets",
+      "readable": true,
+      "slug": "nanonets"
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "workday",
+      "careers": "https://zebra.wd501.myworkdayjobs.com/Zebra_careers",
+      "kind": "MNC",
+      "name": "Zebra Technologies",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "greenhouse",
+      "kind": "MNC",
+      "name": "Celonis",
+      "readable": true,
+      "slug": "celonis"
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "workday",
+      "careers": "https://danaher.wd1.myworkdayjobs.com/DanaherJobs",
+      "kind": "MNC",
+      "name": "Danaher",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "workday",
+      "careers": "https://lytx.wd1.myworkdayjobs.com/Lytx",
+      "kind": "MNC",
+      "name": "Lytx",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "workday",
+      "careers": "https://automationanywhere.wd5.myworkdayjobs.com/AutomationAnywhereJobs",
+      "kind": "MNC",
+      "name": "Automation Anywhere",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "ashby",
+      "kind": "Startup",
+      "name": "Giga (GigaML)",
+      "readable": true,
+      "slug": "gigaml"
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "workday",
+      "careers": "https://veralto.wd1.myworkdayjobs.com/en-US/EskoJobs",
+      "kind": "MNC",
+      "name": "Veralto",
+      "readable": false
+    },
+    {
+      "area": "Hebbal",
+      "ats": "own",
+      "careers": "https://careers.kula.ai/digantara",
+      "kind": "Startup",
+      "name": "Digantara",
+      "readable": true
+    },
+    {
+      "area": "HSR Layout",
+      "ats": "own",
+      "careers": "https://popclub.keka.com/careers",
+      "kind": "Startup",
+      "name": "POP (Poptech)",
+      "readable": true
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "own",
+      "careers": "https://careers.kula.ai/zamp-ai",
+      "kind": "Startup",
+      "name": "Zamp",
+      "readable": true
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "own",
+      "careers": "https://careers.kula.ai/usemultiplier",
+      "kind": "Product",
+      "name": "Multiplier",
+      "readable": true
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "own",
+      "careers": "https://careers.kula.ai/saas-labs",
+      "kind": "Product",
+      "name": "SaaS Labs",
+      "readable": true
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "greenhouse",
+      "kind": "Product",
+      "name": "EarnIn",
+      "readable": true,
+      "slug": "earnin"
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "lever",
+      "kind": "Product",
+      "name": "Plivo",
+      "readable": true,
+      "slug": "plivo"
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "own",
+      "careers": "https://creditsaisonin-talent.freshteam.com/jobs",
+      "kind": "Finance",
+      "name": "Credit Saison India",
+      "readable": true
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "greenhouse",
+      "kind": "AI startup",
+      "name": "SuperApp",
+      "readable": true,
+      "slug": "superapp"
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "greenhouse",
+      "kind": "Product (ERP)",
+      "name": "Amtech Software",
+      "readable": true,
+      "slug": "amtechsoftware"
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "greenhouse",
+      "kind": "MNC GCC",
+      "name": "bswift India",
+      "readable": true,
+      "slug": "bswiftindia"
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "greenhouse",
+      "kind": "Product",
+      "name": "Tellius",
+      "readable": true,
+      "slug": "tellius"
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "workday",
+      "careers": "https://scientificgames.wd5.myworkdayjobs.com/LightWonderExternalCareers",
+      "kind": "MNC",
+      "name": "Light & Wonder",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "workday",
+      "careers": "https://harriscomputer.wd3.myworkdayjobs.com/altera",
+      "kind": "MNC",
+      "name": "Altera Digital Health",
+      "readable": false
+    },
+    {
+      "area": "Bengaluru (hub)",
+      "ats": "workday",
+      "careers": "https://jll.wd1.myworkdayjobs.com/jllcareers",
+      "kind": "MNC",
+      "name": "JLL Technologies",
+      "readable": false
+    }
+  ],
+  "note": "Bengaluru company directory for the daily job run. ats=lever/greenhouse/ashby/amazon are read directly from the cloud; workday/smartrecruiters/own need a browser (Workday blocks cloud requests); unknown = portal not identified yet. Areas are the main Bengaluru campus as generally known and may be approximate.",
+  "updated": "2026-11-01"
+}

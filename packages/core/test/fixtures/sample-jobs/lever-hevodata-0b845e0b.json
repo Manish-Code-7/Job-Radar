@@ -1,0 +1,22 @@
+{
+  "added": "14 Oct",
+  "addedAt": "2026-10-14T03:15:00Z",
+  "closed": true,
+  "company": "Hevo Data",
+  "exp": "0–2 yrs",
+  "location": "Bengaluru · On-site",
+  "note": "Hevo builds no-code data-pipeline SaaS. A second SDE-I backend opening (0–2 yrs); your Python and API-integration work fits, though it leans on multithreading and distributed-systems depth you'll need to show. (Posting closed, checked 2 Nov.)",
+  "portal": "jobs.lever.co/hevodata",
+  "skills": [
+    "Java/Python",
+    "Distributed systems",
+    "Concurrency",
+    "DSA"
+  ],
+  "status": "skip",
+  "tier": "match",
+  "title": "SDE-I (Backend)",
+  "track": "Software",
+  "url": "https://jobs.lever.co/hevodata/0b845e0b-9f6e-4343-9b75-cd340d678a54",
+  "verify": false
+}

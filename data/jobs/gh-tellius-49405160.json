@@ -1,0 +1,22 @@
+{
+  "added": "1 Nov",
+  "addedAt": "2026-11-01T02:46:34Z",
+  "closed": true,
+  "company": "Tellius",
+  "exp": "Freshers–1 yr",
+  "location": "Bengaluru",
+  "note": "Tellius builds an AI-driven analytics and decision-intelligence platform. The posting asks for freshers up to 1 year, and your AWS, Docker and Kubernetes work lines up well; ArgoCD/FluxCD is listed as learn-on-the-job. (Posting closed, checked 2 Nov.)",
+  "portal": "job-boards.greenhouse.io/tellius",
+  "skills": [
+    "AWS/Azure/GCP",
+    "Docker & Kubernetes",
+    "CI/CD (GitHub Actions/Jenkins)",
+    "Prometheus/Grafana"
+  ],
+  "status": "skip",
+  "tier": "match",
+  "title": "Associate Software Engineer – DevOps",
+  "track": "DevOps",
+  "url": "https://job-boards.greenhouse.io/tellius/jobs/4940516007",
+  "verify": false
+}

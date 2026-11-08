@@ -10,3 +10,4 @@ apps/worker/storage/
 reports/*.tmp
 .neon
 *.tsbuildinfo
+job-radar-data.zip

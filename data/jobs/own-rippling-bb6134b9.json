@@ -1,0 +1,22 @@
+{
+  "added": "24 Sep",
+  "addedAt": "2026-09-24T03:26:38Z",
+  "closed": true,
+  "company": "Rippling",
+  "exp": "1–2 yrs",
+  "location": "Bengaluru",
+  "note": "Backend role on Rippling's payroll engine. Your Python fits; Django and MongoDB are gaps, and the 1–2 yr line is at the edge of your 3 months plus internships. (Auto-expired: couldn't confirm it's still open after 21 days.)",
+  "portal": "ats.rippling.com/rippling",
+  "skills": [
+    "Python",
+    "Django",
+    "MongoDB",
+    "CS fundamentals"
+  ],
+  "status": "skip",
+  "tier": "match",
+  "title": "Software Engineer I, Global Payroll Calculation",
+  "track": "Software",
+  "url": "https://ats.rippling.com/rippling/jobs/bb6134b9-e2ab-4e6c-9558-9bd6e4de31da",
+  "verify": false
+}

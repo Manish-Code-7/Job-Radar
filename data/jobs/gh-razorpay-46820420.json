@@ -1,0 +1,22 @@
+{
+  "added": "29 Sep",
+  "addedAt": "2026-09-29T02:58:47Z",
+  "company": "Razorpay",
+  "exp": "1–3 yrs",
+  "lastChecked": "2026-11-02T02:49:30Z",
+  "location": "Bengaluru",
+  "note": "Razorpay builds payments and banking infrastructure for Indian businesses. The role is full-stack (React plus PHP/Go/Java microservices, Docker, K8s, GitHub Actions CI), which matches your React/Docker/Kubernetes stack. PHP, Go and Java would be new to you.",
+  "portal": "job-boards.greenhouse.io/razorpaysoftwareprivatelimited",
+  "skills": [
+    "REST APIs",
+    "React",
+    "Docker/Kubernetes",
+    "SQL"
+  ],
+  "status": "new",
+  "tier": "match",
+  "title": "Software Engineer",
+  "track": "Software",
+  "url": "https://job-boards.greenhouse.io/razorpaysoftwareprivatelimited/jobs/4682042005",
+  "verify": false
+}

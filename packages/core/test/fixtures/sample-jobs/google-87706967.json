@@ -1,0 +1,22 @@
+{
+  "added": "23 Sep",
+  "addedAt": "2026-09-23T10:48:00Z",
+  "closed": true,
+  "company": "Google",
+  "exp": "1 yr min",
+  "location": "Bengaluru",
+  "note": "Early-level SRE asking for 1 year of software development plus data structures. It fits your infra side: servers, TrueNAS, Docker/K8s. (Auto-expired: couldn't confirm it's still open after 21 days.)",
+  "portal": "google.com/about/careers",
+  "skills": [
+    "Linux",
+    "Python/Go",
+    "Distributed systems",
+    "Monitoring"
+  ],
+  "status": "skip",
+  "tier": "match",
+  "title": "Site Reliability Engineer",
+  "track": "DevOps",
+  "url": "https://www.google.com/about/careers/applications/jobs/results/87706967249691334-site-reliability-engineer",
+  "verify": false
+}

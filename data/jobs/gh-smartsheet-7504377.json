@@ -1,0 +1,22 @@
+{
+  "added": "24 Sep",
+  "addedAt": "2026-09-24T03:26:38Z",
+  "closed": true,
+  "company": "Smartsheet",
+  "exp": "Not stated",
+  "location": "Bengaluru · Hybrid",
+  "note": "Smartsheet makes a collaborative work-management platform. Node.js, React, AWS, Docker and Kubernetes line up closely with your stack; Go or Java would be a plus. (Posting closed.)",
+  "portal": "job-boards.greenhouse.io/smartsheet",
+  "skills": [
+    "Node.js",
+    "React",
+    "Microservices",
+    "AWS/Docker/K8s"
+  ],
+  "status": "skip",
+  "tier": "match",
+  "title": "Software Engineer I (Hybrid in Bangalore)",
+  "track": "Software",
+  "url": "https://job-boards.greenhouse.io/smartsheet/jobs/7504377",
+  "verify": false
+}

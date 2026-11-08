@@ -32,6 +32,14 @@ describe("required classifier cases", () => {
     expect(c.seniority).toBe("entry");
   });
 
+  it('"Software Engineer III" + "2 years minimum" → eligible (flagged stretch); + "4 years" → not', () => {
+    expect(classifyRules(raw("Software Engineer III", "Minimum 2 years of experience."), acme)).toMatchObject({ freshersEligible: true });
+    expect(classifyRules(raw("Software Engineer III", "Minimum 2 years of experience."), acme).flags).toContain("level III (stretch)");
+    expect(classifyRules(raw("Software Engineer III", "4+ years of experience."), acme).freshersEligible).toBe(false);
+    expect(classifyRules(raw("Software Engineer III", "Build things."), acme).freshersEligible).toBe(false);
+    expect(classifyRules(raw("Senior Engineer IV", "1 year of experience"), acme).freshersEligible).toBe(false);
+  });
+
   it('"SDE II" + "3–5 years" → not eligible', () => {
     const c = classifyRules(raw("SDE II", "3–5 years of experience building services."), acme);
     expect(c.freshersEligible).toBe(false);
@@ -103,6 +111,7 @@ describe("seniority + employment", () => {
     ["Engineering Manager", "senior"],
     ["Solutions Architect", "senior"],
     ["Software Engineer III", "mid"],
+    ["Software Engineer IV", "mid"],
     ["SDE 1", "entry"],
     ["Junior Developer", "entry"],
     ["Backend Engineer", "unknown"],

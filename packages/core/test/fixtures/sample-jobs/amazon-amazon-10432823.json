@@ -1,0 +1,22 @@
+{
+  "added": "5 Oct",
+  "addedAt": "2026-10-05T03:06:00Z",
+  "company": "Amazon",
+  "exp": "1 yr min",
+  "lastChecked": "2026-11-02T02:49:30Z",
+  "location": "Bengaluru · On-site",
+  "note": "Amazon's Finance Tech team builds payment and FP&A platforms on AWS with some GenAI work; asks for 1+ year of non-internship development, which your consulting role plus AWS/Python covers. The main stack is Java, so expect to ramp up there.",
+  "portal": "amazon.jobs",
+  "skills": [
+    "Java",
+    "AWS",
+    "Distributed systems",
+    "GenAI"
+  ],
+  "status": "new",
+  "tier": "match",
+  "title": "Software Development Engineer I, FinOps FP&A",
+  "track": "Software",
+  "url": "https://www.amazon.jobs/en/jobs/10432823/software-development-engineer-i-finops-fp-a",
+  "verify": false
+}

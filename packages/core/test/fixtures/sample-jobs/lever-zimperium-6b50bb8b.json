@@ -1,0 +1,22 @@
+{
+  "added": "28 Sep",
+  "addedAt": "2026-09-28T03:10:00Z",
+  "company": "Zimperium",
+  "exp": "2+ yrs",
+  "lastChecked": "2026-11-02T02:49:30Z",
+  "location": "Bengaluru · Hybrid",
+  "note": "Zimperium makes mobile-security software. Your Docker/Kubernetes/AWS and REST experience fits, but the core is Java/Spring Boot with Kafka/Redis, which is a gap, and it asks 2+ years.",
+  "portal": "jobs.lever.co/zimperium",
+  "skills": [
+    "Java/Spring Boot",
+    "Docker",
+    "Kubernetes",
+    "AWS"
+  ],
+  "status": "new",
+  "tier": "stretch",
+  "title": "Java Engineer (Back-End & Microservices)",
+  "track": "Software",
+  "url": "https://jobs.lever.co/zimperium/6b50bb8b-2a86-4e93-8c17-39b66f3e0789",
+  "verify": false
+}

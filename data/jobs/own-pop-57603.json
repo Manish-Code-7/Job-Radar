@@ -1,0 +1,22 @@
+{
+  "added": "5 Oct",
+  "addedAt": "2026-10-05T03:06:00Z",
+  "closed": true,
+  "company": "POP (Poptech)",
+  "exp": "1–2 yrs (freshers considered)",
+  "location": "Bengaluru (HSR Layout) · On-site",
+  "note": "POP is a Razorpay-backed fintech running a rewards-based UPI payments app; the SDE-1 role is backend-leaning and accepts Python, which fits your Node/Python API work. Expect a DSA-heavy interview. (Auto-expired: couldn't confirm it's still open after 21 days.)",
+  "portal": "popclub.keka.com/careers",
+  "skills": [
+    "Java/Go/Python",
+    "REST APIs",
+    "SQL/NoSQL",
+    "DSA"
+  ],
+  "status": "skip",
+  "tier": "match",
+  "title": "Software Development Engineer – I (SDE-1)",
+  "track": "Software",
+  "url": "https://popclub.keka.com/careers/jobdetails/57603",
+  "verify": false
+}

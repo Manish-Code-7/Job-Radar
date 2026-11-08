@@ -9,6 +9,9 @@ describe("seed mapping", () => {
     expect(mapKind("Staffing agency")).toMatchObject({ kind: "staffing", excluded: true });
     expect(mapKind("GCC")).toMatchObject({ kind: "gcc", excluded: false });
     expect(mapKind("Product")).toMatchObject({ kind: "product", excluded: false });
+    expect(mapKind("Bank/Finance GCC")).toMatchObject({ kind: "gcc", excluded: false });
+    expect(mapKind("Auto MNC")).toMatchObject({ kind: "mnc", excluded: false });
+    expect(mapKind("AI startup")).toMatchObject({ kind: "startup", excluded: false });
   });
   it("maps ATS names and aliases", () => {
     expect(mapAts("Greenhouse")).toBe("greenhouse");
@@ -16,6 +19,8 @@ describe("seed mapping", () => {
     expect(mapAts("Zoho Recruit")).toBe("zoho");
     expect(mapAts("Taleo")).toBe("oracle");
     expect(mapAts("something new")).toBe("unknown");
+    expect(mapAts("own")).toBe("unknown"); // own careers site → ATS detector decides
+    expect(mapAts("atlassian")).toBe("custom");
   });
   it("validates directory rows", () => {
     expect(DirectoryRow.safeParse({ name: "Acme", kind: "Product", ats: "lever", readable: true }).success).toBe(true);

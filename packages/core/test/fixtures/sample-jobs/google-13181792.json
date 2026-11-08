@@ -1,0 +1,22 @@
+{
+  "added": "1 Oct",
+  "addedAt": "2026-10-01T03:05:00Z",
+  "closed": true,
+  "company": "Google",
+  "exp": "2 yrs min",
+  "location": "Bengaluru · On-site",
+  "note": "Builds the infrastructure (compute, storage, networks) behind Google Cloud. Your Docker/Kubernetes/AWS work is relevant, but it asks for 2 years and real distributed-systems depth. (Auto-expired: couldn't confirm it's still open after 21 days.)",
+  "portal": "google.com/about/careers",
+  "skills": [
+    "Python/Go/Java",
+    "Distributed systems",
+    "Cloud infra",
+    "DSA"
+  ],
+  "status": "skip",
+  "tier": "stretch",
+  "title": "Software Engineer III, Infrastructure, Google Cloud",
+  "track": "DevOps",
+  "url": "https://www.google.com/about/careers/applications/jobs/results/131817929036440262-software-engineer-iii-infrastructure-google-cloud",
+  "verify": false
+}
