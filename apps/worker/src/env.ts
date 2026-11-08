@@ -16,7 +16,7 @@ const Env = z.object({
   NEON_AI_GATEWAY_BASE_URL: z.string().optional(),
   AI_GATEWAY_MODEL: z.string().default("gemini-3-5-flash-lite"),
   GEMINI_API_KEY: z.string().optional(),
-  GEMINI_MODEL: z.string().default("gemini-2.5-flash-lite"),
+  GEMINI_MODEL: z.string().default("gemini-3.5-flash-lite"),
   GEMINI_DAILY_REQUESTS: num(200),
   GEMINI_RPM: num(10),
   OLLAMA_URL: z.string().default("http://localhost:11434"),

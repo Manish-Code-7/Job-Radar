@@ -15,8 +15,8 @@ import { warn } from "./log";
 export class GeminiJobAi implements JobEnricher, AiExtractor {
   private ai: GoogleGenAI;
   private lastCall = 0;
-  readonly provider: "ai_gateway" | "gemini";
-  readonly model: string;
+  provider: "ai_gateway" | "gemini";
+  model: string;
   constructor(private db: Db) {
     if (env.NEON_AI_GATEWAY_TOKEN && env.NEON_AI_GATEWAY_BASE_URL) {
       this.provider = "ai_gateway";
@@ -59,7 +59,16 @@ export class GeminiJobAi implements JobEnricher, AiExtractor {
       await this.db.insert(providerUsage).values({ provider: this.provider, units: 1, task });
       return JSON.parse(res.text ?? "null");
     } catch (e) {
-      warn("ai call failed; using rules only", { provider: this.provider, model: this.model, task, err: (e as Error).message.slice(0, 300) });
+      const msg = (e as Error).message;
+      // Gateway without prepaid credits → switch to the Gemini free tier (if configured) for this process.
+      if (this.provider === "ai_gateway" && /paid_plan_required|not enabled on this account|insufficient.*credit/i.test(msg) && env.GEMINI_API_KEY) {
+        warn("AI Gateway has no credits; falling back to Gemini free tier", { model: env.GEMINI_MODEL });
+        this.provider = "gemini";
+        this.model = env.GEMINI_MODEL;
+        this.ai = new GoogleGenAI({ apiKey: env.GEMINI_API_KEY });
+        return this.call(task, prompt, schema);
+      }
+      warn("ai call failed; using rules only", { provider: this.provider, model: this.model, task, err: msg.slice(0, 300) });
       return null;
     }
   }
