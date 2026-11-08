@@ -14,7 +14,8 @@
     "db:generate": "pnpm --filter @job-radar/db generate",
     "db:migrate": "pnpm --filter @job-radar/db migrate",
     "dev:web": "pnpm --filter @job-radar/web dev",
-    "neon:deploy": "neon deploy"
+    "neon:deploy": "neon deploy",
+    "dev:web:https": "pnpm --filter @job-radar/web dev:https"
   },
   "devDependencies": {
     "@types/node": "^22.10.0",

@@ -13,7 +13,7 @@ export default defineConfig({
   preview: {
     realtime: {
       // Every browser origin that subscribes to live queries.
-      allowedOrigins: ["http://localhost:3000"],
+      allowedOrigins: ["http://localhost:3000", "https://localhost:3000"],
     },
   },
   auth: true,

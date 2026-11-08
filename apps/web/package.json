@@ -8,7 +8,8 @@
     "build": "next build",
     "start": "next start -p 3000",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "test": "echo 'web: covered by core tests + manual admin checks in Phase 1'"
+    "test": "echo 'web: covered by core tests + manual admin checks in Phase 1'",
+    "dev:https": "next dev -p 3000 --experimental-https"
   },
   "dependencies": {
     "@job-radar/core": "workspace:*",
