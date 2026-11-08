@@ -1,0 +1,21 @@
+{
+  "name": "job-radar",
+  "private": true,
+  "packageManager": "pnpm@9.15.9",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "typecheck": "pnpm -r --parallel typecheck",
+    "test": "pnpm -r test",
+    "seed": "pnpm --filter @job-radar/worker seed",
+    "worker": "pnpm --filter @job-radar/worker cli",
+    "db:generate": "pnpm --filter @job-radar/db generate",
+    "db:migrate": "pnpm --filter @job-radar/db migrate",
+    "dev:web": "pnpm --filter @job-radar/web dev"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3",
+    "@types/node": "^22.10.0",
+    "tsx": "^4.19.2",
+    "vitest": "^2.1.8"
+  }
+}
